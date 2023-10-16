@@ -1,0 +1,842 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image.webp",
+            "heading": "心の新たな癒やしの場<br>\nアートは新たな日常の扉を開ける。",
+            "heading_size": "medium",
+            "subheading": "",
+            "button_label": "shopify:\/\/shop_images\/linebotn.svg",
+            "link": "",
+            "button_style_secondary": true,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "inverse",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide-0"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "small",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand."
+      }
+    },
+    "02336f0e-0910-4beb-bb06-6cd5d4030c54": {
+      "type": "news-list",
+      "settings": {
+        "title": "お知らせ一覧",
+        "news_list": "news",
+        "post_limit": 3,
+        "news_list_date": true,
+        "news_list_category": true
+      }
+    },
+    "rich-text-1": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "CONCEPT",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 0
+      }
+    },
+    "224f1167-ddc9-4cbb-8004-6cc21e64ff17": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16800083542244__224f1167-ddc9-4cbb-8004-6cc21e64ff17-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>お取り扱いしている絵画は、世代を超えて心を掴むような作品を数多く展示しており、<\/p><p>作品と鑑賞者の心が共鳴する作品に導き、美と感動の未知なる視点を見つけるお手伝いを致します。<\/p><p>皆様が作品と深く対話することで日々の喧騒から解き放たれて新たな日常を送るための、一つのきっかけを提供致します。<\/p>",
+            "text_style": "body"
+          }
+        },
+        "66457e33-fe49-4d63-b995-c187a539af77": {
+          "type": "caption",
+          "settings": {
+            "caption": "Who we are",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "c490e450-2b39-4032-9faf-6833cc6ecbc6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>私たちは作品を通じてアーティストの深い感情や思考を伝えることを重視しております。<br\/>私たちが選定する作品は、色彩や形、線の動きを通じて、鑑賞者に強烈な感情やメッセージを伝えるものを取り揃えております。<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16800083542244__224f1167-ddc9-4cbb-8004-6cc21e64ff17-text-1",
+        "66457e33-fe49-4d63-b995-c187a539af77",
+        "c490e450-2b39-4032-9faf-6833cc6ecbc6"
+      ],
+      "custom_css": [
+        "p.image-with-text__text.image-with-text__text--caption.subtitle.subtitle--medium.subtitle {font-family: \"Oswald\";}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/concept.webp",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "d7d53b89-fef5-43ea-b06f-e8e212b8d0e1": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16800083542244__d7d53b89-fef5-43ea-b06f-e8e212b8d0e1-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "ARTISTS",
+            "heading_size": "h2"
+          }
+        },
+        "accdae46-dec6-41d3-a6a4-0ba88d9827e5": {
+          "type": "caption",
+          "settings": {
+            "caption": "画家一覧",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "template--16800083542244__d7d53b89-fef5-43ea-b06f-e8e212b8d0e1-heading-1",
+        "accdae46-dec6-41d3-a6a4-0ba88d9827e5"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "c1bebbca-bbb2-459b-8791-b72a0242ba3e": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16800083542244__c1bebbca-bbb2-459b-8791-b72a0242ba3e-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>さまざまなテーマやスタイルを持つアーティストたちが、現代アートの舞台で独自の表現を追求しています。<br\/>彼らは感情の営み、社会の動き、技術の進化を通じて、新しいアートの形を模索しています。<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16800083542244__c1bebbca-bbb2-459b-8791-b72a0242ba3e-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "59bbef2a-791b-408c-aabb-55fdb19a8f8a": {
+      "type": "image-box",
+      "settings": {
+        "image_box": "shopify:\/\/shop_images\/Rectangle_8.png"
+      }
+    },
+    "852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--16800083542244__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "イザベル・ステラ<span>Isabel Stella<\/span>",
+            "text": "<p>朝のコーヒー\n<span>Morning Coffee<\/span><\/p>\n<p>街の散歩\n<span>Stroll Through the City<\/span><\/p>\n<p>家族の食事\n<span>Family Dinner<\/span><\/p>",
+            "link_label": "VIEW MORE",
+            "link": ""
+          }
+        },
+        "template--16800083542244__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "マクシミリアン・シャドウ<span>Maximilian Shadow<\/span>",
+            "text": "<p>朝のコーヒー\n<span>Morning Coffee<\/span><\/p>\n<p>街の散歩\n<span>Stroll Through the City<\/span><\/p>\n<p>家族の食事\n<span>Family Dinner<\/span><\/p>",
+            "link_label": "VIEW MORE",
+            "link": ""
+          }
+        },
+        "template--16800083542244__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "エレノア・クリムゾン<span>Eleanor Crimson<\/span>",
+            "text": "<p>朝のコーヒー\n<span>Morning Coffee<\/span><\/p>\n<p>街の散歩\n<span>Stroll Through the City<\/span><\/p>\n<p>家族の食事\n<span>Family Dinner<\/span><\/p>",
+            "link_label": "VIEW MORE",
+            "link": ""
+          }
+        },
+        "4c7d07cf-a3d9-4c3d-ae9c-5718dd3c46c0": {
+          "type": "column",
+          "settings": {
+            "title": "セバスチャン・ネビュラ<span>Sebastian Nebula<\/span>",
+            "text": "<p>朝のコーヒー\n<span>Morning Coffee<\/span><\/p>\n<p>街の散歩\n<span>Stroll Through the City<\/span><\/p>\n<p>家族の食事\n<span>Family Dinner<\/span><\/p>",
+            "link_label": "VIEW MORE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16800083542244__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-column-1",
+        "template--16800083542244__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-column-2",
+        "template--16800083542244__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-column-3",
+        "4c7d07cf-a3d9-4c3d-ae9c-5718dd3c46c0"
+      ],
+      "custom_css": [
+        "h3.inline-richtext {border-top: 1px solid; border-bottom: 1px solid; padding: 1rem 0; font-family: var(--font-body-family); font-size: 1em;}",
+        "h3.inline-richtext span {margin-top: 0.4rem;}",
+        "span {font-family: var(--font-heading-family); display: block; font-size: 0.9em;}",
+        "p {margin-bottom: 0.4rem;}",
+        "a.link.animate-arrow {display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid; line-height: 3; font-family: var(--font-heading-family);}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "ALL ARTISTS",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection__title {display: flex; gap: 1em; align-items: center;}",
+        ".collection__title h2 {margin: 0;}",
+        ".collection__title h5 {font-size: 1.2rem; margin: 0; padding: 0; color: rgba(var(--color-foreground), 0.75);}",
+        ".card__information {position: relative; bottom: 5em;}",
+        ".card__inner {width: 100%; position: relative; bottom: 1.5em;}",
+        ".card-wrapper {color: inherit; height: 80%; position: relative; text-decoration: none; top: 2em;}",
+        ".price {display: none;}"
+      ],
+      "settings": {
+        "title": "WORKS",
+        "heading_size": "h2",
+        "description": "<h5>作品一覧<\/h5>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "54e51075-478b-4d8c-a058-7561aac36f1e": {
+      "type": "rich-text",
+      "blocks": {
+        "f1b5f2b2-29c4-4afa-8159-076317bef476": {
+          "type": "heading",
+          "settings": {
+            "heading": "SEARCH",
+            "heading_size": "h2"
+          }
+        },
+        "e8a31ffe-39d9-4354-a344-8cfaebe5602b": {
+          "type": "caption",
+          "settings": {
+            "caption": "お好みの商品を探す",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "f1b5f2b2-29c4-4afa-8159-076317bef476",
+        "e8a31ffe-39d9-4354-a344-8cfaebe5602b"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "d41503f1-0145-40d2-b285-ede395ff8174": {
+      "type": "search-box",
+      "custom_css": [],
+      "settings": {}
+    },
+    "8ceb71e0-58b5-4101-914f-4f70894435e1": {
+      "type": "rich-text",
+      "blocks": {
+        "aa112431-cc2e-49fc-8578-de0346128ffa": {
+          "type": "heading",
+          "settings": {
+            "heading": "HASHTAGS",
+            "heading_size": "h2"
+          }
+        },
+        "d9a4a023-057a-4975-b708-210084842acc": {
+          "type": "caption",
+          "settings": {
+            "caption": "ハッシュタグから選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "aa112431-cc2e-49fc-8578-de0346128ffa",
+        "d9a4a023-057a-4975-b708-210084842acc"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "04a9beeb-2d08-4b4d-869e-0c50d1c5f13d": {
+      "type": "hash-tag",
+      "settings": {}
+    },
+    "bf9cb169-32a9-4960-a5e3-7f895bd191b4": {
+      "type": "rich-text",
+      "blocks": {
+        "ad368bdd-c32a-4c7d-899e-70cfb79b5168": {
+          "type": "heading",
+          "settings": {
+            "heading": "PRISE",
+            "heading_size": "h2"
+          }
+        },
+        "ed74c6d1-d5a4-43f6-832f-a6f293926c88": {
+          "type": "caption",
+          "settings": {
+            "caption": "金額から選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "ad368bdd-c32a-4c7d-899e-70cfb79b5168",
+        "ed74c6d1-d5a4-43f6-832f-a6f293926c88"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "09c87d5a-721c-4314-912e-69fc07d67278": {
+      "type": "collection-list-custom",
+      "settings": {
+        "custom_collection_list": [
+          "50万円以下",
+          "100万円以下",
+          "150万円以下",
+          "200万より下",
+          "200万以上"
+        ],
+        "max_collections": 5
+      }
+    },
+    "4f1b44e2-35f1-4594-a995-f8d79ad6b31a": {
+      "type": "rich-text",
+      "blocks": {
+        "8a9504ab-fee2-4762-81eb-9812fcc0ad2c": {
+          "type": "heading",
+          "settings": {
+            "heading": "ARTIST",
+            "heading_size": "h2"
+          }
+        },
+        "8f2233c8-1706-4890-a4d4-91203360ce85": {
+          "type": "caption",
+          "settings": {
+            "caption": "画家から選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "8a9504ab-fee2-4762-81eb-9812fcc0ad2c",
+        "8f2233c8-1706-4890-a4d4-91203360ce85"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "0a19fc6d-0dfb-4ae6-989e-0ae1f7d94635": {
+      "type": "sakusha-tag",
+      "settings": {}
+    },
+    "102d8e24-2540-479b-8f07-8668ddf1c6ef": {
+      "type": "rich-text",
+      "blocks": {
+        "de11b450-17f9-410d-b750-bf9b39667b9e": {
+          "type": "heading",
+          "settings": {
+            "heading": "TASTE",
+            "heading_size": "h2"
+          }
+        },
+        "fb031221-8992-483c-84b7-e177e9a86b4f": {
+          "type": "caption",
+          "settings": {
+            "caption": "テイストから選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "de11b450-17f9-410d-b750-bf9b39667b9e",
+        "fb031221-8992-483c-84b7-e177e9a86b4f"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "03505dde-6723-4e3f-81ab-a1b32b0e60be": {
+      "type": "category",
+      "blocks": {
+        "9e2ba944-7d45-41a4-ab5f-17242828b8f2": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "first",
+            "url": "shopify:\/\/collections\/風景アート",
+            "image": "shopify:\/\/shop_images\/Group_72.png",
+            "alt_text": ""
+          }
+        },
+        "a22b3994-f7ba-4f2e-86cc-636d3a76036f": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_75.png",
+            "alt_text": ""
+          }
+        },
+        "4dde3b36-07d5-4e54-9803-21e2014b64b2": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_76.png",
+            "alt_text": ""
+          }
+        },
+        "402cf9d2-e820-4cbd-83f6-5a0f50aa72a2": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_73_2.png",
+            "alt_text": ""
+          }
+        },
+        "fcdb7182-920b-45c5-a21a-233c71b7f506": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_74_2.png",
+            "alt_text": ""
+          }
+        },
+        "76497b01-67f8-466f-b9b3-e599f29c8da4": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_77_2.png",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "9e2ba944-7d45-41a4-ab5f-17242828b8f2",
+        "a22b3994-f7ba-4f2e-86cc-636d3a76036f",
+        "4dde3b36-07d5-4e54-9803-21e2014b64b2",
+        "402cf9d2-e820-4cbd-83f6-5a0f50aa72a2",
+        "fcdb7182-920b-45c5-a21a-233c71b7f506",
+        "76497b01-67f8-466f-b9b3-e599f29c8da4"
+      ],
+      "settings": {}
+    },
+    "0101de7d-8fc9-422d-92fa-c4f84b0fd81e": {
+      "type": "rich-text",
+      "blocks": {
+        "b73389c5-3e6f-4e23-99e8-82b7ecc02eb4": {
+          "type": "heading",
+          "settings": {
+            "heading": "PLACE",
+            "heading_size": "h2"
+          }
+        },
+        "eda9a6e9-6dd6-40f0-8212-3c8201f6f68e": {
+          "type": "caption",
+          "settings": {
+            "caption": "場所から選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "b73389c5-3e6f-4e23-99e8-82b7ecc02eb4",
+        "eda9a6e9-6dd6-40f0-8212-3c8201f6f68e"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "26c2dda4-a83f-4d47-998c-7e204e792306": {
+      "type": "category",
+      "blocks": {
+        "cbb10c9a-70b6-4b51-8192-7e618beeaa5c": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "first",
+            "url": "shopify:\/\/collections\/風景アート",
+            "image": "shopify:\/\/shop_images\/Group_72_1.png",
+            "alt_text": ""
+          }
+        },
+        "2379fc73-5250-47fb-819f-4ccf4a362022": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_75_1.png",
+            "alt_text": ""
+          }
+        },
+        "580e9d29-ceaa-4485-9d8a-4b8b5b397aa8": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_76_1.png",
+            "alt_text": ""
+          }
+        },
+        "a67cbc1d-8c0b-4623-94f8-3a5468be110a": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_73.png",
+            "alt_text": ""
+          }
+        },
+        "f0a7c356-5b92-4123-8cfa-a9b6bccd39a7": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_74.png",
+            "alt_text": ""
+          }
+        },
+        "89631984-7387-46af-9d4c-d864ff75ae74": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_77.png",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "cbb10c9a-70b6-4b51-8192-7e618beeaa5c",
+        "2379fc73-5250-47fb-819f-4ccf4a362022",
+        "580e9d29-ceaa-4485-9d8a-4b8b5b397aa8",
+        "a67cbc1d-8c0b-4623-94f8-3a5468be110a",
+        "f0a7c356-5b92-4123-8cfa-a9b6bccd39a7",
+        "89631984-7387-46af-9d4c-d864ff75ae74"
+      ],
+      "settings": {}
+    },
+    "54a6b88d-fe99-4196-a958-d5bd8252177e": {
+      "type": "rich-text",
+      "blocks": {
+        "056f4726-361b-41ed-a82e-10ff92f0cc4b": {
+          "type": "heading",
+          "settings": {
+            "heading": "FAQ",
+            "heading_size": "h2"
+          }
+        },
+        "6687a367-1418-444d-862a-45f4963d772d": {
+          "type": "caption",
+          "settings": {
+            "caption": "FAQ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "056f4726-361b-41ed-a82e-10ff92f0cc4b",
+        "6687a367-1418-444d-862a-45f4963d772d"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "fc42f818-8b96-476c-9451-931eb5b5b473": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Q.　お届け期間について",
+            "icon": "none",
+            "row_content": "<p>A.　作品は一週間から10日程度で到着しますが、一部海外作家の委託作品につきましては3週間近く日数がかかることがありますのでご了承ください。<\/p>",
+            "page": ""
+          }
+        },
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Q.　購入手続き後のキャンセルについて",
+            "icon": "none",
+            "row_content": "<p>A.　郵送でのキャンセル対応は致しかねますので、予めご了承くださいませ。<br\/>もしキャンセル希望の方はお問合せフォームよりご連絡くださいませ。<\/p>",
+            "page": ""
+          }
+        },
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Q.　送料は地域別でどのくらいかかりますか？",
+            "icon": "none",
+            "row_content": "<p>A.　事前の配送料のお見積もりは、特殊配送のためお伝え致しかねます。<br\/>作品の発送時におおよその金額をお伝え致しますので、予めご了承くださいませ。<\/p>",
+            "page": ""
+          }
+        },
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Q.　インターネットで買う前に実物を見たい場合はどうしたら良い？",
+            "icon": "none",
+            "row_content": "<p>A.　ご来店いただき直接作品をご覧くださいませ。<\/p>",
+            "page": ""
+          }
+        },
+        "d3500c48-f259-43d1-bf50-3ac6d00a1a23": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Q.　購入条件の交渉は出来ますか？",
+            "icon": "none",
+            "row_content": "<p>A.　可能でございますので、お問い合わせフォームよりお問い合わせくださいませ。<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-1",
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-2",
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-3",
+        "template--16800083542244__fc42f818-8b96-476c-9451-931eb5b5b473-collapsible_row-4",
+        "d3500c48-f259-43d1-bf50-3ac6d00a1a23"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.collapsible-content .accordion {margin-top: 0; width: 49%; } .grid__item {display: flex; flex-wrap: wrap; gap: 1rem; } .collapsible-content-wrapper-narrow {max-width: 120rem; padding: 0 9rem; }}",
+        "h3.accordion__title.inline-richtext.h4,p {text-indent: -2.1em; padding-left: 2.1em; font-family: serif;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "d2b261d7-99af-47ad-a91b-5893651ce640": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16800083542244__d2b261d7-99af-47ad-a91b-5893651ce640-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\\その他のご質問は公式LINEから!!\/<\/p>"
+          }
+        },
+        "template--16800083542244__d2b261d7-99af-47ad-a91b-5893651ce640-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "LINE登録はこちら",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16800083542244__d2b261d7-99af-47ad-a91b-5893651ce640-text-1",
+        "template--16800083542244__d2b261d7-99af-47ad-a91b-5893651ce640-button-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "02336f0e-0910-4beb-bb06-6cd5d4030c54",
+    "rich-text-1",
+    "224f1167-ddc9-4cbb-8004-6cc21e64ff17",
+    "d7d53b89-fef5-43ea-b06f-e8e212b8d0e1",
+    "c1bebbca-bbb2-459b-8791-b72a0242ba3e",
+    "59bbef2a-791b-408c-aabb-55fdb19a8f8a",
+    "852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c",
+    "featured-collection",
+    "54e51075-478b-4d8c-a058-7561aac36f1e",
+    "d41503f1-0145-40d2-b285-ede395ff8174",
+    "8ceb71e0-58b5-4101-914f-4f70894435e1",
+    "04a9beeb-2d08-4b4d-869e-0c50d1c5f13d",
+    "bf9cb169-32a9-4960-a5e3-7f895bd191b4",
+    "09c87d5a-721c-4314-912e-69fc07d67278",
+    "4f1b44e2-35f1-4594-a995-f8d79ad6b31a",
+    "0a19fc6d-0dfb-4ae6-989e-0ae1f7d94635",
+    "102d8e24-2540-479b-8f07-8668ddf1c6ef",
+    "03505dde-6723-4e3f-81ab-a1b32b0e60be",
+    "0101de7d-8fc9-422d-92fa-c4f84b0fd81e",
+    "26c2dda4-a83f-4d47-998c-7e204e792306",
+    "54a6b88d-fe99-4196-a958-d5bd8252177e",
+    "fc42f818-8b96-476c-9451-931eb5b5b473",
+    "d2b261d7-99af-47ad-a91b-5893651ce640"
+  ]
+}

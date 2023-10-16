@@ -1,0 +1,36 @@
+<slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+  <ul class="sakusha-list">
+    {% for product_vendor in shop.vendors %}
+        <li>{{ product_vendor | link_to_vendor }}</li>
+    {% endfor %}
+    </ul>
+</slider-component>
+
+
+{% schema %}
+{
+    "presets": [
+      {
+        "name": "作者タグ"
+      }
+    ]
+  }
+{% endschema %}
+
+{%- style -%}
+.sakusha-list {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+.sakusha-list li {
+    padding: 1rem 2rem;
+    border: 1px solid;
+}
+.sakusha-list a {
+    line-height: 1.5;
+    font-family: var(--font-body-family);
+    text-decoration: none;
+    color: currentColor;
+}
+{%- endstyle -%}

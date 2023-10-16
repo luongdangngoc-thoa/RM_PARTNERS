@@ -1,0 +1,41 @@
+<slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+    <div class="tagsWrap">
+<ul class="search_tags">
+    {% for collection in section.settings.custom_collection_list %}
+        <li class="search_tagItem">
+            <a href="{{ collection.url }}">{{ collection.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+</div>
+</slider-component>
+
+
+
+  {% schema %}
+  {
+    "name": "コレクションタグ",
+    "settings": [
+      {
+        "type": "collection_list",
+        "label": "カスタムコレクションリスト",
+        "id": "custom_collection_list"
+      },
+      {
+        "type": "range",
+        "label": "最大表示数",
+        "id": "max_collections",
+        "min": 1,
+        "max": 5,
+        "default": 5
+      }
+    ],
+    "presets": [
+      {
+        "name": "コレクションタグ",
+        "category": "カスタムコンテンツ"
+      }
+    ]
+  }
+  {% endschema %}
+  

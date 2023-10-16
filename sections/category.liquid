@@ -1,0 +1,114 @@
+<slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+    <div class="category page-width">
+    {% for block in section.blocks %}
+      <div class="{{ block.settings.class_name }}">
+        <a href="{{ block.settings.url }}">
+          <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text }}">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</slider-component>
+
+  
+  {% schema %}
+  {
+    "name": "カテゴリ一覧",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "custom_block_1",
+        "name": "Custom Block_1",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Class名",
+            "id": "class_name"
+          },
+          {
+            "type": "url",
+            "label": "URL",
+            "id": "url"
+          },
+          {
+            "type": "image_picker",
+            "label": "画像ピッカー",
+            "id": "image"
+          },
+          {
+            "type": "text",
+            "label": "テキスト",
+            "id": "alt_text"
+          }
+        ]
+      },
+      {
+        "type": "custom_block_2",
+        "name": "Custom Block_2",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Class名",
+            "id": "class_name"
+          },
+          {
+            "type": "url",
+            "label": "URL",
+            "id": "url"
+          },
+          {
+            "type": "image_picker",
+            "label": "画像ピッカー",
+            "id": "image"
+          },
+          {
+            "type": "text",
+            "label": "テキスト",
+            "id": "alt_text"
+          }
+        ]
+      },
+      {
+        "type": "custom_block_3",
+        "name": "Custom Block_3",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Class名",
+            "id": "class_name"
+          },
+          {
+            "type": "url",
+            "label": "URL",
+            "id": "url"
+          },
+          {
+            "type": "image_picker",
+            "label": "画像ピッカー",
+            "id": "image"
+          },
+          {
+            "type": "text",
+            "label": "テキスト",
+            "id": "alt_text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+          "name": "カテゴリ一覧"
+        }
+      ]
+  }
+  {% endschema %}
+  
+  {%- style -%}
+  .category {
+    margin:1rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  {%- endstyle -%}

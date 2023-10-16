@@ -1,0 +1,32 @@
+<slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+  <div class="image-box page-width">
+  <img src="{{section.settings.image_box | img_url: 'master'}}" alt="">
+</div>
+</slider-component>
+
+{% schema %}
+{
+ "name": "画像ボックス",
+ "settings": [
+  {
+   "type": "image_picker",
+   "id": "image_box",
+   "label": "画像を選ぶ"
+  }
+ ],
+  "presets": [
+    {
+      "name": "画像ボックス"
+    }
+  ]
+}
+{% endschema %}
+
+{%- style -%}
+.image-box.page-width {
+  padding:0 9rem;
+}
+.image-box.page-width img {
+    width: 100%;
+}
+{%- endstyle -%}

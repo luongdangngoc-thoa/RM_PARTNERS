@@ -1,0 +1,50 @@
+{% assign tag_list = "" %}
+{% paginate collections.all.products by 1000 %}
+  {% for product in collections.all.products %}
+    {% for tag in product.tags %}
+      {% assign tag_list = tag_list |  append: "," | append: tag %}
+    {% endfor %}
+  {% endfor %}
+{% endpaginate %}
+
+{% assign tag_list = tag_list | remove_first: "," %}
+{% assign tag_array = tag_list | split: "," | uniq %}
+
+<slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+    <div class="tagsWrap">
+      <ul class="search_tags">
+        {% for tag in tag_array %}
+          <li class="search_tagItem"><a href="/collections/all/{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+</slider-component>
+
+
+{% schema %}
+{
+    "presets": [
+      {
+        "name": "ハッシュタグ"
+      }
+    ]
+  }
+{% endschema %}
+
+{%- style -%}
+.search_tags {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+.search_tags li {
+    padding: 1rem 2rem;
+    border: 1px solid;
+}
+.search_tags a {
+    line-height: 1.5;
+    font-family: Oswald, serif;
+    text-decoration: none;
+    color: currentColor;
+}
+{%- endstyle -%}
