@@ -12,6 +12,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  a.link.animate-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    line-height: 3;
+    text-decoration: none;
+    width: 200px;
+    margin: auto;
+    font-family:"Noto Serif", serif;
+  }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
@@ -69,9 +80,10 @@
                     {% else %}
                       href="{{ block.settings.button_link }}"
                     {% endif %}
-                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                    class="link animate-arrow"
                   >
                     {{- block.settings.button_label | escape -}}
+                    <span class="icon-wrap">{% render 'icon-arrow' %}</span>
                   </a>
                 {%- endif -%}
                 {%- if block.settings.button_label_2 != blank -%}

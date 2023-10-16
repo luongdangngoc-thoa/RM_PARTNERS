@@ -61,17 +61,24 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  h1.h2.center.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  h1.h2.center.search span {
+    font-size: 1.2rem;
+    letter-spacing: .16rem;
+    font-family: 'Noto Serif', serif;
+  }
 {%- endstyle -%}
 
 {% paginate search.results by 24 %}
   <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
     <div class="template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      <h1 class="h2 center">
-        {%- if search.performed -%}
-          {{- 'templates.search.title' | t -}}
-        {%- else -%}
-          {{- 'general.search.search' | t -}}
-        {%- endif -%}
+      <h1 class="h2 center search">
+        SEARCH<span>お好みの商品を探す</span>
       </h1>
       <div class="template-search__search">
         {%- if settings.predictive_search_enabled -%}
@@ -100,7 +107,7 @@
                       spellcheck="false"
                     {%- endif -%}
                   >
-                  <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+                  <label class="field__label" for="Search-In-Template">作品名・画家・カテゴリーを入力</label>
                   <input name="options[prefix]" type="hidden" value="last">
 
                   {%- if settings.predictive_search_enabled -%}
