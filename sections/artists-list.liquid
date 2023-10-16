@@ -1,0 +1,170 @@
+<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="artist-wrapper page-width">
+    <div class="artist-list">
+      {%- for block in section.blocks -%}
+        <div class="artist">
+          <div class="artist-name-group">
+            <p class="artist-name">
+              {{ block.settings.artist-name }}</p>
+            <p class="artist-name artist-name-romaji">
+              {{ block.settings.artist-name-romaji }}</p>
+          </div>
+          <div class="artist-desc-group">
+            <p class="artist-desc">
+              {{ block.settings.artist-desc }}</p>
+            <a class="artist-link" href="{{block.settings.url}}">
+              <span>
+                VIEW MORE
+              </span>
+              {% render 'icon-arrow' %}</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="artist-button">
+      <a class="page-button btn-primary" href="{{section.settings.button_link}}">
+        {{ section.settings.button_lable }}</a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+  .artist-wrapper {
+    margin-top: 14rem;
+  }
+
+  .artist-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 4rem 3rem;
+  }
+
+  .artist {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  .artist-name-group {
+    border-bottom: 1px solid #333;
+  }
+
+
+  .artist-name {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  .artist-name-romaji {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(18 / 12);
+    letter-spacing: 0.6px;
+  }
+
+  .artist-desc {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24 / 14);
+    letter-spacing: 0.7px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .artist-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .artist-link {
+    text-decoration: none;
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+  }
+
+
+</style>
+{% schema %}
+  {
+    "name": "Artists",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      }, {
+        "type": "text",
+        "id": "button_lable",
+        "label": "Button lable",
+        "default": "口コミランキングはこちら"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "artist-name",
+            "default": "Artist name kanji",
+            "label": "Artist name kanji"
+          }, {
+            "type": "text",
+            "id": "artist-name-romaji",
+            "default": "Artist name romaji",
+            "label": "Artist name romaji"
+          }, {
+            "type": "text",
+            "id": "artist-desc",
+            "default": "Artist decription",
+            "label": "Artist decription"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "View more URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Artists",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
