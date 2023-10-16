@@ -66,7 +66,7 @@
     "skip_to_text": "コンテンツに進む",
     "close": "閉じる",
     "unit_price_separator": "あたり",
-    "vendor": "販売元:",
+    "vendor": "作者:",
     "error": "エラー",
     "refresh_page": "選択結果を選ぶと、ページが全面的に更新されます。",
     "link_messages": {
@@ -130,7 +130,7 @@
       "share": "この商品を共有する",
       "sold_out": "売り切れ",
       "unavailable": "利用できません",
-      "vendor": "販売元",
+      "vendor": "作者",
       "video_exit_message": "{{ title }}は同じウィンドウの全画面表示ビデオで開きます。",
       "xr_button": "スペースに表示する",
       "xr_button_label": "スペースに表示し、拡張現実ウィンドウにアイテムを読み込む",

@@ -139,7 +139,7 @@
           "label": "検索候補を有効にする"
         },
         "predictive_search_show_vendor": {
-          "label": "商品の販売元を表示する",
+          "label": "商品の作者を表示する",
           "info": "検索候補が有効な場合に表示されます。"
         },
         "predictive_search_show_price": {
@@ -270,7 +270,7 @@
           }
         },
         "show_vendor": {
-          "label": "販売元を表示"
+          "label": "作者を表示"
         },
         "show_cart_note": {
           "label": "カートメモを有効にする"
@@ -735,7 +735,7 @@
           "label": "マウスオーバー時に2番目の画像を表示する"
         },
         "show_vendor": {
-          "label": "販売元を表示する"
+          "label": "作者を表示する"
         },
         "show_rating": {
           "label": "商品の評価を表示",
@@ -1473,7 +1473,7 @@
           "label": "マウスオーバー時に2番目の画像を表示する"
         },
         "show_vendor": {
-          "label": "販売元を表示する"
+          "label": "作者を表示する"
         },
         "header__1": {
           "content": "絞り込みと並び替え"
@@ -2096,7 +2096,7 @@
           "label": "マウスオーバー時に2番目の画像を表示する"
         },
         "show_vendor": {
-          "label": "販売元を表示する"
+          "label": "作者を表示する"
         },
         "header__1": {
           "content": "商品カード"
@@ -3137,7 +3137,7 @@
           "label": "マウスオーバー時に2番目の画像を表示する"
         },
         "show_vendor": {
-          "label": "販売元を表示"
+          "label": "作者を表示"
         },
         "show_rating": {
           "label": "商品の評価を表示",

@@ -3,8 +3,8 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": false,
-        "show_collection_image": false,
+        "show_collection_description": true,
+        "show_collection_image": true,
         "color_scheme": "background-1"
       }
     },
@@ -35,10 +35,399 @@
         "padding_top": 36,
         "padding_bottom": 60
       }
+    },
+    "3a76e840-0e13-46fb-be56-99baf235b06f": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16825565020388__3a76e840-0e13-46fb-be56-99baf235b06f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "SEARCH",
+            "heading_size": "h2"
+          }
+        },
+        "e289d51c-453b-441e-8a07-b59f40896887": {
+          "type": "caption",
+          "settings": {
+            "caption": "お好みの商品を探す",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "template--16825565020388__3a76e840-0e13-46fb-be56-99baf235b06f-heading-1",
+        "e289d51c-453b-441e-8a07-b59f40896887"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "9613ba5a-e741-470c-b943-917111dc5723": {
+      "type": "search-box",
+      "settings": {}
+    },
+    "e425452f-1547-4c79-9e71-a697e4d6ae09": {
+      "type": "rich-text",
+      "blocks": {
+        "9094d532-c674-4fbf-a434-0d24e6917865": {
+          "type": "heading",
+          "settings": {
+            "heading": "SEARCH",
+            "heading_size": "h2"
+          }
+        },
+        "c5b96ec6-8c88-49df-a18d-c5347000a2d6": {
+          "type": "caption",
+          "settings": {
+            "caption": "金額から選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "9094d532-c674-4fbf-a434-0d24e6917865",
+        "c5b96ec6-8c88-49df-a18d-c5347000a2d6"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "0036dba9-ac96-43e2-9e00-458d3ee6cbca": {
+      "type": "hash-tag",
+      "settings": {}
+    },
+    "1b15fffc-5483-4803-8e7b-1991c9ada1b5": {
+      "type": "rich-text",
+      "blocks": {
+        "c121645e-7c2a-45b3-ac12-6c940101fe4c": {
+          "type": "heading",
+          "settings": {
+            "heading": "PRICE",
+            "heading_size": "h2"
+          }
+        },
+        "b6c8f158-cd9e-4df4-ab60-0f5b2a14085c": {
+          "type": "caption",
+          "settings": {
+            "caption": "お好みの商品を探す",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "c121645e-7c2a-45b3-ac12-6c940101fe4c",
+        "b6c8f158-cd9e-4df4-ab60-0f5b2a14085c"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "7ab214e3-0abb-4786-bc17-e3910c13a202": {
+      "type": "collection-list-custom",
+      "settings": {
+        "custom_collection_list": [
+          "50万円以下",
+          "100万円以下",
+          "150万円以下",
+          "200万より下",
+          "200万以上"
+        ],
+        "max_collections": 5
+      }
+    },
+    "17311222-a124-4786-aed6-3d59f0dda463": {
+      "type": "rich-text",
+      "blocks": {
+        "23ecc62c-1d08-4af0-9907-9e52ddec3c42": {
+          "type": "heading",
+          "settings": {
+            "heading": "ARTIST",
+            "heading_size": "h2"
+          }
+        },
+        "c7daa3e5-582b-48f1-82a8-5cfdb3bd4d65": {
+          "type": "caption",
+          "settings": {
+            "caption": "画家から選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "23ecc62c-1d08-4af0-9907-9e52ddec3c42",
+        "c7daa3e5-582b-48f1-82a8-5cfdb3bd4d65"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "5daf4363-2028-410e-a13c-d4aa33eccba9": {
+      "type": "sakusha-tag",
+      "settings": {}
+    },
+    "9bc43d84-f84f-46df-89a3-22bf677b6d62": {
+      "type": "rich-text",
+      "blocks": {
+        "301548ad-8b52-419a-9cb0-971742d0070c": {
+          "type": "heading",
+          "settings": {
+            "heading": "TASTE",
+            "heading_size": "h2"
+          }
+        },
+        "26da7107-f727-4be1-b24b-d5f65a0b8ef3": {
+          "type": "caption",
+          "settings": {
+            "caption": "テイストから選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "301548ad-8b52-419a-9cb0-971742d0070c",
+        "26da7107-f727-4be1-b24b-d5f65a0b8ef3"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "b983432a-a2fd-4714-be84-bcaaadd0dee9": {
+      "type": "category",
+      "blocks": {
+        "751080aa-e12d-4467-bf67-e672c482bc61": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_72.png",
+            "alt_text": ""
+          }
+        },
+        "2b27594e-6826-4848-971e-bfbf18af07bf": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_75.png",
+            "alt_text": ""
+          }
+        },
+        "6ff4ec56-cafe-41ed-9f1c-efa9a1ce3e99": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_76.png",
+            "alt_text": ""
+          }
+        },
+        "72bcdaaf-c78b-479f-abfe-65111d080273": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_73_2.png",
+            "alt_text": ""
+          }
+        },
+        "c1777ada-170c-4c59-bba3-ec848c0104ad": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_74_2.png",
+            "alt_text": ""
+          }
+        },
+        "cf377790-1c68-449b-bff3-8f217a105488": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_77_2.png",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "751080aa-e12d-4467-bf67-e672c482bc61",
+        "2b27594e-6826-4848-971e-bfbf18af07bf",
+        "6ff4ec56-cafe-41ed-9f1c-efa9a1ce3e99",
+        "72bcdaaf-c78b-479f-abfe-65111d080273",
+        "c1777ada-170c-4c59-bba3-ec848c0104ad",
+        "cf377790-1c68-449b-bff3-8f217a105488"
+      ],
+      "settings": {}
+    },
+    "9db279c5-31b8-4f04-ac6e-1233052de82b": {
+      "type": "rich-text",
+      "blocks": {
+        "548c5dd0-09b0-4f19-8f33-3b456855492d": {
+          "type": "heading",
+          "settings": {
+            "heading": "PLACE",
+            "heading_size": "h2"
+          }
+        },
+        "3c77d2ff-e92f-460f-be93-0f356dd234b0": {
+          "type": "caption",
+          "settings": {
+            "caption": "場所から選ぶ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "548c5dd0-09b0-4f19-8f33-3b456855492d",
+        "3c77d2ff-e92f-460f-be93-0f356dd234b0"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "5b331455-ebb5-49ca-9d1c-ce6c30d80754": {
+      "type": "category",
+      "blocks": {
+        "71c27b65-a545-4411-a7ee-355c188f777e": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_72_1.png",
+            "alt_text": ""
+          }
+        },
+        "30f2871a-3cd0-4d8d-91d4-b6861a2419d8": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_75_1.png",
+            "alt_text": ""
+          }
+        },
+        "eba4158b-7180-427b-a072-7396b7f15352": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_76_1.png",
+            "alt_text": ""
+          }
+        },
+        "62acd852-77b5-4386-a472-c52578f29ef7": {
+          "type": "custom_block_1",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_73.png",
+            "alt_text": ""
+          }
+        },
+        "7969c4d5-9afe-4ad4-91a9-fb3dd89afa78": {
+          "type": "custom_block_2",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_74.png",
+            "alt_text": ""
+          }
+        },
+        "a11efd5a-a056-44b0-a422-eff36b51077c": {
+          "type": "custom_block_3",
+          "settings": {
+            "class_name": "",
+            "url": "",
+            "image": "shopify:\/\/shop_images\/Group_77.png",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "71c27b65-a545-4411-a7ee-355c188f777e",
+        "30f2871a-3cd0-4d8d-91d4-b6861a2419d8",
+        "eba4158b-7180-427b-a072-7396b7f15352",
+        "62acd852-77b5-4386-a472-c52578f29ef7",
+        "7969c4d5-9afe-4ad4-91a9-fb3dd89afa78",
+        "a11efd5a-a056-44b0-a422-eff36b51077c"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "3a76e840-0e13-46fb-be56-99baf235b06f",
+    "9613ba5a-e741-470c-b943-917111dc5723",
+    "e425452f-1547-4c79-9e71-a697e4d6ae09",
+    "0036dba9-ac96-43e2-9e00-458d3ee6cbca",
+    "1b15fffc-5483-4803-8e7b-1991c9ada1b5",
+    "7ab214e3-0abb-4786-bc17-e3910c13a202",
+    "17311222-a124-4786-aed6-3d59f0dda463",
+    "5daf4363-2028-410e-a13c-d4aa33eccba9",
+    "9bc43d84-f84f-46df-89a3-22bf677b6d62",
+    "b983432a-a2fd-4714-be84-bcaaadd0dee9",
+    "9db279c5-31b8-4f04-ac6e-1233052de82b",
+    "5b331455-ebb5-49ca-9d1c-ce6c30d80754"
   ]
 }

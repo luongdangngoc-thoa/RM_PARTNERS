@@ -1,0 +1,43 @@
+.product__title h1 {
+  color: var(--primary, #333);
+  font-family: Noto Serif JP;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 150% */
+  letter-spacing: 3px;
+}
+
+.product__title p {
+  color: var(--primary, #333);
+  font-family: Oswald;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.6px;
+}
+
+.product__author h3 {
+  color: var(--primary, #333);
+  /* font-size-base */
+  font-family: Noto Serif JP;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.8px;
+  margin: 0px;
+}
+
+.product__author p {
+  color: var(--primary, #333);
+  /* oswald-xsm */
+  font-family: Oswald;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.6px;
+  margin: 0px;
+}

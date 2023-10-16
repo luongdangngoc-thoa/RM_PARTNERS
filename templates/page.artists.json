@@ -24,6 +24,9 @@
       "block_order": [
         "template--16826083180772__a9024dd2-3d67-408d-a3ff-9fbf35c6cd4b-slide-1"
       ],
+      "custom_css": [
+        ".slideshow__text.banner__box.content-container {background: transparent;}"
+      ],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "small",
@@ -37,9 +40,93 @@
     },
     "artists-list": {
       "type": "artists-list",
+      "blocks": {
+        "999e3a30-4e93-47e2-8c9c-78c0cd0f4144": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "幼少期から...（説明文を20文字程度抜粋）",
+            "url": "#"
+          }
+        },
+        "232965b3-0b1f-49a6-b124-499cdf3ff576": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        },
+        "67ed8a4f-dd3f-488a-b4da-daee27b7fb27": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        },
+        "61f16326-bb2d-4b8c-a4d3-25990026da47": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        },
+        "2f4fd72b-71bd-4ba0-adc6-db81c42d2b43": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        },
+        "b096682a-13a9-470b-9eae-00810ed8fe66": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        },
+        "113d4d7b-0fff-42d9-b31d-c67e2eaebf4c": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        },
+        "0eada4b7-e12a-42e9-ad8e-c71234643a86": {
+          "type": "Block",
+          "settings": {
+            "artist-name": "草間 彌生",
+            "artist-name-romaji": "Kusama Yayoi",
+            "artist-desc": "私は10年以上、インタビューという仕事を通じ、下は高校生から上は85歳まで、立場も職業も生き方も、様々な方のお話を伺ってきました。そんな中で、年齢問わず、自分のことを語り慣れている方は、次から次へと言葉をぶつけてくれます。",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "999e3a30-4e93-47e2-8c9c-78c0cd0f4144",
+        "232965b3-0b1f-49a6-b124-499cdf3ff576",
+        "67ed8a4f-dd3f-488a-b4da-daee27b7fb27",
+        "61f16326-bb2d-4b8c-a4d3-25990026da47",
+        "2f4fd72b-71bd-4ba0-adc6-db81c42d2b43",
+        "b096682a-13a9-470b-9eae-00810ed8fe66",
+        "113d4d7b-0fff-42d9-b31d-c67e2eaebf4c",
+        "0eada4b7-e12a-42e9-ad8e-c71234643a86"
+      ],
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
+        "section_color_scheme": "",
+        "button_lable": "口コミランキングはこちら"
       }
     },
     "main": {

@@ -1,26 +1,32 @@
 <div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+
   <div class="artist-wrapper page-width">
-    <div class="artist-list">
-      {%- for block in section.blocks -%}
-        <div class="artist">
-          <div class="artist-name-group">
-            <p class="artist-name">
-              {{ block.settings.artist-name }}</p>
-            <p class="artist-name artist-name-romaji">
-              {{ block.settings.artist-name-romaji }}</p>
+    {% paginate shop.metaobjects.artist.values by 8 %}
+      <div class="artist-list">
+        {% for artist in shop.metaobjects.artist.values %}
+          <div class="artist">
+            <div class="artist-name-group">
+              <p class="artist-name">
+                {{ artist.name.value }}</p>
+              <p class="artist-name artist-name-romaji">
+                {{ artist.name_romaji.value }}</p>
+            </div>
+            <div class="artist-desc-group">
+              <p class="artist-desc">
+                {{ artist.description.value }}</p>
+              <a class="artist-link" href="{{ page.url }}/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">
+                <span>
+                  VIEW MORE
+                </span>
+                {% render 'icon-arrow' %}</a>
+            </div>
           </div>
-          <div class="artist-desc-group">
-            <p class="artist-desc">
-              {{ block.settings.artist-desc }}</p>
-            <a class="artist-link" href="{{block.settings.url}}">
-              <span>
-                VIEW MORE
-              </span>
-              {% render 'icon-arrow' %}</a>
-          </div>
-        </div>
-      {%- endfor -%}
-    </div>
+        {% endfor %}
+      </div>
+      <div class="page-pagination">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endpaginate %}
     <div class="artist-button">
       <a class="page-button btn-primary" href="{{section.settings.button_link}}">
         {{ section.settings.button_lable }}</a>
@@ -104,7 +110,12 @@
     padding-bottom: 0.8rem;
   }
 
-
+  .page-pagination {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 </style>
 {% schema %}
   {
