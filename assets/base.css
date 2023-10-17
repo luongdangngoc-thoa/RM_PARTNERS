@@ -804,6 +804,7 @@ summary::-webkit-details-marker {
 
 .title--primary {
   margin: 4rem 0;
+  font-family: 'Oswald', serif;
 }
 
 .title-wrapper--self-padded-tablet-down,

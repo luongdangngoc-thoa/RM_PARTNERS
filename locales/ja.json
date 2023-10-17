@@ -313,8 +313,8 @@
     },
     "collection_template": {
       "title": "コレクション",
-      "empty": "商品が見つかりません",
-      "use_fewer_filters_html": "絞り込みの数を減らす、または<a class=\"{{ class }}\" href=\"{{ link }}\">すべて削除する<\/a>"
+      "empty": "現在このカテゴリーには作品が登録されておりません。",
+      "use_fewer_filters_html": "大変申し訳ございませんが、別カテゴリーの作品をお探しください。"
     },
     "video": {
       "load_video": "動画を読み込む: {{ description }}"

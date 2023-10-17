@@ -11,15 +11,13 @@
               <p class="artist-name artist-name-romaji">
                 {{ artist.name_romaji.value }}</p>
             </div>
-            <div class="artist-desc-group">
-              <p class="artist-desc">
-                {{ artist.description.value }}</p>
-              <a class="artist-link" href="{{ page.url }}/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">
-                <span>
-                  VIEW MORE
-                </span>
-                {% render 'icon-arrow' %}</a>
-            </div>
+            <p class="artist-desc">
+              {{ artist.description.value }}</p>
+            <a class="artist-link" href="{{ page.url }}/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">
+              <span>
+                VIEW MORE
+              </span>
+              {% render 'icon-arrow' %}</a>
           </div>
         {% endfor %}
       </div>
@@ -28,15 +26,13 @@
       </div>
     {% endpaginate %}
     <div class="artist-button">
-      <a class="page-button btn-primary" href="{{section.settings.button_link}}">
-        {{ section.settings.button_lable }}</a>
+      <a class="artist-link" href="{{section.settings.button_link}}">
+        {{ section.settings.button_lable }} {% render 'icon-arrow' %}</a>
     </div>
   </div>
 </div>
 
-
-<style>
-
+{% style %}
   .artist-wrapper {
     margin-top: 14rem;
   }
@@ -49,26 +45,28 @@
 
   .artist {
     border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
   }
 
   .artist-name-group {
     border-bottom: 1px solid #333;
   }
 
-
   .artist-name {
     color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
     font-family: Noto Serif JP;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: calc(24 / 16);
     letter-spacing: 0.8px;
+    margin: 1.2rem 0;
   }
 
   .artist-name-romaji {
+    margin-top: unset;
     color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
     font-family: Oswald;
     font-size: 1.2rem;
     font-style: normal;
@@ -79,6 +77,7 @@
 
   .artist-desc {
     color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
     font-family: Noto Serif JP;
     font-size: 1.4rem;
     font-style: normal;
@@ -100,23 +99,102 @@
   .artist-link {
     text-decoration: none;
     color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
     font-family: Oswald;
     font-size: 1.6rem;
     font-style: normal;
-    font-weight: 300;
     line-height: calc(24 / 16);
     letter-spacing: 0.8px;
     text-transform: uppercase;
     padding-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+  }
+
+  .artist-button {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .page-pagination {
-    margin-top: 5rem;
+    margin-top: 6rem;
     width: 100%;
     display: flex;
     justify-content: center;
+    gap: 3rem;
   }
-</style>
+
+  .page-pagination .page {
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Oswald;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 0.8rem 0.3rem 0.3rem;
+    line-height: 1 !important;
+  }
+
+  .page-pagination .page a {
+    text-decoration: none;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Oswald;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1 !important;
+  }
+
+  .page-pagination .page.current {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  .page-pagination .next,
+  .page-pagination .prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-pagination .prev a,
+  .page-pagination .next a {
+    display: block;
+    text-indent: -9999px;
+    width: 50px;
+    height: 37px;
+  }
+
+  .page-pagination .next::after,
+  .page-pagination .prev::after {
+    content: "";
+    display: block;
+    background-image: url('{{ 'icon-arrow.svg' | asset_url }}');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 10px;
+    float: left;
+    position: absolute;
+    z-index: -100;
+  }
+
+  .page-pagination .prev a:hover,
+  .page-pagination .next a:hover,
+  .page-pagination .page a:hover {
+    opacity: 0.7;
+  }
+
+  .page-pagination .prev::after {
+    transform: rotate(180deg);
+  }
+
+  .artist-button .artist-link {
+    min-width: 24rem;
+    height: 3.3rem;
+    font-family: Noto Serif JP;
+
+  }
+{% endstyle %}
 {% schema %}
   {
     "name": "Artists",
@@ -132,49 +210,11 @@
         "type": "text",
         "id": "button_lable",
         "label": "Button lable",
-        "default": "口コミランキングはこちら"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "Block",
-        "name": "Block",
-        "settings": [
-          {
-            "type": "text",
-            "id": "artist-name",
-            "default": "Artist name kanji",
-            "label": "Artist name kanji"
-          }, {
-            "type": "text",
-            "id": "artist-name-romaji",
-            "default": "Artist name romaji",
-            "label": "Artist name romaji"
-          }, {
-            "type": "text",
-            "id": "artist-desc",
-            "default": "Artist decription",
-            "label": "Artist decription"
-          }, {
-            "type": "url",
-            "id": "url",
-            "label": "View more URL"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Artists",
-        "blocks": [
-          {
-            "type": "Block"
-          }, {
-            "type": "Block"
-          }, {
-            "type": "Block"
-          }
-        ]
+        "default": "作品一覧を見る"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Product list more URL"
       }
     ]
   }

@@ -25,7 +25,7 @@
     -%}
 
     <product-form
-      class="product-form"
+      class="product-form" style="margin: 0px;"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
     >
@@ -73,6 +73,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+          <div class="add-to-cart">
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -101,9 +102,18 @@
               </svg>
             </div>
           </button>
+          </div>
+          {% if product.selected_or_first_available_variant.available == true %}
           {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
+            {% comment %} {{ form | payment_button }} {% endcomment %}
+            <div
+            data-shopify="payment-button"
+            name="checkout"
+            class="checkout-btn">
+          </div>
           {%- endif -%}
+        {% endif %}
+
         </div>
       {%- endform -%}
     </product-form>

@@ -3,8 +3,8 @@
     "main": {
       "type": "main-blog",
       "settings": {
-        "layout": "grid",
-        "show_image": true,
+        "layout": "collage",
+        "show_image": false,
         "image_height": "large",
         "show_date": true,
         "show_author": false,

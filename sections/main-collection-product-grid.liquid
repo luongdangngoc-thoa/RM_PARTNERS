@@ -25,6 +25,10 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .title--primary {
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding">
@@ -132,14 +136,16 @@
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
             <div class="title-wrapper center">
-              <h2 class="title title--primary">
+              <h2 class="title title--primary" style="font-family:">
                 {{ 'sections.collection_template.empty' | t -}}
                 <br>
-                {{
-                  'sections.collection_template.use_fewer_filters_html'
-                  | t: link: collection.url, class: 'underlined-link link'
-                }}
+                {{ 'sections.collection_template.use_fewer_filters_html' | t -}}
               </h2>
+              <div class="rich-text__buttons scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+                <a role="link" aria-disabled="true" class="link animate-arrow">作品一覧ページに戻る<span class="icon-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="31" height="6" viewBox="0 0 31 6" fill="none">
+                <path d="M0 5H29L24.4211 1" stroke="#333333"></path>
+              </svg></span></a></div>
             </div>
           </div>
         {%- else -%}

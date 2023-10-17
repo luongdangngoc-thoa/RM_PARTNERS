@@ -89,19 +89,30 @@
                 {{- block.settings.text -}}
               </p> {% endcomment %}
             {%- when 'title' -%}
-              <div class="product__title" {{ block.shopify_attributes }}>
-                <h1>{{ product.title | escape }}</h1>
-                <p>Pumpkin</p>
-                <a href="{{ product.url }}" class="product__title">
-                  <h2 class="h1">
-                    {{ product.title | escape }}
-                  </h2>
-                </a>
+              <div class="product">
+                <div class="product__title" {{ block.shopify_attributes }}>
+                  <h1>{{ product.title | escape }}</h1>
+                  <p>Pumpkin</p>
+                  <a href="{{ product.url }}" class="product__title">
+                    <h2 class="h1">
+                      {{ product.title | escape }}
+                    </h2>
+                  </a>
+                </div>
+                <div class="prime-review prime-review-favorites-product-{{ product_hash }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                  <g class="prime-review-favorites-heart-8045909639396-023f81b54db35551568e9e464626e002 prime-review-favorites-heart-8045909639396-023f81b54db35551568e9e464626e002-disable" transform="scale(0.3 0.3)">
+                    <path class="prime-review-favorites-heart-border-8045909639396-023f81b54db35551568e9e464626e002 prime-review-favorites-heart-border-8045909639396-023f81b54db35551568e9e464626e002-disable" stroke-width="5px" d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z"></path>
+                  </g>
+                </svg>
+                </div>
+                
               </div>
+             
 
                 <div class="product__author">
-                  <h3>{{ product.metafields.custom.author.value.name }}</h3>
-                  <p>{{ product.metafields.custom.author.value.slug }}</p>
+                  <h3>{{ product.metafields.custom.artist.value.name }}</h3>
+                  <p>{{ product.metafields.custom.artist.value.name_romaji }}</p>
                 </div>
 
             {%- when 'price' -%}

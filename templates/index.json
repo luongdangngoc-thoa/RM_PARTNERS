@@ -160,7 +160,7 @@
         "template--16800083542244__c1bebbca-bbb2-459b-8791-b72a0242ba3e-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>さまざまなテーマやスタイルを持つアーティストたちが、現代アートの舞台で独自の表現を追求しています。<br\/>彼らは感情の営み、社会の動き、技術の進化を通じて、新しいアートの形を模索しています。<\/p>"
+            "text": "<p>さまざまなテーマやスタイルを持つアーティストたちが、現代アートの舞台で独自の表現を追求しています。<br>彼らは感情の営み、社会の動き、技術の進化を通じて、新しいアートの形を模索しています。<\/p>"
           }
         }
       },
@@ -490,7 +490,7 @@
         "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "",
-        "full_width": false,
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
@@ -502,7 +502,7 @@
           "type": "custom_block_1",
           "settings": {
             "class_name": "first",
-            "url": "shopify:\/\/collections\/風景アート",
+            "url": "shopify:\/\/collections\/pop-culture",
             "image": "shopify:\/\/shop_images\/Group_72.png",
             "alt_text": ""
           }
@@ -511,7 +511,7 @@
           "type": "custom_block_2",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/portrait",
             "image": "shopify:\/\/shop_images\/Group_75.png",
             "alt_text": ""
           }
@@ -520,7 +520,7 @@
           "type": "custom_block_3",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/urban",
             "image": "shopify:\/\/shop_images\/Group_76.png",
             "alt_text": ""
           }
@@ -529,7 +529,7 @@
           "type": "custom_block_1",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/abstract",
             "image": "shopify:\/\/shop_images\/Group_73_2.png",
             "alt_text": ""
           }
@@ -538,7 +538,7 @@
           "type": "custom_block_2",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/street",
             "image": "shopify:\/\/shop_images\/Group_74_2.png",
             "alt_text": ""
           }
@@ -547,7 +547,7 @@
           "type": "custom_block_3",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/landskape",
             "image": "shopify:\/\/shop_images\/Group_77_2.png",
             "alt_text": ""
           }
@@ -594,7 +594,7 @@
         "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "",
-        "full_width": false,
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
@@ -606,7 +606,7 @@
           "type": "custom_block_1",
           "settings": {
             "class_name": "first",
-            "url": "shopify:\/\/collections\/風景アート",
+            "url": "shopify:\/\/collections\/entrance",
             "image": "shopify:\/\/shop_images\/Group_72_1.png",
             "alt_text": ""
           }
@@ -615,7 +615,7 @@
           "type": "custom_block_2",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/bedroom",
             "image": "shopify:\/\/shop_images\/Group_75_1.png",
             "alt_text": ""
           }
@@ -624,7 +624,7 @@
           "type": "custom_block_3",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/stails",
             "image": "shopify:\/\/shop_images\/Group_76_1.png",
             "alt_text": ""
           }
@@ -633,7 +633,7 @@
           "type": "custom_block_1",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/living",
             "image": "shopify:\/\/shop_images\/Group_73.png",
             "alt_text": ""
           }
@@ -642,7 +642,7 @@
           "type": "custom_block_2",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/toilet",
             "image": "shopify:\/\/shop_images\/Group_74.png",
             "alt_text": ""
           }
@@ -651,7 +651,7 @@
           "type": "custom_block_3",
           "settings": {
             "class_name": "",
-            "url": "",
+            "url": "shopify:\/\/collections\/other",
             "image": "shopify:\/\/shop_images\/Group_77.png",
             "alt_text": ""
           }
@@ -666,6 +666,39 @@
         "89631984-7387-46af-9d4c-d864ff75ae74"
       ],
       "settings": {}
+    },
+    "f66571a9-533e-491c-8913-b4b28e4b19b1": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection__title {display: flex; gap: 1em; align-items: center;}",
+        ".collection__title h2 {margin: 0;}",
+        ".collection__description p {font-size: 1.2rem;}"
+      ],
+      "settings": {
+        "title": "LATEST SOLD WORKS",
+        "heading_size": "h2",
+        "description": "<p>最近購入された商品<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "ranking",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "54a6b88d-fe99-4196-a958-d5bd8252177e": {
       "type": "rich-text",
@@ -698,7 +731,7 @@
         "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "",
-        "full_width": false,
+        "full_width": true,
         "padding_top": 40,
         "padding_bottom": 0
       }
@@ -764,8 +797,8 @@
         "h3.accordion__title.inline-richtext.h4,p {text-indent: -2.1em; padding-left: 2.1em; font-family: serif;}"
       ],
       "settings": {
-        "caption": "",
-        "heading": "",
+        "caption": "FAQ",
+        "heading": "FAQ",
         "heading_size": "h2",
         "heading_alignment": "left",
         "layout": "none",
@@ -835,6 +868,7 @@
     "03505dde-6723-4e3f-81ab-a1b32b0e60be",
     "0101de7d-8fc9-422d-92fa-c4f84b0fd81e",
     "26c2dda4-a83f-4d47-998c-7e204e792306",
+    "f66571a9-533e-491c-8913-b4b28e4b19b1",
     "54a6b88d-fe99-4196-a958-d5bd8252177e",
     "fc42f818-8b96-476c-9451-931eb5b5b473",
     "d2b261d7-99af-47ad-a91b-5893651ce640"
