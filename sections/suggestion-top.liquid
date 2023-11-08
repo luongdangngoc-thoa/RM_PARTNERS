@@ -1,0 +1,145 @@
+<div class="section-{{ section.id }} suggestion-top gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="suggestion-top-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <div class="suggestion-top-heading-group">
+      <h2 class="suggestion-top-heading heading-en">
+        SUGGESTION
+      </h2>
+      <h2 class="suggestion-top-heading heading-jp">
+        プロの提案を受ける
+      </h2>
+    </div>
+    <p class="suggestion-top-txt">
+      様々なアートを取り扱うART GALLERY Mで働くスタッフにLINEで相談しませんか？
+    </p>
+
+    <a class="suggestion-top-btn-link" href="{{section.settings.btn-url}}" target="_blank">
+      <span>LINE登録はこちら</span>
+      {% render 'icon-arrow' %}</a>
+  </div>
+</div>
+
+<style>
+  .suggestion-top {
+    margin-top: 8rem;
+  }
+
+  .suggestion-top-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .suggestion-top-heading-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .suggestion-top-heading-group .suggestion-top-heading.heading-en {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .suggestion-top-heading-group .suggestion-top-heading.heading-jp {
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+  }
+
+  .suggestion-top-txt {
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: calc(25 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  .suggestion-top-btn-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 24rem;
+    margin-top: 3rem;
+  }
+
+  .suggestion-top-btn-link span {
+    flex-grow: 1;
+  }
+
+
+  .suggestion-top-btn-link {
+    text-decoration: none;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+  }
+
+
+  @media screen and (max-width: 749px) {
+    .suggestion-top {
+      margin-top: 4rem;
+    }
+    .suggestion-top-heading-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .suggestion-top-heading-group .suggestion-top-heading.heading-en {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .suggestion-top-heading-group .suggestion-top-heading.heading-jp {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .suggestion-top-txt {
+      font-size: 1.4rem;
+      line-height: calc(20 / 14);
+      letter-spacing: 0.7px;
+    }
+    .suggestion-top-btn-link {
+      font-size: 1.4rem;
+      letter-spacing: 0.7px;
+    }
+  }
+
+</style>
+
+
+{% schema %}
+  {
+    "name": "Order guide top",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Button url"
+      }
+    ]
+  }
+{% endschema %}

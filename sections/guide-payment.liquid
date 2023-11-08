@@ -1,0 +1,103 @@
+<div id="guide-payment" class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="guide-payment-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="guide-payment-title">
+      お支払い方法について</h2>
+
+    <div class="payment-list-wrapper">
+      <p class="payment-list-txt">
+        当サイトで使用可能な決済方法は</p>
+      <ul class="payment-list">
+        {%- for block in section.blocks -%}
+          <li class="payment">
+            {{ block.settings.payment }}</li>
+        {%- endfor -%}
+      </ul>
+      <p class="payment-list-txt">
+        のみでございます。代引きや銀行振込などの支払い方法については承っておりませんので、予めご確認くださいませ。
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  #guide-payment {
+    padding-top: 8rem;
+  }
+  .guide-payment-title {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30 / 20);
+    letter-spacing: 1px;
+  }
+  .payment-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .payment-list-txt,
+  .payment-list {
+    margin: 0;
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.8px;
+  }
+  @media screen and (max-width: 749px) {
+    .payment-list-txt,
+    .payment-list {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: calc(24 / 14);
+      letter-spacing: 0.7px;
+    }
+  }
+
+</style>
+{% schema %}
+  {
+    "name": "Guide payment",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "payment",
+            "default": "Payment method",
+            "label": "Payment method"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Guide payment",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

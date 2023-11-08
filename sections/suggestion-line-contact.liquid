@@ -1,0 +1,451 @@
+<div class="line-contact section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="line-contact-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="line-contact-title">
+      LINEから問い合わせる方法</h2>
+    <div class="line-contact-des-wrapper">
+      <p class="line-contact-txt">
+        ①ART GALLERY M公式LINEアカウントを友だち登録する (
+        <a class="line-contact-txt" href="{{ section.settings.btn-line-url }}" target="_blank">公式ラインに登録する</a>)
+        <br>
+        ②友達追加後、ご希望のメニューをクリック <br>
+        ※ご希望のメニューがない場合はメッセージをお送りください。
+      </p>
+    </div>
+
+    <div class="line-contact-img-wrapper">
+      <div class="line-contact-img">
+        {%- if section.settings.line-contact-img -%}
+          {{ section.settings.line-contact-img | image_url: width: 1000 | image_tag: loading: 'lazy' }}
+        {%- endif -%}
+
+        <div class="line-contact-img-content">
+          <div class="img-title-wrapper">
+            <div class="img-title-overlay"></div>
+            <h2 class="img-title">
+              オススメ絵画を知りたい
+            </h2>
+          </div>
+          <a class="line-contact-btn" href="{{section.settings.btn-detail-url}}">
+            <span>詳細はこちら</span>
+            {% render 'icon-arrow-w' %}</a>
+
+          <div class="img-block-group">
+            {%- for block in section.blocks -%}
+              <div class="img-block-wrapper">
+                <div class="img-block-overlay"></div>
+                <div class="img-block">
+                  {%- if block.settings.bl-img -%}
+                    {{ block.settings.bl-img | image_url: width: 100 | image_tag: loading: 'lazy' }}
+                  {%- endif -%}
+                  <h2 class="img-block-title">
+                    {%- if block.settings.bl-title -%}
+                      {{ block.settings.bl-title }}
+                    {%- endif -%}
+                  </h2>
+                  <h2 class="img-block-txt">
+                    {%- if block.settings.bl-text -%}
+                      {{ block.settings.bl-text }}
+                    {%- endif -%}
+                  </h2>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="line-contact-txt">③ART GALLERY M担当スタッフがご対応致します。</p>
+
+    <div class="line-contact-btn-wapper">
+      <a class="line-contact-btn" href="{{section.settings.btn-line-url}}" target="_blank">
+        <span>LINE登録はこちら</span>
+        {% render 'icon-arrow' %}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .line-contact-wrapper {
+    max-width: 80rem;
+  }
+  .line-contact {
+    padding-top: 7rem;
+    margin-bottom: 12rem;
+  }
+
+  .line-contact-title {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: calc(30 / 20);
+    letter-spacing: 1px;
+  }
+
+  .line-contact-txt {
+    margin: 0;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  .line-contact-btn-wapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .line-contact-btn {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 24rem;
+  }
+
+  .line-contact-btn span {
+    flex-grow: 1;
+  }
+
+  .line-contact-btn {
+    text-decoration: none;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+  }
+
+  .line-contact-img-wrapper {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .line-contact-img {
+    position: relative;
+    max-width: 80rem;
+    height: 48rem;
+  }
+
+  .line-contact-img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .line-contact-img-content {
+    max-width: 80rem;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0.4rem 0.4rem;
+  }
+
+  .line-contact-img-content .img-title-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 40rem;
+    height: 6.4rem;
+    flex-grow: 1;
+  }
+
+  .line-contact-img-content .img-title-overlay {
+    background: #ffffff;
+    opacity: 0.8;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 6rem;
+    display: block !important;
+  }
+
+  .line-contact-img-content .img-title {
+    display: inline-block;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    color: #FFF;
+    text-align: center;
+    font-family: Noto Serif JP;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.4;
+    margin: 0;
+    letter-spacing: 7.2px;
+    -webkit-text-stroke-width: 0.6px;
+    -webkit-text-stroke-color: #333333;
+  }
+
+  .line-contact-img-content .line-contact-btn {
+    color: #FFF;
+    border-color: #FFF;
+    margin-top: 3rem;
+  }
+
+  .img-block-group {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0.4rem;
+  }
+
+  .img-block-wrapper {
+    position: relative;
+    width: 33.3333%;
+    max-width: 24rem;
+    height: 24rem;
+  }
+
+  .img-block-overlay {
+    background: #ffffff;
+    opacity: 0.8;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block !important;
+  }
+
+  .img-block {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    height: 24rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .img-block-wrapper:nth-child(2) .img-block-overlay {
+    background: #959595;
+  }
+
+  .img-block img {
+    width: 49px;
+    height: 49px;
+  }
+
+  .img-block .img-block-title {
+    color: var(--primary, #333);
+    text-align: center;
+    font-family: Oswald;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: calc(36 / 24);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .img-block .img-block-txt {
+    display: inline-block;
+    width: 100%;
+    color: var(--primary, #333);
+    text-align: center;
+    font-family: Noto Serif JP;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1.295px;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.70);
+    background-color: #FFFFFFB2;
+    margin: 0;
+  }
+
+  .img-block-wrapper:nth-child(2) .img-block .img-block-title {
+    color: #FFF;
+  }
+
+  .line-contact-btn-wapper {
+    margin-top: 6rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .line-contact {
+      padding-top: 6rem;
+      margin-bottom: 6rem;
+    }
+
+    .line-contact-title {
+      font-size: 1.6rem;
+      line-height: normal;
+      letter-spacing: 0.8px;
+    }
+
+    .line-contact-txt {
+      font-size: 1.4rem;
+      line-height: calc(20 / 14);
+      letter-spacing: 0.7px;
+    }
+
+    .line-contact-btn {
+      width: 29rem;
+      font-size: 1.6rem;
+      font-style: normal;
+      line-height: calc(24 / 16);
+    }
+
+    .line-contact-img-wrapper {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .line-contact-img {
+      max-width: 80rem;
+      height: 36rem;
+    }
+
+    .line-contact-img img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .line-contact-img-content {
+      padding-top: 3rem;
+    }
+
+    .line-contact-img-content .img-title-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 28rem;
+      height: 4.8rem;
+    }
+
+    .line-contact-img-content .img-title-overlay {
+      width: 28rem;
+      height: 4.8rem;
+    }
+
+    .line-contact-img-content .img-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 2.4;
+      letter-spacing: 3.5px;
+      -webkit-text-stroke-width: 0.6px;
+      -webkit-text-stroke-color: #333333;
+    }
+
+    .line-contact-img-content .line-contact-btn {
+      margin-top: 3rem;
+    }
+
+    .img-block-group {
+      margin-top: 3rem;
+    }
+
+    .img-block-wrapper {
+      max-width: 26rem;
+      height: 18rem;
+    }
+
+    .img-block {
+      height: 100%;
+      padding: 1rem 0.8rem;
+      gap: 1rem;
+    }
+
+    .img-block img {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .img-block .img-block-title {
+      font-size: 2rem;
+      line-height: calc(30 / 20);
+    }
+
+    .img-block .img-block-txt {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 1.295px;
+      padding: 0.6rem;
+    }
+
+    .line-contact-btn-wapper {
+      margin-top: 4rem;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Line contact",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      },
+      {
+        "type": "image_picker",
+        "id": "line-contact-img",
+        "label": "line-contact-img"
+      },
+      {
+        "type": "url",
+        "id": "btn-line-url",
+        "label": "公式ラインに登録する url"
+      },
+      {
+        "type": "url",
+        "id": "btn-detail-url",
+        "label": "詳細はこちら url"
+      }, {
+        "type": "url",
+        "id": "btn-line-url2",
+        "label": "LINE登録はこちら url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "image",
+            "id": "bl-img"
+          }, {
+            "type": "text",
+            "id": "bl-title",
+            "default": "Block title",
+            "label": "Block title"
+          }, {
+            "type": "textarea",
+            "id": "bl-text",
+            "default": "Block description",
+            "label": "Block description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Line contact"
+      }
+    ]
+  }
+{% endschema %}

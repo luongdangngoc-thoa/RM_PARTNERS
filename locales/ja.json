@@ -66,7 +66,7 @@
     "skip_to_text": "コンテンツに進む",
     "close": "閉じる",
     "unit_price_separator": "あたり",
-    "vendor": "作者:",
+    "vendor": "販売元:",
     "error": "エラー",
     "refresh_page": "選択結果を選ぶと、ページが全面的に更新されます。",
     "link_messages": {
@@ -130,7 +130,7 @@
       "share": "この商品を共有する",
       "sold_out": "売り切れ",
       "unavailable": "利用できません",
-      "vendor": "作者",
+      "vendor": "販売元",
       "video_exit_message": "{{ title }}は同じウィンドウの全画面表示ビデオで開きます。",
       "xr_button": "スペースに表示する",
       "xr_button_label": "スペースに表示し、拡張現実ウィンドウにアイテムを読み込む",
@@ -244,10 +244,13 @@
     },
     "contact": {
       "form": {
+        "inquiry": "問い合わせ内容",
         "name": "名前",
-        "email": "メール",
+        "email": "メールアドレス",
+        "checkbox": "について、同意します。",
         "phone": "電話番号",
-        "comment": "コメント",
+        "comment": "お問い合わせ内容",
+        "comment_placeholder": "お問い合わせ内容をご記載ください",
         "send": "送信する",
         "post_success": "お問い合わせいただきありがとうございます。早急に返信いたします。",
         "error_heading": "以下を確認してください。",
@@ -313,8 +316,8 @@
     },
     "collection_template": {
       "title": "コレクション",
-      "empty": "現在このカテゴリーには作品が登録されておりません。",
-      "use_fewer_filters_html": "大変申し訳ございませんが、別カテゴリーの作品をお探しください。"
+      "empty": "商品が見つかりません",
+      "use_fewer_filters_html": "絞り込みの数を減らす、または<a class=\"{{ class }}\" href=\"{{ link }}\">すべて削除する<\/a>"
     },
     "video": {
       "load_video": "動画を読み込む: {{ description }}"

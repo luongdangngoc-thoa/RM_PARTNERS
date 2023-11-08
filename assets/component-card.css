@@ -144,6 +144,7 @@
   padding: 1rem;
   width: 100%;
   flex-grow: 1;
+  padding-right: 0;
 }
 
 .card__content--auto-margins {
@@ -153,8 +154,8 @@
 .card__information {
   grid-row-start: 2;
   padding: 1.3rem 1rem;
+  padding-right: 0;
 }
-
 .card:not(.ratio)>.card__content {
   grid-template-rows: max-content minmax(0, 1fr) max-content auto;
 }
@@ -162,7 +163,7 @@
 .card-information .card__information-volume-pricing-note {
   margin-top: 0.6rem;
   line-height: calc(0.5 + .4 / var(--font-body-scale));
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-foreground);
 }
 
 @media screen and (min-width: 750px) {
@@ -173,7 +174,7 @@
 }
 
 .card__badge {
-  align-self: flex-end;
+  align-self: center;
   grid-row-start: 3;
   justify-self: flex-start;
 }
@@ -368,7 +369,7 @@
 }
 
 .card-information {
-  width: 90%;
+  /* width: 90%; */
   margin-left: 2.6rem;
   line-height: 1.5;
   margin-top: 0.8em;
@@ -386,7 +387,7 @@
 }
 
 .card--horizontal .card-information>.price {
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-foreground);
 }
 
 .card-information>.rating {
@@ -488,4 +489,65 @@
   .grid__item:nth-child(8n) .product-card-wrapper:hover .shape--blob {
     clip-path: polygon(var(--shape--blob-5));
   }
+}
+#shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .card__heading.h5 a::before {
+  content: '作者';
+  border: 1px solid;
+  padding: 0.1rem 0.6rem;
+  margin-right: 1rem;
+}
+#Slider-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .caption-with-letter-spacing.light p {
+  border: 1px solid;
+  padding: 0.5rem;
+}
+#shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .card-information, #shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .card__heading.h5 a {
+  margin-left: 0px;
+  border-bottom: 0px;
+  text-wrap: nowrap;
+  font-size: 1rem;
+}
+#shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .card__information {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 0.8rem 0;
+}
+#shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .caption-with-letter-spacing.light:before {
+    content: "作品名";
+    border: 1px solid;
+    padding: 0.1rem 0.6rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width:749px) {
+  .card__information {
+    grid-row-start: 2;
+    padding: 0;
+  } 
+  .card__heading.h5 a {
+    margin-left: 1em;
+  }
+  .card-information {
+    /* width: 92%; */
+    margin-left: 1rem;
+  }
+  #shopify-section-template--16825564987620__featured-collection .card__content {
+    position: relative;
+    bottom: 4em;
+    padding-right: 0;
+  }
+  #shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .ratio {
+    margin-left:1em;
+  }
+  .card .card__inner .card__media {
+    top: -1.5em;
+    left: -1.5em;
+    width: 70%;
+    height: 70%;
+}
+#shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .card .card__inner .card__media {
+  left: -0.4em !important;
+}
+.card--card.card--media>.card__content {
+  margin-top: calc(2rem - var(--image-padding));
+}
 }

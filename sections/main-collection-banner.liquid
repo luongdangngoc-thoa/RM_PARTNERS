@@ -16,16 +16,31 @@
     padding-left:20rem;
     background:#fff;
   }
-  .collection-back .collection-hero__inner {
+  @media screen and (min-width: 750px) {
+    .collection-back .collection-hero__inner {
     position: absolute;
     top: 10rem;
     width: 100%;
-    margin-left: 9rem;
+    margin-left: 10rem;
+  }
+
+  }
+  @media screen and (max-width: 749px) {
+    .collection-back .media img {
+      padding-left: calc(100% - 100% / 1440 * 1240);
+    }
+    .collection-back .collection-hero__inner {
+    margin-left: 2rem;
+    max-width: 100%;
+    position: absolute;
+    top: 3rem;
+
+  }
   }
   .collection-hero__title{
     margin-bottom: 0;
-    font-family: "Noto Serif", serif;
-    font-size: 3.5rem;
+    font-family: "Noto Serif JP", serif;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 700;
     line-height: 4.875rem;
@@ -38,35 +53,40 @@
   .page-width-desktop {
     display: block;
 }
+@media screen and (max-width:749px){
+.sakusha-list {
+  gap: 2em 1em !important;
+  padding-top:1em;
+}
+}
 {%- endstyle -%}
 
 <div class="collection-back collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   {%- if section.settings.show_collection_image and collection.image -%}
     <div class="collection-hero__image-container media gradient">
-      <img
-        srcset="
-          {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-          {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
-          {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-          {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-          {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
-          {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-          {{ collection.image | image_url }} {{ collection.image.width }}w
-        "
-        src="{{ collection.image | image_url: width: 750 }}"
-        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
-        alt=""
-        width="{{ collection.image.width }}"
-        height="{{ collection.image.height }}"
-      >
+      <img src="{{ collection.image | image_url }}"
+        alt="" >
+    </div>
+    {% else %}
+    <div class="collection-hero__image-container media gradient">
+      <img src="{{ 'image.webp' | asset_url }}">
     </div>
   {%- endif -%}
-  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  <div class="collection-hero__inner {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
-      </h1>
+        {% if collection %}
+          {% if collection.title == 'WORK' %}
+            あなたの感性を刺激する<br>多くの作品がここにある
+          {% else %}
+            {{- collection.title | escape -}}
+          {% endif %}
+        {% else %}
+        あなたの感性を刺激する<br>
+        多くの作品がここにある
+        {% endif %}
+      </h1>      
 
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>

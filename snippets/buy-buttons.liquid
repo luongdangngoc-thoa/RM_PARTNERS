@@ -63,6 +63,8 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
+        {% comment %} stocking {% endcomment %}
+        {% if product.selected_or_first_available_variant.available == true %}
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -103,7 +105,6 @@
             </div>
           </button>
           </div>
-          {% if product.selected_or_first_available_variant.available == true %}
           {%- if show_dynamic_checkout -%}
             {% comment %} {{ form | payment_button }} {% endcomment %}
             <div
@@ -112,9 +113,62 @@
             class="checkout-btn">
           </div>
           {%- endif -%}
-        {% endif %}
 
         </div>
+        <div class="btn__contact">
+          <a href="/pages/contact">お問い合わせはこちらから</a>
+        </div>
+      {% endif %}
+
+
+      {% comment %} sold out {% endcomment %}
+      {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+        <div class="product-form__buttons">
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          <div class="add-to-cart-sold-out">
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                SOLD OUT
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <div class="loading-overlay__spinner hidden">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+          </div>
+        </div>
+        <div class="btn__contact">
+          <a href="/pages/contact">店舗で見る（お問い合わせ）</a>
+        </div>
+      {% endif %}
+
       {%- endform -%}
     </product-form>
   {%- else -%}
@@ -126,7 +180,7 @@
           class="product-form__submit button button--full-width button--primary"
           disabled
         >
-          {{ 'products.product.sold_out' | t }}
+          SOLD OUT
         </button>
       </div>
     </div>

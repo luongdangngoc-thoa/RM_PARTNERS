@@ -10,6 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <!-- Javasript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
         {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -80,7 +87,7 @@
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
-        color: rgba(var(--color-foreground), 0.75);
+        color: var(--color-foreground);
         background-color: rgb(var(--color-background));
       }
 
@@ -337,5 +344,47 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <div class="page_top" id="topButton">
+      <a href="#">
+        <img src="{{ 'page_top.svg' | asset_url }}" />
+      </a>
+    </div>   
   </body>
 </html>
+<style>
+  @media screen and (max-width: 749px) {
+    .page_top {
+    display:none !important;
+    }
+   .gridjs-pagination .gridjs-pages {
+    text-align: center;
+    margin-top: 2rem;
+    float: none;
+}
+    .gridjs-pagination .gridjs-summary {
+      float:none;
+    }
+  }
+  .page_top{
+  position: fixed;
+  display: inline-block;
+  bottom: 20px;
+  right: 2%;
+    }
+</style>
+<script>
+$(document).ready(function() {
+  $('#topButton').click(function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  });
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('#topButton').fadeIn();
+    } else {
+      $('#topButton').fadeOut();
+    }
+  });
+});
+</script> 

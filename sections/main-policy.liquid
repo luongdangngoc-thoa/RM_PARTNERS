@@ -1,0 +1,138 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width section-{{ section.id }}-padding page-width-desktop">
+  <div class="privacy_policy">
+    <h1 class="policy_type">PRIVACY POLICY</h1>
+    <h2 class="policy_tilte">個人情報保護方針と取扱いについて</h2>
+  </div>
+  <div class="policy__form">
+    <div class="refund-policy">
+      <h3>{{ shop.privacy_policy }}</h3>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "t:sections.main-policy.name",
+"tag": "section",
+"class": "section",
+"settings": [
+{
+"type": "header",
+"content": "t:sections.all.padding.section_padding_heading"
+},
+{
+"type": "range",
+"id": "padding_top",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"label": "t:sections.all.padding.padding_top",
+"default": 36
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"label": "t:sections.all.padding.padding_bottom",
+"default": 36
+}
+]
+}
+{% endschema %}
+<style>
+  .privacy_policy {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .policy_type {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(60/40);
+    text-transform: uppercase;
+  }
+
+  .policy_tilte {
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24/16);
+    letter-spacing: 0.8px;
+  }
+
+  .shopify-section.shopify-section-group-header-group.section-header.shopify-section-header-sticky {
+    margin: 0;
+  }
+
+  .policy__form {
+    width: 100%;
+
+  }
+
+  .refund-policy h3 {
+    align-items: center;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24/16);
+    letter-spacing: 0.8px;
+    padding: 0 0 5rem 0;
+    color: #333;
+
+  }
+
+  .section-template--16838004736228__main-padding {
+    align-items: center;
+    max-width: var(--page-width);
+    margin: 2rem auto;
+  }
+
+  .section-template--16838004736228__e04dd024-6888-4bd5-8763-f5bfe3eb990e {
+    display: flex;
+    justify-content: 30rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    .privacy_policy {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .policy_type {
+      color: var(--primary, #333);
+      font-family: Oswald;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: calc(60/40);
+      text-transform: uppercase;
+    }
+
+    .policy_tilte {
+      color: var(--primary, #333);
+      text-align: justify;
+      font-family: Noto Serif JP;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: calc(24/16);
+      letter-spacing: 0.8px;
+    }
+  }
+</style>

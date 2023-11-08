@@ -52,10 +52,6 @@
     margin-bottom: 2rem;
   }
 
-  .collection-hero__description {
-    max-width: 66.67%;
-  }
-
   .collection-hero--with-image .collection-hero__description {
     max-width: 100%;
     max-width: 100%;
@@ -71,6 +67,7 @@
 
 .collection-hero--with-image .collection-hero__text-wrapper {
   padding: 5rem 0 4rem;
+  width: 100%;
 }
 
 .collection-hero__image-container {
@@ -82,7 +79,21 @@
 
 @media screen and (max-width: 749px) {
   .collection-hero__image-container {
-    height: 20rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 50rem;
+    background-color: #fff;
+  }
+  .collection-back .media img {
+    padding-left: calc(100% - 100% / 1440 * 1240);
+  }
+  .collection-hero--with-image .collection-hero__description {
+    max-width: 100%;
+    max-width: 100%;
+    background: #fff;
+    padding: 2rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -96,6 +107,6 @@
     align-self: stretch;
     flex: 1 0 50%;
     margin-left: 3rem;
-    min-height: 42rem;
+    min-height: 50rem;
   }
 }

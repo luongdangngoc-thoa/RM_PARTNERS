@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "7b13b39a-042e-4bf5-be9b-603f584ab1bf": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "main": {
+      "type": "main-policy",
+      "settings": {}
+    }
+  },
+  "order": [
+    "7b13b39a-042e-4bf5-be9b-603f584ab1bf",
+    "main"
+  ]
+}

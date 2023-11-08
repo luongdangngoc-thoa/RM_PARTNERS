@@ -1,0 +1,321 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<div class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="artist-product-list-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <input
+      class="custom-search"
+      type="text"
+      id="productSearchInput"
+      placeholder="作品名で検索"
+      title="Type in a name">
+
+    <div class="loading-overlay gradient"></div>
+    <ul
+      id="product-grid"
+      data-id="{{ section.id }}"
+      class="
+                                                        grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                                                        grid--{{ section.settings.columns_desktop }}-col-desktop
+                                                      ">
+      {%- for product in metaobject.product.value -%}
+        {% assign lazy_load = false %}
+        {%- if forloop.index > 2 -%}
+          {%- assign lazy_load = true -%}
+        {%- endif -%}
+        <li
+          class="artist-product-item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: {{ forloop.index }};"
+          {% endif %}>
+          {% render 'card-product'
+            , card_product: product
+            , media_aspect_ratio: section.settings.image_ratio
+            , image_shape: section.settings.image_shape
+            , show_secondary_image: section.settings.show_secondary_image
+            , show_vendor: section.settings.show_vendor
+            , show_rating: section.settings.show_rating
+            , lazy_load: lazy_load
+            , show_quick_add: section.settings.enable_quick_add
+            , section_id: section.id %}
+        </li>
+      {%- endfor -%}
+    </ul>
+    <div class="product-view-more" id="view-more">
+      <span class="">
+        VIEW MORE
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Get list
+  const listElement = document.querySelectorAll('.artist-product-item');
+  const buttonLoadMoreElement = document.getElementById('view-more');
+  let defaultDisplay = 6;
+  
+  function renderData(count) {
+    for (let i = 0; i <= listElement.length; i++) {
+      if (i > count - 1 && listElement[i]) {
+        listElement[i].style.display = 'none';
+      } else if (listElement[i]) {
+        listElement[i].style.display = 'block';
+      }
+    }
+  }
+  renderData(defaultDisplay);
+  
+  // Button load more
+  if (defaultDisplay >= listElement.length) {
+    buttonLoadMoreElement.style.display = 'none';
+  }
+  buttonLoadMoreElement.addEventListener('click', () => {
+    renderData((defaultDisplay += 6));
+    if (defaultDisplay >= listElement.length) {
+      buttonLoadMoreElement.style.display = 'none';
+    }
+    return;
+  });
+  
+  // Handle search
+  // Get value input
+  const inputElement = document.getElementById('productSearchInput');
+  inputElement.addEventListener('input', (e) => {
+    const inputValue = e
+      .target
+      .value
+      .trim()
+      .toUpperCase();
+  
+    for (let i = 0; i <= listElement.length; i++) {
+      if (listElement[i]) { // Get target value
+        const el = listElement[i];
+        const artistName = el.querySelector('.product-title').innerText.trim();
+        displayElementCount = 0;
+        if (artistName.toUpperCase().indexOf(inputValue) > -1) {
+          el.style.display = 'block';
+          displayElementCount += 1;
+          if (displayElementCount <= 6) {
+            buttonLoadMoreElement.style.display = 'none';
+          }
+        } else {
+          el.style.display = 'none';
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .artist-product-list-wrapper {
+    margin-top: 9.6rem;
+    margin-bottom: 20rem;
+  }
+  input:focus {
+    outline-offset: 0 !important;
+  }
+
+  #productSearchInput:focus {
+    box-shadow: unset !important;
+    outline: unset !important;
+    border-radius: unset !important;
+  }
+
+  #productSearchInput:focus-visible {
+    box-shadow: unset !important;
+    outline: unset !important;
+    outline-offset: unset !important;
+    border-radius: unset !important;
+  }
+
+  #productSearchInput {
+    background-image: url('{{ 'icon-search.svg' | asset_url }}');
+    background-position-x: calc(100% - 1rem);
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 39rem;
+    font-size: 1.6rem;
+    font-family: Noto Serif JP;
+    padding: 16px 20px 12px;
+    border: none;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 6rem;
+  }
+
+  #productSearchInput::placeholder {
+    color: rgb(var(--color-foreground));
+    opacity: 1;
+    font-weight: 300;
+  }
+
+  /* style for view more button*/
+  .product-view-more {
+    margin-top: 7.6rem;
+    text-align: center;
+  }
+
+  .product-view-more span {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 1.6 rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    padding: 1.6rem 2rem;
+    border: 1px solid var(--primary, #333);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .product-view-more span:hover {
+    color: #fff;
+    background-color: var(--primary, #333);
+  }
+
+  @media screen and (max-width: 850px) {
+    .artist-product-list-wrapper {
+      margin-top: 6rem;
+      margin-bottom: 10rem;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    #productSearchInput {
+      width: 100%;
+    }
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "t:sections.main-collection-product-grid.name",
+    "class": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 4,
+        "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+      },
+      {
+        "type": "select",
+        "id": "image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+          }, {
+            "value": "portrait",
+            "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+          }, {
+            "value": "square",
+            "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+          }
+        ],
+        "default": "adapt",
+        "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+      },
+      {
+        "type": "select",
+        "id": "image_shape",
+        "options": [
+          {
+            "value": "default",
+            "label": "t:sections.all.image_shape.options__1.label"
+          },
+          {
+            "value": "arch",
+            "label": "t:sections.all.image_shape.options__2.label"
+          },
+          {
+            "value": "blob",
+            "label": "t:sections.all.image_shape.options__3.label"
+          },
+          {
+            "value": "chevronleft",
+            "label": "t:sections.all.image_shape.options__4.label"
+          }, {
+            "value": "chevronright",
+            "label": "t:sections.all.image_shape.options__5.label"
+          }, {
+            "value": "diamond",
+            "label": "t:sections.all.image_shape.options__6.label"
+          }, {
+            "value": "parallelogram",
+            "label": "t:sections.all.image_shape.options__7.label"
+          }, {
+            "value": "round",
+            "label": "t:sections.all.image_shape.options__8.label"
+          }
+        ],
+        "default": "default",
+        "label": "t:sections.all.image_shape.label",
+        "info": "t:sections.all.image_shape.info"
+      }, {
+        "type": "checkbox",
+        "id": "show_secondary_image",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+      }, {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+      }, {
+        "type": "checkbox",
+        "id": "show_rating",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+        "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+      }, {
+        "type": "checkbox",
+        "id": "enable_quick_add",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+      }, {
+        "type": "header",
+        "content": "t:sections.main-collection-product-grid.settings.header__1.content"
+      }, {
+        "type": "header",
+        "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
+      }, {
+        "type": "select",
+        "id": "columns_mobile",
+        "default": "2",
+        "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
+        "options": [
+          {
+            "value": "1",
+            "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
+          }, {
+            "value": "2",
+            "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

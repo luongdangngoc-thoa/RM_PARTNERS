@@ -1,7 +1,16 @@
-.product__info-wrapper.grid__item.scroll-trigger.animate--slide-in {
-  padding-left: 30px;
+.shopify-section.shopify-section-group-header-group.section-header.shopify-section-header-sticky {
+  margin: 0px;
 }
-
+.product.product--large.product--left {
+  padding-bottom: 12rem;
+}
+.product { position: relative;}
+.page-width.section-template--16825565282532__main-padding {
+  padding-top: 12rem;
+}
+.content-for-layout.focus-none {
+  overflow: hidden;
+}
 .product__title {
   margin: 0px;
 }
@@ -9,21 +18,21 @@
 .product__title h1 {
   color: var(--primary, #333);
   font-family: Noto Serif JP;
-  font-size: 20px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 30px; /* 150% */
-  letter-spacing: 3px;
+  line-height: calc(30 / 20); /* 150% */
+  letter-spacing: 3;
 }
 
 .product__title p {
   color: var(--primary, #333);
   font-family: Oswald;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: 0.6px;
+  line-height: calc(18 / 12); /* 150% */
+  letter-spacing: 0.6;
 }
 
 .product__author {
@@ -31,15 +40,15 @@
 }
 
 .product__author h3 {
-  padding-top: 34.1px;
+  padding-top: 3.41rem;
   color: var(--primary, #333);
   /* font-size-base */
   font-family: Noto Serif JP;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
-  letter-spacing: 0.8px;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
   margin: 0px;
 }
 
@@ -47,65 +56,445 @@
   color: var(--primary, #333);
   /* oswald-xsm */
   font-family: Oswald;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: 0.6px;
+  line-height: calc(18 / 12); /* 150% */
+  letter-spacing: 0.6;
   margin: 0px;
 }
 
 .product-form__buttons {
   max-width: 100%;
   display: flex;
-  gap: 8px;
-  padding: 40px 0 0 0;
+  gap: 0.8rem;
+  padding: 4rem 0 0 0;
 }
 
 .add-to-cart {
   width: 50%;
 }
+
+.add-to-cart-sold-out {
+  width: 100%;
+}
+
 .add-to-cart button {
-  height: 58px;
+  height: 5.8rem;
 }
 .checkout-btn {
   width: 50%;
 }
 
 .checkout-btn button {
-  height: 58px;
+  height: 5.8rem;
   color: var(--primary, #333);
   font-family: Noto Serif JP;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.8px;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.8;
   background-color: transparent;
+}
+
+.checkout-btn button:hover {
+  border: 1px solid #333 !important;
+  background-color: transparent !important;
 }
 .button--full-width {
   display: flex;
   width: 100%;
-  height: 58px;
+  height: 5.8rem;
   color: var(--primary, #333);
   /* font-size-base */
   font-family: Noto Serif JP;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
-  letter-spacing: 0.8px;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
   background-color: transparent;
 }
 
 .product .prime-review {
+}
+.product .prime-review .prime-review-main {
   background: #ffff;
   border-radius: 100%;
   border: 1px solid #333;
   position: absolute;
-  top: 0px !important;
-  width: 53px;
-  height: 53px;
+  top: 1em;
+  width: 5.3rem;
+  height: 5.3rem;
   cursor: pointer;
-  padding: 12px 11.2px;
+  padding: 1.2rem 1.12rem;
+  right: -1px;
+}
+
+.product__media img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient.constrain-height {
+  padding-right: 1.5rem;
+}
+.product__information {
+  padding-top: 6rem;
+}
+.product__view-more {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.product__information h2 {
+  color: var(--primary, #333);
+  /* h3 */
+  font-family: Oswald;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: calc(36 / 24); /* 150% */
+  text-transform: uppercase;
+}
+.product__list-information {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+.product__list-information--detail {
+  display: flex;
+}
+.product__list-information--detail-title {
+  width: 40%;
+  color: var(--primary, #333);
+  text-align: justify;
+  /* font-size-base */
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+}
+.product__list-information--detail-content {
+  width: 60%;
+  text-align: end;
+  color: var(--primary, #333);
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+}
+.product__this_artist_in_thumbnail {
+  padding-top: 4rem;
+}
+.product__this_artist a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #333;
+  text-decoration: none;
+}
+.product__this_artist p {
+  width: 55%;
+  color: var(--primary, #333);
+  /* font-size-base */
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+  white-space: nowrap;
+}
+.product__this_artist span {
+  width: 20%;
+  text-align: end;
+}
+.product__fee p {
+  color: var(--primary, #333);
+  text-align: justify;
+  /* font-size-base */
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+}
+
+.product__information-artist-main {
+  max-width: 100%;
+  padding: 12rem 0 0 0;
+  border-top: 1px solid #333;
+}
+.product__information-artist {
+  display: flex;
+}
+.product__information-artist-title h3 {
+  margin: 0px;
+  color: var(--primary, #333);
+  /* font-size-md */
+  font-family: Noto Serif JP;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(30 / 20); /* 150% */
+  letter-spacing: 1px;
+}
+.product__information-artist-left {
+  width: 60%;
+}
+.product__information-artist-name {
+  padding-top: 1.3rem;
+  display: flex;
+  align-items: end;
+  gap: 2rem;
+}
+.product__information-artist-name h2 {
+  margin: 0px;
+  color: var(--primary, #333);
+  /* 画家の名前 */
+  font-family: Noto Serif JP;
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.8;
+}
+
+.product__information-artist-name p {
+  margin: 0px;
+  color: var(--primary, #333);
+  /* oswald-base */
+  font-family: Oswald;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+  white-space: nowrap;
+}
+.product__information-artist-description {
+  padding-top: 4rem;
+}
+.product__information-artist-description p {
+  color: var(--primary, #333);
+  text-align: justify;
+  /* font-size-base */
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+  margin: 0px;
+}
+
+.product__information-artist-right {
+  padding-left: 7.7rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.product__information-artist-see-more {
+  border-bottom: 1px solid #333;
+  height: 3.4rem;
+}
+.product__information-artist-see-more a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.product__information-artist-see-more p {
+  color: var(--primary, #333);
+  /* font-size-base */
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.8;
+  white-space: nowrap;
+  margin: 0px;
+}
+
+.hidden {
+  display: none;
+}
+.product-media-container.constrain-height {
+  margin-left: 0px !important;
+}
+.collection__title {
+  padding: 0 14.3rem;
+}
+.collection__title h2 {
+  color: var(--primary, #333);
+  font-family: Oswald;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+/* .grid {
+  overflow: hidden;
+}
+.grid__item {
+  max-width: 390px !important;
+  width: 100%;
+}
+
+.media {
+  max-height: 216px;
+  height: 100%;
+  img {
+    object-fit: cover;
+  }
+}
+/* .card-wrapper.product-card-wrapper {
+  height: 350px;
+} */
+.card-wrapper.product-card-wrapper {
+  /* height: 313px;
+  width: 280px; */
+}
+.slider--desktop:after {
+  color: red;
+}
+.shopify-block.shopify-app-block {
+  display: none;
+}
+.btn__contact a {
+  max-width: 100%;
+  padding-top: 1.5rem;
+  border: 1px solid #333;
+  height: 5.8rem;
+  text-align: center;
+  display: block;
+}
+.btn__contact a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--primary, #333);
+  font-family: Noto Serif JP;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0.8;
+}
+.btn__contact a:hover {
+  border: 2px solid #333;
+}
+.breadcrumbs__list {
+  color: var(--primary, #333);
+  /* oswald-xsm */
+  font-family: Oswald;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(18 / 12); /* 150% */
+  letter-spacing: 0.6;
+}
+.breadcrumbs__item a {
+  color: var(--primary, #333);
+  /* oswald-xsm */
+  font-family: Oswald;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(18 / 12); /* 150% */
+  letter-spacing: 0.6;
+}
+.product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient {
+  width: 95%;
+}
+@media screen and (max-width: 1500px) {
+  .product__information-artist-see-more a {
+    gap: 3rem;
+  }
+  .page-width {
+    padding: 0 10rem;
+  }
+}
+@media screen and (max-width: 995px) {
+  .product__info-wrapper {
+    padding: 0 0 0 1rem;
+  }
+}
+@media screen and (min-width:750px) {
+  .product__content.sp {
+    display: none;
+  }
+}
+@media screen and (max-width: 735px) {
+  .page-width {
+    padding: 0 1rem 0 1rem;
+  }
+  .add-to-cart span {
+    white-space: nowrap;
+  }
+  .product__this_artist_in_thumbnail {
+    padding-top: 2rem;
+    padding-left: 0.8em;
+  }
+  .product__info-wrapper {
+    padding: 0 0 0 0;
+  }
+  .product.product--large.product--left {
+    padding-bottom: 4rem;
+  }
+  .product__information-artist-main {
+    padding: 4rem 0 0;
+  }
+  .product__information-artist {
+    display: inline-block;
+  }
+  .product__information-artist-left {
+    width: 100%;
+    padding-right: 0.8rem;
+  }
+  .product__information-artist-right {
+    padding-left: 0;
+    width: 100%;
+  }
+  .product__information-artist-see-more {
+    margin-top: 2.5rem;
+    border-bottom: 1px solid #333;
+    height: 3.4rem;
+  }
+  .page-width.section-template--16825565282532__main-padding {
+    padding-top: 0px;
+  }
+  .product__content.pc {
+    display: none;
+  }
+  .product__content.sp {
+    margin-top: 1rem;
+  }
+  .product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient.constrain-height {
+    padding-right: 0px;
+    width: 100%;
+  }
+  .product-form__buttons {
+    padding: 0;
+  }
+  .product__information {
+    padding-top: 4rem;
+  }
+  .product__modal-opener.product__modal-opener--image {
+    height: auto;
+  }
+  .slider-buttons.no-js-hidden.quick-add-hidden.small-hide {
+    display: none;
+  }
+
 }

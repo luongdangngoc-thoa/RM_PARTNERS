@@ -1,0 +1,194 @@
+<div id="order-flow" class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="oder-flow-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="oder-flow-title">
+      {{ section.settings.title }}</h2>
+    <div class="order-flow-list">
+      {%- for block in section.blocks -%}
+        <div class="oder-flow-step">
+          <p class="step-name">
+            {{ block.settings.step-name }}</p>
+          <p class="step-des">
+           {%- if block.settings.step-des -%}
+            {{ block.settings.step-des }}</p>
+           {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  #order-flow {
+    padding-top: 8rem;
+  }
+
+  .oder-flow-title {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30 / 20);
+    letter-spacing: 1px;
+  }
+  .order-flow-list {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .oder-flow-step {
+    width: calc((100% - 16rem) / 5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step-name {
+    display: inline-flex;
+    justify-content: center;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    width: 100%;
+    border: 1px solid var(--primary, #333);
+    background: var(--white, #FFF);
+    padding: 1.8rem 0;
+    position: relative;
+  }
+
+  .step-name::after {
+    content: "";
+    display: block;
+    background-image: url('{{ 'icon-arrow-guide-page.svg' | asset_url }}');
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 10px;
+    float: left;
+    position: absolute;
+    z-index: 100;
+    right: -5rem;
+    top: 50%;
+  }
+
+  .oder-flow-step:last-child .step-name::after {
+    display: none !important;
+  }
+
+  .step-des {
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(20 / 14);
+    letter-spacing: 0.7px;
+  }
+
+
+  @media screen and (max-width: 1000px) {
+    .order-flow-list {
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .oder-flow-step {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .oder-flow-step::after {
+      content: "";
+      display: block;
+      background-image: url('{{ 'icon-arrow-guide-page.svg' | asset_url }}');
+      background-repeat: no-repeat;
+      rotate: 90deg;
+      width: 50px;
+      height: 10px;
+      position: absolute;
+      z-index: 100;
+      right: calc((100% - 5rem) / 2);
+      bottom: calc(100% - 0.5rem);
+    }
+
+    .oder-flow-step:first-child::after {
+      display: none !important;
+    }
+
+    .step-name {
+    width: 15rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 1.2rem 0;
+  }
+
+
+    .step-name::after {
+      display: none !important;
+    }
+}
+
+</style>
+{% schema %}
+  {
+    "name": "Oder flow",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Section title",
+        "default": "ご注文の流れ"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "step-name",
+            "default": "step name",
+            "label": "step name"
+          }, {
+            "type": "textarea",
+            "id": "step-des",
+            "default": "step description",
+            "label": "step description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Oder flow",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

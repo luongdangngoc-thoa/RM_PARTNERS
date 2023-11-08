@@ -1,0 +1,108 @@
+<div id="guide-cancel-return" class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="guide-return-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="guide-return-title">
+      キャンセル・返品について</h2>
+    <div class="guide-return-list">
+      {%- for block in section.blocks -%}
+        <h3 class="guide-return-subtitle">{{ block.settings.cancel-return-title }}</h3>
+        <p class="guide-return-txt">
+          {{ block.settings.cancel-return-des }}</p>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  #guide-cancel-return {
+    padding-top: 8rem;
+  }
+  .guide-return-title {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30 / 20);
+    letter-spacing: 1px;
+  }
+
+  .guide-return-list {
+    margin-left: 3.5rem;
+  }
+
+  .guide-return-subtitle {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .guide-return-txt {
+    margin: 0;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .guide-return-txt {
+      font-size: 1.4rem;
+      line-height: calc(24 / 14);
+      letter-spacing: 0.7px;
+    }
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Guide canel return",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "cancel-return-title",
+            "default": "ご注文後のキャンセル、商品変更。",
+            "label": "Title"
+          }, {
+            "type": "textarea",
+            "id": "cancel-return-des",
+            "default": "ご注文確定後、お客様のご都合(搬入不可含む)によるキャンセルや商品変更はお受け致しかねますのであらかじめご了承ください。",
+            "label": "About delivery"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Guide cancel return",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

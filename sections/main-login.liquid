@@ -39,7 +39,7 @@
             aria-describedby="RecoverEmail-email-error"
             autofocus
           {% endif %}
-          placeholder="{{ 'customer.login_page.email' | t }}"
+          placeholder=""
         >
         <label for="RecoverEmail">
           {{ 'customer.login_page.email' | t }}
@@ -107,7 +107,7 @@
           {% if form.errors contains 'form' %}
             aria-invalid="true"
           {% endif %}
-          placeholder="{{ 'customer.login_page.email' | t }}"
+          placeholder=""
         >
         <label for="CustomerEmail">
           {{ 'customer.login_page.email' | t }}
@@ -125,7 +125,7 @@
             {% if form.errors contains 'form' %}
               aria-invalid="true"
             {% endif %}
-            placeholder="{{ 'customer.login_page.password' | t }}"
+            placeholder=""
           >
           <label for="CustomerPassword">
             {{ 'customer.login_page.password' | t }}

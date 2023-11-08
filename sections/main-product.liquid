@@ -42,7 +42,6 @@
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
@@ -65,9 +64,31 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+  <div class="prime-review">
+    {% render 'mxpr-card-product-favorite', product: product %}
+  </div>  
+  <div class="product__content sp">
+    <div class="product">
+      <div class="product__title" {{ block.shopify_attributes }}>
+        <h1>{{ product.title | escape }}</h1>
+        <p>{{ product.metafields.custom.product_name_romaji }}</p>
+        <a href="{{ product.url }}" class="product__title">
+          <h2 class="h1">
+            {{ product.title | escape }}
+          </h2>
+        </a>
+      </div>
+    </div>
+
+    <div class="product__author">
+        <h3>{{ product.metafields.custom.artist.value.name }}</h3>
+        <p>{{ product.metafields.custom.artist.value.name_romaji }}</p>
+      </div>
+      </div>
+      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
+    
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
         id="ProductInfo-{{ section.id }}"
@@ -89,32 +110,23 @@
                 {{- block.settings.text -}}
               </p> {% endcomment %}
             {%- when 'title' -%}
+              <div class="product__content pc">
               <div class="product">
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
-                  <p>Pumpkin</p>
+                  <p>{{ product.metafields.custom.product_name_romaji }}</p>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
                     </h2>
                   </a>
-                </div>
-                <div class="prime-review prime-review-favorites-product-{{ product_hash }}">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                  <g class="prime-review-favorites-heart-8045909639396-023f81b54db35551568e9e464626e002 prime-review-favorites-heart-8045909639396-023f81b54db35551568e9e464626e002-disable" transform="scale(0.3 0.3)">
-                    <path class="prime-review-favorites-heart-border-8045909639396-023f81b54db35551568e9e464626e002 prime-review-favorites-heart-border-8045909639396-023f81b54db35551568e9e464626e002-disable" stroke-width="5px" d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z"></path>
-                  </g>
-                </svg>
-                </div>
-                
+                </div>                
               </div>
-             
-
-                <div class="product__author">
+              <div class="product__author">
                   <h3>{{ product.metafields.custom.artist.value.name }}</h3>
                   <p>{{ product.metafields.custom.artist.value.name_romaji }}</p>
                 </div>
-
+                </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
@@ -191,12 +203,12 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
-            {%- when 'description' -%}
+            {% comment %} {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                   {{ product.description }}
                 </div>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
             {%- when 'sku' -%}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -432,12 +444,6 @@
               <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
                 {{- block.settings.text -}}
               </a>
-            {%- when 'share' -%}
-              {% comment %} {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
-              {% render 'share-button',
-                block: block,
-                share_link: share_url
-              %} {% endcomment %}
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -570,13 +576,92 @@
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}
         </a>
+      {% comment %} view more {% endcomment %}
+      <div class="product__information">
+        <div class="product__view-more">
+          <h2 id="viewMoreButton" >VIEW MORE</h2>
+          <div class="vector"  id="vector" >
+            <svg width="17" height="7" viewBox="0 0 17 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 0.59668L8.5 5.59668L16 0.59668" stroke="#333333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="product__more_information" id="moreInformation"> 
+          <div class="product__list-information">
+            <div class="product__list-information--detail">
+              <p class="product__list-information--detail-title">
+                技法
+                </p>
+              <p class="product__list-information--detail-content">
+                {{ product.metafields.custom.technique }}
+                </p>
+            </div>
+          </div>
+          <div class="product__list-information">
+            <div class="product__list-information--detail">
+              <p class="product__list-information--detail-title">
+                サイズ
+                </p>
+              <p class="product__list-information--detail-content">
+                {{ product.metafields.custom.size }}
+                </p>
+            </div>
+          </div>
+          <div class="product__list-information">
+            <div class="product__list-information--detail">
+              <p class="product__list-information--detail-title">
+                額縁
+                </p>
+              <p class="product__list-information--detail-content">
+                {{ product.metafields.custom.picture_frame }}
+                </p>
+            </div>
+          </div>
+          <div class="product__list-information">
+            <div class="product__list-information--detail">
+              <p class="product__list-information--detail-title">
+                制作
+                </p>
+              <p class="product__list-information--detail-content">
+                {{ product.metafields.custom.year_of_production }}
+                </p>
+            </div>
+          </div>
+          <div class="product__list-information">
+            <div class="product__list-information--detail">
+              <p class="product__list-information--detail-title">
+                ED
+                </p>
+              <p class="product__list-information--detail-content">
+                {{ product.metafields.custom.ed_picture }}
+                </p>
+            </div>
+          </div>
+          <div class="product__list-information">
+            <div class="product__list-information--detail">
+              <p class="product__list-information--detail-title">
+                商品到着までの期間
+                </p>
+              <p class="product__list-information--detail-content">
+                {{ product.metafields.custom.delivery_time }}
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="product__fee">
+          <p class="product__fee-title">※商品の配送料はお客様負担となります。</p>
+        </div>
+      </div>
       </product-info>
+     
+     
     </div>
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
       <div class="grid__item product__media-wrapper small-hide">
         {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %}
       </div>
+  
     {%- endif -%}
   </div>
 
@@ -620,6 +705,61 @@
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
 
+  <div class="product__information-artist-main">
+    <div class="product__information-artist">
+      <div class="product__information-artist-left">
+      <div class="product__information-artist-title">
+        <h3>アーティスト</h3>
+      </div>
+      <div class="product__information-artist-name">
+        <h2 class="artist-name">
+          {{ product.metafields.custom.artist.value.name }}
+        </h2>
+        <p class="artist-romaji-name">
+          {{ product.metafields.custom.artist.value.name_romaji }}
+        </p>
+      </div>
+      <div class="product__information-artist-description">
+        <p>
+          {{ product.metafields.custom.artist.value.description }}
+        </p>
+      </div>
+    </div>
+    <div class="product__information-artist-right">
+      <div class="product__information-artist-see-more">
+        <a href="/pages/artists/{{ product.metafields.custom.artist.value.name_romaji | downcase | replace: ' ', '-' }}">
+          <p class="product__this_artist-detail">
+            このアーティストの作品をすべて見る
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="6" viewBox="0 0 31 6" fill="none">
+            <path d="M0 5H29L24.4211 1" stroke="#333333"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // Get references to the button and more information elements
+    const viewMoreButton = document.getElementById('viewMoreButton');
+    const vector = document.getElementById('vector');
+    const moreInformation = document.getElementById('moreInformation');
+
+    // Add a click event listener to the vector element
+    vector.addEventListener('click', () => {
+    // Toggle the visibility of the more information element
+    moreInformation.classList.toggle('hidden');
+    });
+
+     // Add a click event listener to the vector element
+    viewMoreButton.addEventListener('click', () => {
+    // Toggle the visibility of the more information element
+    moreInformation.classList.toggle('hidden');
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function isIE() {

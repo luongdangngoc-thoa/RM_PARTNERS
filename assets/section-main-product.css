@@ -54,13 +54,13 @@
 
 @media screen and (min-width: 990px) {
   .product--large:not(.product--no-media) .product__media-wrapper {
-    max-width: 61%;
+    max-width: 55%;
     width: calc(65% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
     padding: 0 0 0 4rem;
-    max-width: 39%;
+    max-width: 45%;
     width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
@@ -350,7 +350,7 @@ fieldset.product-form__input .form__label {
 a.product__text {
   display: block;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-foreground);
 }
 
 .product__text.caption-with-letter-spacing {
@@ -595,6 +595,9 @@ a.product__text {
 .product__media-icon .icon {
   width: 1.2rem;
   height: 1.4rem;
+}
+.product__media-icon {
+  display: none !important;
 }
 
 .product__media-icon,
@@ -902,7 +905,7 @@ a.product__text {
 }
 
 .product-media-modal__toggle:hover {
-  color: rgba(var(--color-foreground), 0.75);
+  color: #707070;
 }
 
 .product-media-modal__toggle .icon {
@@ -1060,7 +1063,7 @@ a.product__text {
 }
 
 .product-popup-modal__toggle:hover {
-  color: rgba(var(--color-foreground), 0.75);
+  color: #707070;
 }
 
 .product-popup-modal__toggle .icon {

@@ -1,5 +1,5 @@
-<slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
-  <div class="image-box page-width">
+<slider-component class="slider-mobile-gutter scroll-trigger animate--slide-in">
+  <div class="image-box page-width-desktop">
   <img src="{{section.settings.image_box | img_url: 'master'}}" alt="">
 </div>
 </slider-component>
@@ -23,10 +23,21 @@
 {% endschema %}
 
 {%- style -%}
-.image-box.page-width {
-  padding:0 9rem;
+@media screen and (min-width: 750px) {
+.image-box {
+  /* padding:0 200px; */
 }
-.image-box.page-width img {
+.image-box img {
     width: 100%;
+}
+}
+@media screen and (max-width: 749px) {
+  .image-box {
+    width:100%;
+    padding:0 20px;
+}
+.image-box img {
+  width:100%;
+}
 }
 {%- endstyle -%}

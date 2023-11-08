@@ -1,0 +1,306 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "order-guide-top": {
+      "type": "order-guide-top",
+      "settings": {}
+    },
+    "order-flow": {
+      "type": "order-flow",
+      "blocks": {
+        "11b6d4e2-f05d-472d-9348-3170c81b9852": {
+          "type": "Block",
+          "settings": {
+            "step-name": "ご注文完了",
+            "step-des": ""
+          }
+        },
+        "003cd202-6eed-4754-b2a1-152a4dfeabde": {
+          "type": "Block",
+          "settings": {
+            "step-name": "自動配信メール",
+            "step-des": "ご注文が完了した際に自動で送信されるメールです。<br>\n※ご注文完了メールが届かない場合は迷惑メールフォルダをご確認の上、お問い合わせくださいませ。"
+          }
+        },
+        "3fe60b58-764f-4be2-be0a-8b62513f3cb6": {
+          "type": "Block",
+          "settings": {
+            "step-name": "商品発送",
+            "step-des": "ご注文完了から商品発送までは約2週間程度かかりますので、予めご了承くださいませ。<br>\n※詳しくは各商品ページにてご確認くださいませ。"
+          }
+        },
+        "46b2e427-3513-4b9f-8033-a4c54b07d170": {
+          "type": "Block",
+          "settings": {
+            "step-name": "出荷のお知らせ",
+            "step-des": "商品出荷後、配送の詳細情報をご登録のメールアドレスまで送信致します。"
+          }
+        },
+        "97beb538-c44c-4806-a97a-92a235efc3b5": {
+          "type": "Block",
+          "settings": {
+            "step-name": "商品到着",
+            "step-des": ""
+          }
+        }
+      },
+      "block_order": [
+        "11b6d4e2-f05d-472d-9348-3170c81b9852",
+        "003cd202-6eed-4754-b2a1-152a4dfeabde",
+        "3fe60b58-764f-4be2-be0a-8b62513f3cb6",
+        "46b2e427-3513-4b9f-8033-a4c54b07d170",
+        "97beb538-c44c-4806-a97a-92a235efc3b5"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "title": "ご注文の流れ"
+      }
+    },
+    "guide-payment": {
+      "type": "guide-payment",
+      "blocks": {
+        "d2fd3e7a-dde6-4a75-9cb2-85cd38152b78": {
+          "type": "Block",
+          "settings": {
+            "payment": "クレジットカード決済"
+          }
+        },
+        "03a16aee-c501-406e-b22f-6025fd89d8c0": {
+          "type": "Block",
+          "settings": {
+            "payment": "PayPal決済"
+          }
+        }
+      },
+      "block_order": [
+        "d2fd3e7a-dde6-4a75-9cb2-85cd38152b78",
+        "03a16aee-c501-406e-b22f-6025fd89d8c0"
+      ],
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "guide-delivery-cost": {
+      "type": "guide-delivery-cost",
+      "blocks": {
+        "2e5e52d5-e686-4af6-9303-06537d20a9c6": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "北海道",
+            "delivery-cost-1": "1,650円",
+            "delivery-cost-2": "1,960円",
+            "delivery-cost-3": "2,460円",
+            "delivery-cost-4": "2,690円"
+          }
+        },
+        "8178d1f0-a8bc-435d-b68e-fc0cdaa01afb": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "北東北",
+            "delivery-cost-1": "1,280円",
+            "delivery-cost-2": "1,610円",
+            "delivery-cost-3": "2,100円",
+            "delivery-cost-4": "2,340円"
+          }
+        },
+        "40d03bc0-c045-4e7b-ae13-2237a04d223f": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "南東北",
+            "delivery-cost-1": "1,160円",
+            "delivery-cost-2": "1,490円",
+            "delivery-cost-3": "1,980円",
+            "delivery-cost-4": "2,220円"
+          }
+        },
+        "9523af22-9378-4065-aa05-7957022598c1": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "関東",
+            "delivery-cost-1": "1,160円",
+            "delivery-cost-2": "1,490円",
+            "delivery-cost-3": "1,980円",
+            "delivery-cost-4": "2,220円"
+          }
+        },
+        "f0cc1a63-ab90-42d9-b191-bc5d555a45e2": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "信越",
+            "delivery-cost-1": "1,160円",
+            "delivery-cost-2": "1,490円",
+            "delivery-cost-3": "1,980円",
+            "delivery-cost-4": "2,220円"
+          }
+        },
+        "caede308-7578-4b9f-9856-fd48e35a5929": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "東海",
+            "delivery-cost-1": "1,160円",
+            "delivery-cost-2": "1,490円",
+            "delivery-cost-3": "1,980円",
+            "delivery-cost-4": "2,220円"
+          }
+        },
+        "4f1bbb9d-7f9b-46d5-a9d8-6df3c7a918a0": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "北陸",
+            "delivery-cost-1": "1,160円",
+            "delivery-cost-2": "1,490円",
+            "delivery-cost-3": "1,980円",
+            "delivery-cost-4": "2,220円"
+          }
+        },
+        "793bb3c0-2504-4635-a7a6-29371cf4f354": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "関西",
+            "delivery-cost-1": "1,280円",
+            "delivery-cost-2": "1,610円",
+            "delivery-cost-3": "2,100円",
+            "delivery-cost-4": "2,340円"
+          }
+        },
+        "09b7eb9f-c300-41ef-9407-6aee8945d8ce": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "中国",
+            "delivery-cost-1": "1,400円",
+            "delivery-cost-2": "1,720円",
+            "delivery-cost-3": "2,220円",
+            "delivery-cost-4": "2,450円"
+          }
+        },
+        "f5b649cd-add9-46e0-830a-0542153998ec": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "四国",
+            "delivery-cost-1": "1,520円",
+            "delivery-cost-2": "1,840円",
+            "delivery-cost-3": "2,340円",
+            "delivery-cost-4": "2,570円"
+          }
+        },
+        "f4632171-5947-428d-a802-7f54d7e9f763": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "北九州",
+            "delivery-cost-1": "1,650円",
+            "delivery-cost-2": "1,960円",
+            "delivery-cost-3": "2,460円",
+            "delivery-cost-4": "2,690円"
+          }
+        },
+        "60a62a78-6caa-4530-878e-9b29a67d2459": {
+          "type": "Block",
+          "settings": {
+            "delivery-area": "沖縄",
+            "delivery-cost-1": "3,520円",
+            "delivery-cost-2": "4,686円",
+            "delivery-cost-3": "7,579円",
+            "delivery-cost-4": "10,560円"
+          }
+        }
+      },
+      "block_order": [
+        "2e5e52d5-e686-4af6-9303-06537d20a9c6",
+        "8178d1f0-a8bc-435d-b68e-fc0cdaa01afb",
+        "40d03bc0-c045-4e7b-ae13-2237a04d223f",
+        "9523af22-9378-4065-aa05-7957022598c1",
+        "f0cc1a63-ab90-42d9-b191-bc5d555a45e2",
+        "caede308-7578-4b9f-9856-fd48e35a5929",
+        "4f1bbb9d-7f9b-46d5-a9d8-6df3c7a918a0",
+        "793bb3c0-2504-4635-a7a6-29371cf4f354",
+        "09b7eb9f-c300-41ef-9407-6aee8945d8ce",
+        "f5b649cd-add9-46e0-830a-0542153998ec",
+        "f4632171-5947-428d-a802-7f54d7e9f763",
+        "60a62a78-6caa-4530-878e-9b29a67d2459"
+      ],
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "guide-delivery": {
+      "type": "guide-delivery",
+      "blocks": {
+        "6bea2f72-6670-4f68-9131-83d08ca57a77": {
+          "type": "Block",
+          "settings": {
+            "delivery-des": "作品の在庫状況やご注文数量によって納期は異なります。"
+          }
+        },
+        "af5de22e-41e8-405b-a0bf-cc1d3ead2f57": {
+          "type": "Block",
+          "settings": {
+            "delivery-des": "各商品ページに記載しております納期の目安を参考にしてください。"
+          }
+        },
+        "afbc54d6-c1f1-418c-9390-fef751005b78": {
+          "type": "Block",
+          "settings": {
+            "delivery-des": "正式な納期は、生産開始時にメールにてご連絡いたします。"
+          }
+        }
+      },
+      "block_order": [
+        "6bea2f72-6670-4f68-9131-83d08ca57a77",
+        "af5de22e-41e8-405b-a0bf-cc1d3ead2f57",
+        "afbc54d6-c1f1-418c-9390-fef751005b78"
+      ],
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "guide-cancel-return": {
+      "type": "guide-cancel-return",
+      "blocks": {
+        "602a62f2-fcc6-4cca-a6f9-34934a0cf011": {
+          "type": "Block",
+          "settings": {
+            "cancel-return-title": "ご注文後のキャンセル、商品変更",
+            "cancel-return-des": "ご注文確定後、お客様のご都合(搬入不可含む)によるキャンセルや商品変更はお受け致しかねますのであらかじめご了承ください。<br>\n商品のカラーやサイズ、内容に誤りがないよう、ご注文画面で十分ご確認いただけますようお願いいたします。"
+          }
+        },
+        "a17c97f1-b717-4fa8-a970-6c68c9bac334": {
+          "type": "Block",
+          "settings": {
+            "cancel-return-title": "お届け後の商品交換、返品",
+            "cancel-return-des": "原則、作品のお届け後の商品交換、返品は原則受け付けておりません。<br>\n状態によってはご対応可能な場合がございますので、お問合せフォームよりご連絡くださいませ。<br>\n尚、郵送での交換・返品については一切受け付けておりません。"
+          }
+        }
+      },
+      "block_order": [
+        "602a62f2-fcc6-4cca-a6f9-34934a0cf011",
+        "a17c97f1-b717-4fa8-a970-6c68c9bac334"
+      ],
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "guide-soldout": {
+      "type": "guide-soldout",
+      "settings": {
+        "section_color_scheme": "",
+        "guide-soldOut-des": "ご希望の商品が売り切れしまっている場合は公式LINEをご登録の上、ご希望の商品をメッセージにてお伝え下さい。<br>\n最新の在庫状況や次回入荷時のご連絡を致します。",
+        "btn-url": "http:\/\/lin.ee\/OFdk49W"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "order-guide-top",
+    "order-flow",
+    "guide-payment",
+    "guide-delivery-cost",
+    "guide-delivery",
+    "guide-cancel-return",
+    "guide-soldout"
+  ]
+}

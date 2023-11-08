@@ -16,33 +16,82 @@
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
-
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div
-          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
-        </div>
-      {%- endfor -%}
+{%- paginate blog.articles by 10 -%}
+  <div class="main-blog section-{{ section.id }}-padding page-width-desktop page-width-tablet page-width-sp">
+    <div class="blog__title-main">
+      <div class="blog__title">
+      <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ blog.title | escape }} 
+      </h1>
+      <p>お知らせ</p>
     </div>
+    </div>
+
+    <div class="blog__tags">
+      <p class="blogs_all" onclick="showAllTags()">All</p>
+      {% for tag in blog.tags %}
+        <p class="blogs_by_tag" onclick="filterBlogs('{{ tag }}')">{{ tag }}</p>
+      {% endfor %}
+    </div>
+
+    
+    {% comment %} <div class="blog-articles">
+      {%- for article in blog.articles -%}
+          <div class="article__blogs">
+            <div class="article__blogs-left">
+                <div class="article__main">
+                <div class="article__time">
+                  <p>{{ article.published_at | time_tag: format: 'date' }}</p>
+                </div>
+                <div class="article__title">
+                  <p>{{  article.title }}</p>
+                </div>
+              </div>
+              <div class="article__excerpt">
+                <p>{{ article.excerpt | strip_html | truncatewords: 30 }}</p>
+              </div>
+            </div>
+            <div class="article__blogs-right">
+              <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="31" height="6" viewBox="0 0 31 6" fill="none">
+                 <path d="M0 5H29L24.4211 1" stroke="#333333"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+      {%- endfor -%}
+    </div> {% endcomment %}
+    <div class="blog-articles">
+      <div class="detail_blog">
+    {%- for article in blog.articles -%}
+      <div class="article__blogs" data-tags="{{ article.tags }}">
+        <div class="article__blogs-left">
+          <a href="{{ article.url }}">
+            <div class="article__main">
+            <div class="article__time">
+              <p>{{ article.published_at | time_tag: format: 'date' }}</p>
+            </div>
+            <div class="article__title">
+              <p>{{ article.tags }}</p>
+            </div>
+          </div>
+          <div class="article__excerpt">
+            <p>{{ article.title | strip_html | truncatewords: 30 }}</p>
+          </div>
+          </a>
+        </div>
+        <div class="article__blogs-right">
+          <a href="{{ article.url }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="6" viewBox="0 0 31 6" fill="none">
+             <path d="M0 5H29L24.4211 1" stroke="#333333"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+  {%- endfor -%}
+  </div>
+
+</div>
 
     {%- if paginate.pages > 1 -%}
       {%- render 'pagination', paginate: paginate -%}
@@ -50,6 +99,67 @@
   </div>
 {%- endpaginate -%}
 
+
+<script>
+  var allTag = document.querySelector(".blogs_all");
+  var tags = document.querySelectorAll(".blogs_by_tag");
+
+  if (allTag) {
+    allTag.classList.add("active");
+  }
+
+  tags.forEach(function (tag) {
+    tag.addEventListener("click", function () {
+      var activeTag = document.querySelector(".blogs_by_tag.active");
+      allTag.classList.remove("active");
+      if (activeTag && activeTag !== allTag) {
+        activeTag.classList.remove("active");
+      } 
+      if (tag == allTag) {
+        tags.forEach(function (tag) {
+          tag.classList.add("active");
+        });
+      } else {
+        allTag.classList.remove("active");
+        tag.classList.add("active");
+      }
+    });
+  });
+
+  function filterBlogs(tag) {
+    var articles = document.getElementsByClassName("article__blogs");
+    var tags = document.getElementsByClassName("blogs_by_tag");
+    for (var i = 0; i < articles.length; i++) {
+      var tags = articles[i].dataset.tags.split(",");
+      if (tags.includes(tag) || tag === "All") {
+        articles[i].style.display = "flex";
+      } else {
+        articles[i].style.display = "none";
+      }
+    }
+  }
+
+  function showAllTags() {
+    var articles = document.getElementsByClassName("article__blogs");
+    for (var i = 0; i < articles.length; i++) {
+      articles[i].style.display = "flex";
+    }
+    tags.forEach(function (tag) {
+      tag.classList.remove("active")
+    })
+    allTag.classList.add("active");
+
+  }
+
+  // var tags = document.getElementsByClassName("blogs_by_tag");
+  // for (var i = 0; i < tags.length; i++) {
+  //   if (!tags[i].classList.contains("blogs_all")) {
+  //     tags[i].classList.remove("active");
+  //   }
+  // }
+
+  
+</script>
 {% schema %}
 {
   "name": "t:sections.main-blog.name",

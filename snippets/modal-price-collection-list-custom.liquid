@@ -1,0 +1,72 @@
+<slider-component class="modal-search-block slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+          <div class="price-heading-group">
+                <h2 class="price-heading heading-en">
+                    PRICE
+                </h2>
+                <h2 class="price-heading heading-jp">
+                    金額から選ぶ
+                </h2>
+            </div>
+<ul class="search_tags">
+    {% for collection in section.settings.custom_price_collection_list %}
+        <li class="search_tagItem">
+            <a href="{{ collection.url }}">{{ collection.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+</slider-component>
+
+  {%- style -%}
+
+ .price-heading-group {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .price-heading-group .price-heading.heading-en {
+    color: #fff;
+    font-family: Oswald;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .price-heading-group .price-heading.heading-jp {
+    color: #fff;
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+  }
+.search_tags {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.modal-search-block .search_tagItem {
+    color : #fff ;
+}
+@media screen and (max-width: 750px) {
+  .search_tags{
+    overflow-x:scroll;
+  }
+}
+.search_tags li a {
+    padding: 1rem 2rem;
+    border: 1px solid;
+    white-space: nowrap;
+}
+.modal-search-block .search_tags a {
+    line-height: 1.5;
+    font-family: Oswald, serif;
+    text-decoration: none;
+    color: #fff;
+}
+
+{%- endstyle -%}

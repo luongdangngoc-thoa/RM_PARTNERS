@@ -1,0 +1,129 @@
+<div class="suggestion-unpublished-prod section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="suggestion-unpublished-prod-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="suggestion-unpublished-prod-heading">
+      {{ section.settings.section_heading }}
+    </h2>
+    <p class="suggestion-unpublished-prod-txt">
+      {{ section.settings.section_desc }}
+    </p>
+
+    <div class="suggestion-unpublished-prod-btn-wapper">
+      <a class="suggestion-unpublished-prod-btn" href="{{section.settings.btn-url}}" target="_blank">
+        <span>LINE登録はこちら</span>
+        {% render 'icon-arrow' %}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .suggestion-unpublished-prod {
+    margin-top: 9rem;
+  }
+
+  .suggestion-unpublished-prod-wrapper {
+    max-width: 80rem;
+  }
+
+  .suggestion-unpublished-prod-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .suggestion-unpublished-prod-heading {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin: 0;
+  }
+
+  .suggestion-unpublished-prod-txt {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  .suggestion-unpublished-prod-btn-wapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .suggestion-unpublished-prod-btn {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 24rem;
+    margin-top: 6rem;
+  }
+
+  .suggestion-unpublished-prod-btn span {
+    flex-grow: 1;
+  }
+
+  .suggestion-unpublished-prod-btn {
+    text-decoration: none;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+  }
+
+  @media screen and (max-width: 749px) {
+    .suggestion-unpublished-prod {
+      margin-top: 6rem;
+    }
+    .suggestion-unpublished-prod-heading {
+      font-size: 2rem;
+    }
+    .suggestion-unpublished-prod-txt {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      line-height: calc(20 / 14);
+      letter-spacing: 0.7px;
+    }
+    .suggestion-unpublished-prod-btn {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      line-height: calc(20 / 14);
+      letter-spacing: 0.7px;
+    }
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "Unpublished product",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Section heading"
+      }, {
+        "type": "textarea",
+        "id": "section_desc",
+        "label": "section description"
+      }, {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Button url"
+      }
+    ]
+  }
+{% endschema %}

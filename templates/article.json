@@ -1,5 +1,11 @@
 {
   "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
     "main": {
       "type": "main-article",
       "blocks": {
@@ -37,6 +43,7 @@
     }
   },
   "order": [
+    "breadcrumbs",
     "main"
   ]
 }

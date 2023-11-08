@@ -1,5 +1,11 @@
 {
   "sections": {
+    "728b9c6b-1b52-499f-8c60-3639b28a525e": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
     "f31c9a14-d75e-430a-a6b2-4afb73199ae5": {
       "type": "rich-text",
       "blocks": {
@@ -7,7 +13,7 @@
           "type": "heading",
           "settings": {
             "heading": "CONTACT",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "bf8133f3-1dd1-49ef-82f5-5c0091380fc8": {
@@ -36,28 +42,20 @@
         "padding_bottom": 52
       }
     },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "ad58b0f0-17ca-4a54-baec-0344b1615c5d": {
       "type": "rich-text",
       "blocks": {
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>お問い合わせの前に、<a hred=\"\">よくある質問<\/a>をご確認ください。<br>お問い合わせより早く問題が解決できる場合がございます。<\/p>\n<p>解決できない場合は下記フォームよりお問い合わせください。<br>\n＊ご回答までの目安は2,3営業日となります。迅速な対応を心がけておりますが、<br>\nお問い合わせが集中した場合、約一週間ほどお時間がかかる場合がございます。<br>\n大型連休期間は翌営業日以降の対応となります。<\/p>\n<p>＊LINEからもお問い合わせ可能でございます。<\/p>"
+            "text": "<p>お問い合わせの前に<br><span style=\"font-weight: bold; text-decoration: underline;\">よくある質問<\/span>をご確認ください。<br>お問い合わせより早く問題が解決できる場合がございます。<\/p>\n<p>解決できない場合は下記フォームより<br>お問い合わせください。<br>\n＊ご回答までの目安は2,3営業日となります。迅速な対応を心がけておりますが、<br>\nお問い合わせが集中した場合、一週間ほどお時間がかかる場合がございます。<br>\n大型連休期間は翌営業日以降対応致します。<\/p>\n<p>＊LINEからも問い合わせ可能でございます。<\/p>"
           }
         },
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-button-1": {
           "type": "button",
           "settings": {
             "button_label": "LINE登録はこちらから",
-            "button_link": "",
+            "button_link": "http:\/\/lin.ee\/OFdk49W",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -67,7 +65,7 @@
         "7b73e65f-2f4d-40ab-871d-4af98bc238e5": {
           "type": "text",
           "settings": {
-            "text": "<p>疑問点・ご不明点・取材のご依頼・作品を掲載したいなどのご要望があればお問い合わせください。<br>\n尚、お問い合わせはLINEからでも承っております。<\/p>"
+            "text": "<p>疑問点・ご不明点・取材のご依頼・作品を掲載したいなどのご要望があればお問い合わせください。<br>\nお問い合わせはLINEからも承っております。<\/p>"
           }
         }
       },
@@ -75,6 +73,9 @@
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-text-1",
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-button-1",
         "7b73e65f-2f4d-40ab-871d-4af98bc238e5"
+      ],
+      "custom_css": [
+        "a.link.animate-arrow {width: 20rem;}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -97,8 +98,8 @@
     }
   },
   "order": [
+    "728b9c6b-1b52-499f-8c60-3639b28a525e",
     "f31c9a14-d75e-430a-a6b2-4afb73199ae5",
-    "main",
     "ad58b0f0-17ca-4a54-baec-0344b1615c5d",
     "form"
   ]

@@ -1,0 +1,117 @@
+<div class="home-concept">
+  <div class="rich-text__wrapper rich-text__wrapper--left">
+    <div class="rich-text__blocks left"><h2 class="rich-text__heading rte inline-richtext h1 scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+              CONCEPT
+            </h2></div>
+  </div>
+</div>
+<div class="page-width-desktop column">
+    <div class="column_img">
+        <img src="https://cdn.shopify.com/s/files/1/0666/8294/5764/files/concept.webp" alt="" class="pc">
+        <img src="https://cdn.shopify.com/s/files/1/0666/8294/5764/files/top-2.webp" alt="" class="sp">
+    </div>
+  <div class="column_text">
+        <div class="column_text_innner">
+            <div class="image-with-text__text rte body">
+                <p>当ギャラリーは、世代を超えて心を掴むような作品を数多く展示しております。<br>鑑賞者の心と共鳴する作品を見つけて頂くお手伝いと、美と感動の未知なる視点が広がる様な世界をお届け致します。</p>
+                <p>皆様が作品と深く対話することで、日々の喧騒から解き放たれて新たな日常を送るための、一つのきっかけをご提供させて頂きます。</p>
+            </div>
+            <p class="image-with-text__text image-with-text__text--caption subtitle subtitle--medium subtitle font-oswald">
+            Who we are
+            </p>
+            <div class="image-with-text__text rte body">
+                <p>私たちは作品を通じてアーティストの深い感情や思考を鑑賞者に伝えることをとても大切にしております。<br>
+                私たちが選定する作品は、色彩や形やアーティストの思いを通して、鑑賞者に素晴らしい感動、メッセージを伝えるその様な作品を取り揃えております。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "コンセプト",
+    "presets": [
+      {
+        "name": "コンセプト"
+      }
+    ]
+  }
+{% endschema %}
+
+{%- style -%}
+@media screen and (min-width: 750px) {
+.home-concept {
+    max-width:140em;
+    margin: 120px auto 0;
+}
+.sp {
+  display:none;
+}
+.home-concept h2 {
+    margin-left: 100px;
+    margin-bottom: 40px;
+}
+.column {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:120px;
+}
+.column_img img {
+    width: 100%;
+}
+.column_img {
+    width: 60%;
+}
+}
+@media screen and (max-width: 749px) {
+  .home-concept {
+    margin-top:60px;
+}
+.pc {
+  display:none;
+}
+.home-concept h2 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.column {
+  display:flex;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding:0 1.5rem;
+}
+.column_text {
+  margin-bottom:20px;
+}
+.column_img img {
+    max-width: 100%;
+    height: auto;
+}
+#insta-feed .instafeed-container, .instafeed-shopify .instafeed-container {
+  width: 50% !important;
+    padding-top: 50% !important;
+}
+}
+
+
+@media screen and (min-width: 750px) {
+  .page-width {
+    padding: 0 100px;
+  }
+  .column.page-width {
+    padding: 0 200px;
+  }
+  #shopify-section-template--16825564987620__f66571a9-533e-491c-8913-b4b28e4b19b1 .collection__title {
+    padding-left: 100px;
+  }
+}
+.subtitle {
+  font-weight: bold;
+}
+.font-oswald {
+  font-family: 'Oswald';
+}
+{%- endstyle -%}

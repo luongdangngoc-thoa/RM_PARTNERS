@@ -1,0 +1,445 @@
+<div class="page-width">
+  <div class="title_main">
+    <h2 class="product-recommendations__heading h2">{{ section.settings.heading | escape }}</h2>
+    <p>最近見た商品</p>
+  </div>
+
+  <ul class="recently-viewed grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
+    <!-- Recently viewed products will appear here -->
+
+  </ul>
+
+  <ul class="recently-viewed-max3 grid product-grid grid--3-col-desktop grid--2-col-tablet-down"></ul>
+</div>
+
+<script>
+  function setRecentlyViewedProducts() {
+  const productData = {
+    
+    productTitle: "{{ product.title }}",
+    productId: "{{ product.id}}",
+    productHash: "{{ section.id | md5}}",
+    productImg: "{{ product.featured_media | image_url: width: 533 }}",
+    imgWidth:"{{ product.featured_media.width }}",
+    imgHeight:"{{ product.featured_media.height }}",
+    productPrice: "{{ product.price | money_with_currency }}",
+    productArtist: "{{ product.metafields.custom.artist.value.name }}",
+    productUrl: "{{ product.url }}",
+    productImageAltText: "{{product.featured_media.alt | escape }}"
+  };
+  const productList = [];
+  let jsonResp, jsonRespArr, jsonRespArrStr;
+  const numberOfProducts = 4;
+  productList.push(productData);
+  const currProductPageTitle = productData.productTitle;
+  const productDataString = JSON.stringify(productList);
+  const localData = localStorage.getItem("recentlyViewedProduct");
+  
+  if (localData === null) {
+    localStorage.setItem("recentlyViewedProduct", productDataString);
+  } else if (localData) {
+    const oldProductData = localStorage.getItem("recentlyViewedProduct");
+    const countProductData = (oldProductData.match(/productTitle/g) || []).length;
+    const sameProduct = oldProductData.includes(currProductPageTitle);
+    if (countProductData < numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArrStr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArrStr);
+    } else if (countProductData >= numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonResp.shift();
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArr);
+    }
+  }
+  }
+  
+  setRecentlyViewedProducts();
+  const localViewed = localStorage.recentlyViewedProduct;
+  function getRecentlyViewedProducts() {
+  const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
+  const recentlyViewedHtml = [];
+  productData.map(item => {
+    recentlyViewedHtml.unshift(`
+    
+    <li class="grid__item">
+     <div class="card-wrapper underline-links-hover">
+      <div class="card card--standard card--media " style="--ratio-percent: 100%;">
+        <div class="card__inner color-background-2 gradient ratio" style="--ratio-percent: 100%;">
+         <div style="position:static" class="card__media">
+         <div class="media media--transparent media--hover-effect">
+         <div class="image">
+    		  <img class="motion-reduce" src="${item.productImg}" width="${item.imgWidth}" height="${item.imgHeight}"  loading="lazy" alt="${item.productImageAltText}"/>
+          </div>
+         </div>
+         </div>         
+       </div>
+       <div class="card__content">
+       <div class="card__information">
+       <h3 class="card__heading h5">
+       <a class="full-unstyled-link" href="${item.productUrl}">${item.productTitle}</a></h3>
+         <div class="card-information">
+           <div class="artist">
+             <div class="artist__container">
+              <div class="artist__title">  
+                <p>Artist</p>
+              </div>
+              <div class="artist-item">
+                   ${item.productArtist}
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       </div>
+       </div>
+       </div>
+    </li>
+   `);
+  });
+  const newProductData = `${recentlyViewedHtml.join("")}`;
+  const fullContent = document.getElementsByClassName("recently-viewed");
+  const fullContentMax3 = document.getElementsByClassName("recently-viewed-max3");
+  console.log(productData.length);
+  if (productData.length < 4) {
+        fullContentMax3[0].innerHTML = newProductData;
+        fullContent[0].style.display = "none" ; 
+  }else {
+      fullContent[0].innerHTML = newProductData;
+  }
+  //   fullContent[0].innerHTML = newProductData;
+  }
+  
+  document.addEventListener("DOMContentLoaded", function (event) {
+  getRecentlyViewedProducts();
+  });
+</script>
+
+<div class="recently slider-buttons no-js-hidden">
+  <button
+    type="button"
+    class="slider-button slider-button--previous"
+    name="previous"
+    aria-label="{{ 'general.slider.previous_slide' | t }}"
+    aria-controls="Slider-{{ section.id }}">
+    {% render 'icon-pre-btn' %}
+  </button>
+  <button
+    type="button"
+    class="slider-button slider-button--nexts"
+    name="next"
+    aria-label="{{ 'general.slider.next_slide' | t }}"
+    aria-controls="Slider-{{ section.id }}">
+    {% render 'icon-next-btn' %}
+  </button>
+</div>
+
+
+<div class="recently-viewed-products">
+  {% for product in window.recentlyViewedProducts %}
+    <div class="prime-review-favorites-product">
+      {% render 'mxpr-card-product-favorite'
+        , product: product %}
+    </div>
+  {% endfor %}
+</div></div>
+<script>
+  const heartIcon = document.querySelector('.prime-review-favorites-heart-${item.productId}');
+
+// Add a click event listener to the heart icon element
+heartIcon.addEventListener('click', function() {
+  // If the heart icon is disabled, enable it.
+  if (this.classList.contains('prime-review-favorites-heart-${item.productId}-disable')) {
+    this.classList.remove('prime-review-favorites-heart-${item.productId}-disable');
+    this.classList.add('prime-review-favorites-heart-${item.productId}-enable');
+  } else {
+    // If the heart icon is enabled, disable it.
+    this.classList.remove('prime-review-favorites-heart-${item.productId}-enable');
+    this.classList.add('prime-review-favorites-heart-${item.productId}-disable');
+  }
+});
+
+</script><script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'slide.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+  {
+    "name": "Recent Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Recently Viewed",
+        "label": "Title"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+
+  .page-width .card-wrapper {
+    margin: 0 30px !important;
+    color: inherit;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .title_main {
+    margin-left: -5.2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .title_main p {
+    color: var(--primary, #333);
+    text-align: justify;
+    /* font-size-base */
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24 / 16);
+    /* 150% */
+    letter-spacing: 0.8;
+  }
+  .card.card--standard.card--media {
+    width: 273px;
+    border: 1px solid #333;
+    margin: 1px;
+    height: 317.4px;
+  }
+  .card__media .media img {
+    height: 235px;
+    width: 235px;
+    object-fit: fill !important;
+    object-position: center center;
+    /* width: 100%; */
+  }
+
+  .product-recommendations__heading.h2 {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-left: 0rem
+  }
+  .recently-viewed.grid.product-grid.grid--4-col-desktop.grid--2-col-tablet-down.slick-initialized.slick-slider.slick-dotted {
+    max-width: 1120px;
+    padding: 45px 43px 170px !important;
+    margin: 0 auto !important;
+  }
+  .card__media .image {
+    overflow: hidden;
+    /* position: relative; */
+    /* top: -17px; */
+    /* left: -52px; */
+    position: fixed;
+    top: -20px;
+    left: -17px;
+  }
+
+  .icon-heart {
+    width: 100%;
+    left: 227px;
+    top: 34px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .recently-viewed .slick-list.draggable .slick-track {
+    display: flex !important;
+    gap: 135px !important;
+    opacity: 1 !important;
+    width: 986px !important;
+    order: -1 !important;
+    transform: translate3d(-163px, 1px, 0px);
+    padding-top: 20px;
+
+  }
+
+  .recently-viewed .slick-dots {
+    position: absolute;
+    bottom: 124px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .card__information {
+    padding: 0 0 20px !important;
+    width: 90%;
+    margin-left: 2.2rem;
+    line-height: 1.5;
+    margin-top: 0.8em;
+    overflow: hidden;
+
+  }
+  ..card__information .card__heading.h5 {
+    margin-left: 2.2rem;
+  }
+  .card__information .card__heading.h5 a {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .artist .artist-item {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.55px;
+  }
+  .artist__container {
+    display: flex;
+    gap: 25px;
+  }
+  .artist__title p {
+    margin: 0;
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.5px;
+  }
+
+
+  /*
+
+   .card.card--standard.card--media .card__content { 
+   position: relative !important; 
+   top: -67 !important; 
+   } 
+*/
+  .card__media {
+    margin-left: -20px !important;
+  }
+  .card__media,
+  .card .media {
+    bottom: 44px !important;
+    position: absolute;
+  }
+  .card__content {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
+    padding: 1rem;
+    width: 100%;
+    flex-grow: 1;
+    position: relative !important;
+    top: -50px !important;
+  }
+  .media.media--transparent.media--hover-effect {
+    margin-top: -20px;
+  }
+  .recently.slider-buttons {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1280px;
+    justify-content: space-between;
+    top: -355px;
+  }
+  .image:hover {
+    opacity: 1;
+    transition: transform var(--duration-long) ease;
+    transform: scale(1.03);
+  }
+
+  @media screen and (max-width: 756px) {
+    .recently-viewed.grid.product-grid.grid--4-col-desktop.grid--2-col-tablet-down.slick-initialized.slick-slider.slick-dotted {
+      padding: 0 10px 40px !important;
+    }
+    .page-width .card-wrapper {
+      margin: 0 !important;
+    }
+    .recently-viewed .slick-list.draggable .slick-track {
+      gap: 0 !important;
+    }
+    .card.card--standard.card--media {
+      width: 16.4rem;
+      height: 22.3rem;
+    }
+    .card__media .media img {
+      height: 13rem;
+      width: 13rem;
+    }
+    .icon-heart {
+      left: 12.5rem;
+      top: 2.2rem;
+    }
+    .grid__item.slick-slide {
+      width: 18.7rem !important;
+    }
+    .card__media .image {
+      top: 4px !important;
+      left: 6px !important;
+    }
+    .product-recommendations__heading.h2 {
+      font-size: 2rem;
+      padding-left: 0rem;
+    }
+    .card__information {
+      margin-left: 1.5rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .card-information {
+      margin-left: 1.6rem;
+    }
+    .card__heading.h5 a {
+      margin-left: 1.5rem !important;
+    }
+    .recently.slider-buttons {
+      top: -18rem !important;
+    }
+    .recently-viewed-max3 .grid__item:nth-child(1){
+      max-width: 100%;
+    margin: 0px 30px 0 -87px;
+    }
+    .recently-viewed .slick-dots {
+    bottom: 5px;
+}
+.title_main {
+    margin-left: 0.9rem;
+  }
+  }
+
+  .recently-viewed-max3 {
+    display: flex;
+    margin-left: 1.6rem;
+    margin-right: 0;
+    padding: 80px;
+  }
+
+  .recently-viewed-max3 li {
+    list-style: none;
+
+  }
+  @media screen and (max-width:749px){
+    .sakusha-list {
+      gap: 2em 1em !important;
+      padding-top:1em;
+    }
+    }
+</style>

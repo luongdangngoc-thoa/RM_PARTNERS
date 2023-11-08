@@ -1,0 +1,307 @@
+<section
+  id="shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c"
+  class="shopify-section section"
+>
+  <link
+    href="//rm-partners.myshopify.com/cdn/shop/t/3/assets/section-multicolumn.css?v=106919951641042016721698154386"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  >
+  <div class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="artist-list-wrapper page-width-desktop page-width-tablet page-width-sp">
+      <ul class="artist-list" id="artist-list">
+          {% capture featureArtists %}{% for product in collections['features'].products %}{% if product.metafields.custom.artist.value.name != blank %}{{ product.metafields.custom.artist.value.name | strip }}-{% endif %}{%- endfor -%}{%- endcapture -%}
+          {%- assign feature_artist_array = featureArtists | strip | split: '-' | uniq -%}
+          {%- for artist in shop.metaobjects.artist.values -%}
+            {% for feature_artist in feature_artist_array limit: 4 %}
+              {% assign filterName = feature_artist | strip %}
+              {% assign artistName = artist.name | strip %}
+              {% if filterName != '' and artistName == filterName %}
+                <li class="artist">
+                <div class="artist-name-group">
+                  <p class="artist-name" id="artist-name">
+                    {{ artist.name }}
+                  </p>
+                  <p class="artist-name artist-name-romaji">
+                    {{ artist.name_romaji }}
+                  </p>
+                </div>
+
+                {%- for prod in artist.product.value limit: 3 -%}
+                  <p class="artist-desc">
+                    {{- prod.title -}}
+                  </p>
+                  <p class="artist-desc-romaji">
+                    {{ prod.metafields.custom.product_name_romaji }}
+                  </p>
+                {%- endfor -%}
+                <a href="{{ page.url }}/pages/artists/{{artist.name_romaji | downcase | replace: ' ', '-'}}"
+                  class="artist-link"
+                >
+                  <span>VIEW MORE</span>
+                  {% render 'icon-arrow' %}
+                </a>
+              </li>
+              {% endif %}
+            {%- endfor -%}
+          {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  <div class="center">
+    <a class="link animate-arrow botton" href="/pages/artists">
+      ALL ARTISTS
+      <span class="icon-wrap"
+        >&nbsp;
+        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="6" viewBox="0 0 31 6" fill="none">
+          <path d="M0 5H29L24.4211 1" stroke="#333333"></path>
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "注目アーティスト",
+  "presets": [
+    {
+      "name": "注目アーティスト"
+    }
+  ]
+}
+{% endschema %}
+
+{%- style -%}
+  .artist-list-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .artist {
+    border-top: 1px solid #333;
+    list-style-type: none;
+    width: 100%;
+  }
+  .artist-name-group {
+    border-bottom: 1px solid #333;
+  }
+  .artist-name {
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    margin: 1.2rem 0;
+  }
+  p.artist-desc, .artist-desc-romaji {
+    padding-left: 1em;
+}
+  p.artist-desc-romaji {
+    padding-left:1.3em;
+  }
+  .artist-name-romaji {
+    margin-top: unset;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Oswald;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(18 / 12);
+    letter-spacing: 0.6px;
+  }
+  .artist-desc-romaji {
+    margin-top: unset;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Oswald;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(18 / 12);
+    letter-spacing: 0.6px;
+  }
+  .artist-desc {
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Noto Serif JP;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24 / 14);
+    letter-spacing: 0.7px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* style for view more button*/
+  .artist-view-more {
+    margin-top: 7.6rem;
+    text-align: center;
+  }
+
+  .artist-view-more span {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 1.6 rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    padding: 1.6rem 2rem;
+    border: 1px solid var(--primary, #333);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .artist-view-more span:hover {
+    color: #fff;
+    background-color: var(--primary, #333);
+  }
+
+  /* style for view more button end*/
+
+  .artist-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .artist-link {
+    text-decoration: none;
+    color: var(--primary, #333);
+    color: rgb(var(--color-foreground));
+    font-family: Oswald;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+    font-weight:300;
+  }
+
+  .artist-button {
+    margin-top: 7.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .artist-button .artist-link {
+    min-width: 24rem;
+    height: 3.3rem;
+    font-family: Noto Serif JP;
+  }
+  @media screen and (max-width: 749px) {
+    .artist-list-wrapper {
+      margin-top: 6rem;
+      margin-bottom: 3rem;
+    }
+    .artist {
+      max-width: 100%;
+    }
+    .artist-list {
+      flex-wrap: wrap;
+    }
+    .artist-list {
+    display: flex;
+    gap: 4rem 2rem;
+    justify-content:flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .center {
+    margin-bottom:3rem;
+  }
+  }
+
+  @media screen and (max-width: 600px) {
+    .artist {
+      width: 46%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    #searchInput {
+      width: 100%;
+    }
+  }
+  .section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-padding {
+    padding-top: 30px;
+    padding-bottom: 75px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c-padding {
+      padding-top: 40px;
+      padding-bottom: 100px;
+    }
+    .artist-list-wrapper {
+      margin-top: 2.6rem;
+      /* padding: 0 200px;
+      max-width: none; */
+    }
+    .artist-list {
+    display: flex;
+    gap: 4rem 2rem;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c .center {
+    margin-top: 60px;
+  }
+  }
+
+  a.link.animate-arrow.botton {
+    text-decoration: none;
+    width: 200px;
+    margin: auto;
+    font-weight:300;
+  }
+  .multicolumn-card__info iframe {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c h3.inline-richtext span {
+    margin-top: 0.4rem;
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c span {
+    font-family: var(--font-heading-family);
+    display: block;
+    font-size: 0.9em;
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c p {
+    margin-bottom: 0.4rem;
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c a.link.animate-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    line-height: 3;
+    font-family: var(--font-heading-family);
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c .multicolumn-card__info {
+    padding: 0;
+  }
+  #shopify-section-template--16825564987620__852f4b23-ff53-4fbe-8a60-0cb0f1f69f5c h3.inline-richtext {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 1rem 0;
+    font-family: var(--font-body-family);
+    font-size: 1em;
+  }
+{%- endstyle -%}

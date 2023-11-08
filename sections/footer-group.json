@@ -4,12 +4,48 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "4f5e2cbe-2794-47c2-b4bc-a78845a18cca": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "9549bacf-e776-49c5-af54-47a3a623c8df": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "4f5e2cbe-2794-47c2-b4bc-a78845a18cca",
+        "9549bacf-e776-49c5-af54-47a3a623c8df"
+      ],
+      "custom_css": [
+        "footer {background: #333;}"
+      ],
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "inverse",
+        "custom_hashtag_collection_list": [
+          "features",
+          "first",
+          "new",
+          "pick-up",
+          "popular"
+        ],
+        "custom_price_collection_list": [
+          "under-500000-yen",
+          "under-1000000-yen",
+          "under-1500000-yen",
+          "under-1999999-yen",
+          "over-2000000-yen"
+        ],
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,

@@ -1,0 +1,89 @@
+<div id="guide-delivery" class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="guide-delivery-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="guide-delivery-title">
+      納期について</h2>
+    <div class="guide-delivery-list">
+      {%- for block in section.blocks -%}
+        <p class="guide-delivery-txt">
+          {{ block.settings.delivery-des }}</p>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  #guide-delivery {
+    padding-top: 8rem;
+  }
+  .guide-delivery-title {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30 / 20);
+    letter-spacing: 1px;
+  }
+
+  .guide-delivery-txt {
+    margin: 0;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.8px;
+  }
+
+
+  @media screen and (max-width: 749px) {
+    .guide-delivery-txt {
+      font-size: 1.4rem;
+      line-height: calc(24 / 14);
+      letter-spacing: 0.7px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Guide delivery",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "delivery-des",
+            "default": "作品の在庫状況やご注文数量によって納期は異なります。",
+            "label": "About delivery"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Guide delivery",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

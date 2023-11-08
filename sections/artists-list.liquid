@@ -1,30 +1,39 @@
-<div class=" section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+<div class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
 
-  <div class="artist-wrapper page-width">
-    {% paginate shop.metaobjects.artist.values by 8 %}
-      <div class="artist-list">
+  <div class="artist-list-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <input
+      class="custom-search"
+      type="text"
+      id="searchInput"
+      placeholder="アーティスト名で検索"
+      title="Type in a name">
+
+    <div class="artist-list-block">
+      <ul class="artist-list" id="artist-list">
         {% for artist in shop.metaobjects.artist.values %}
-          <div class="artist">
+          <li class="artist">
             <div class="artist-name-group">
-              <p class="artist-name">
+              <p class="artist-name" id="artist-name">
                 {{ artist.name.value }}</p>
               <p class="artist-name artist-name-romaji">
                 {{ artist.name_romaji.value }}</p>
             </div>
             <p class="artist-desc">
               {{ artist.description.value }}</p>
-            <a class="artist-link" href="{{ page.url }}/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">
+            <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">
               <span>
                 VIEW MORE
               </span>
               {% render 'icon-arrow' %}</a>
-          </div>
+          </li>
         {% endfor %}
-      </div>
-      <div class="page-pagination">
-        {{ paginate | default_pagination }}
-      </div>
-    {% endpaginate %}
+      </ul>
+    </div>
+    <div class="artist-view-more" id="view-more">
+      <span class="">
+        VIEW MORE
+      </span>
+    </div>
     <div class="artist-button">
       <a class="artist-link" href="{{section.settings.button_link}}">
         {{ section.settings.button_lable }} {% render 'icon-arrow' %}</a>
@@ -32,37 +41,150 @@
   </div>
 </div>
 
-{% style %}
-  .artist-wrapper {
-    margin-top: 14rem;
+<script>
+  // Get list
+  const listElement = document.querySelectorAll('.artist');
+  const buttonLoadMoreElement = document.getElementById('view-more');
+  let defaultDisplay = 12;
+
+  function renderData(count) {
+    for (let i = 0; i <= listElement.length; i++) {
+      if (i > count - 1 && listElement[i]) {
+        listElement[i].style.display = 'none';
+      } else if (listElement[i]) {
+        listElement[i].style.display = 'inline-block';
+      }
+    }
   }
 
+  renderData(defaultDisplay);
+
+// Button load more
+
+  if (defaultDisplay >= listElement.length) {
+    buttonLoadMoreElement.style.display = 'none';
+  }
+  buttonLoadMoreElement.addEventListener('click', () => {
+    renderData(defaultDisplay += 12);
+    if (defaultDisplay >= listElement.length) {
+      buttonLoadMoreElement.style.display = "none";
+    }
+    return;
+  })
+
+
+
+// Handle search
+// Get value input
+  const inputElement = document.getElementById('searchInput')
+  inputElement.addEventListener('input', (e) => {
+    const inputValue = e
+      .target
+      .value
+      .trim()
+      .toUpperCase();
+
+
+    for (let i = 0; i <= listElement.length; i++) {
+      if (listElement[i]) { // Get target value
+        const el = listElement[i]
+        const artistName = el.getElementsByTagName('p')[0].innerText.trim();
+        displayElementCount = 0
+        if (artistName.toUpperCase().indexOf(inputValue) > -1) {
+          el.style.display = 'inline-block';
+          displayElementCount += 1;
+          if (displayElementCount <= 12) {
+            buttonLoadMoreElement.style.display = "none";
+          }
+        } else {
+          el.style.display = 'none';
+        }
+      }
+    }
+  })
+</script>
+
+
+<style>
+  /* remove defaul setting*/
+  input:focus {
+    outline-offset: 0 !important;
+  }
+
+  #searchInput:focus {
+    box-shadow: unset !important;
+    outline: unset !important;
+    border-radius: unset !important;
+  }
+
+  #searchInput:focus-visible {
+    box-shadow: unset !important;
+    outline: unset !important;
+    outline-offset: unset !important;
+    border-radius: unset !important;
+  }
+  /* remove defaul setting end*/
+  #searchInput {
+    background-image: url('{{ ' icon-search.svg' | asset_url }}');
+    background-position-x: calc(100% - 1rem);
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 39rem;
+    font-size: 1.6rem;
+    font-family: Noto Serif JP;
+    padding: 16px 20px 12px;
+    border: none;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 6rem;
+  }
+
+  #searchInput::placeholder {
+    color: rgb(var(--color-foreground));
+    opacity: 1;
+    font-weight: 300;
+  }
+  .artist-list-wrapper {
+    margin-top: 9.6rem;
+    margin-bottom: 12rem;
+  }
+
+  .artist-list-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
   .artist-list {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
     gap: 4rem 3rem;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-
   .artist {
     border-top: 1px solid #333;
+    list-style-type: none;
+    max-width: 24rem;
   }
-
   .artist-name-group {
     border-bottom: 1px solid #333;
   }
-
   .artist-name {
     color: var(--primary, #333);
     color: rgb(var(--color-foreground));
     font-family: Noto Serif JP;
     font-size: 1.6rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: calc(24 / 16);
     letter-spacing: 0.8px;
     margin: 1.2rem 0;
   }
-
   .artist-name-romaji {
     margin-top: unset;
     color: var(--primary, #333);
@@ -70,11 +192,10 @@
     font-family: Oswald;
     font-size: 1.2rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: calc(18 / 12);
     letter-spacing: 0.6px;
   }
-
   .artist-desc {
     color: var(--primary, #333);
     color: rgb(var(--color-foreground));
@@ -89,6 +210,32 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* style for view more button*/
+  .artist-view-more {
+    margin-top: 7.6rem;
+    text-align: center;
+  }
+
+  .artist-view-more span {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 1.6 rem;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    padding: 1.6rem 2rem;
+    border: 1px solid var(--primary, #333);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .artist-view-more span:hover {
+    color: #fff;
+    background-color: var(--primary, #333);
+  }
+
+  /* style for view more button end*/
 
   .artist-link {
     display: flex;
@@ -108,93 +255,61 @@
     text-transform: uppercase;
     padding-bottom: 0.8rem;
     border-bottom: 1px solid #333;
+    font-weight:300;
   }
 
   .artist-button {
-    margin-top: 6rem;
+    margin-top: 7.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
-  .page-pagination {
-    margin-top: 6rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-  }
-
-  .page-pagination .page {
-    color: var(--primary, #333);
-    color: rgb(var(--color-foreground));
-    font-family: Oswald;
-    font-size: 1.6rem;
-    font-weight: 400;
-    padding: 0.8rem 0.3rem 0.3rem;
-    line-height: 1 !important;
-  }
-
-  .page-pagination .page a {
-    text-decoration: none;
-    color: var(--primary, #333);
-    color: rgb(var(--color-foreground));
-    font-family: Oswald;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1 !important;
-  }
-
-  .page-pagination .page.current {
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-  }
-
-  .page-pagination .next,
-  .page-pagination .prev {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .page-pagination .prev a,
-  .page-pagination .next a {
-    display: block;
-    text-indent: -9999px;
-    width: 50px;
-    height: 37px;
-  }
-
-  .page-pagination .next::after,
-  .page-pagination .prev::after {
-    content: "";
-    display: block;
-    background-image: url('{{ 'icon-arrow.svg' | asset_url }}');
-    background-repeat: no-repeat;
-    width: 50px;
-    height: 10px;
-    float: left;
-    position: absolute;
-    z-index: -100;
-  }
-
-  .page-pagination .prev a:hover,
-  .page-pagination .next a:hover,
-  .page-pagination .page a:hover {
-    opacity: 0.7;
-  }
-
-  .page-pagination .prev::after {
-    transform: rotate(180deg);
-  }
-
   .artist-button .artist-link {
     min-width: 24rem;
     height: 3.3rem;
     font-family: Noto Serif JP;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .artist-list {
+      grid-template-columns: 30.5% 30.5% 30.5%;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .artist-list-wrapper {
+      margin-top: 6rem;
+      margin-bottom: 10rem;
+    }
+    .artist-list {
+      grid-template-columns: 46% 46%;
+    }
+    .artist {
+      max-width: 100%;
+    }
 
   }
-{% endstyle %}
+
+  @media screen and (max-width: 600px) {
+    .artist-list {
+      grid-template-columns: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .artist {
+      max-width: 36rem;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    #searchInput {
+      width: 100%;
+    }
+  }
+</style>
+
 {% schema %}
   {
     "name": "Artists",

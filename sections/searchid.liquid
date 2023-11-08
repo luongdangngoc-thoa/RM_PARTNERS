@@ -1,0 +1,68 @@
+<section id="search" class="shopify-section section">
+    <link href="//rm-partners.myshopify.com/cdn/shop/t/3/assets/section-rich-text.css?v=100451089136329342071698241117" rel="stylesheet" type="text/css" media="all">
+<div class="isolate">
+  <div class="rich-text content-container color-background-1 gradient rich-text--full-width content-container--full-width">
+    <div class="rich-text__wrapper rich-text__wrapper--left page-width">
+      <div class="rich-text__blocks left">
+        <h2 class="rich-text__heading rte inline-richtext h1 scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+                SEARCH
+              </h2>
+              <p class="rich-text__caption caption-with-letter-spacing caption-with-letter-spacing--medium scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+                お好みの商品を探す
+              </p>
+            </div>
+    </div>
+  </div>
+</div>
+</section>
+
+{% schema %}
+{
+ "name": "検索する",
+  "presets": [
+    {
+      "name": "検索する"
+    }
+  ]
+}
+{% endschema %}
+
+{%- style -%}
+#search .rich-text__blocks {display: flex; align-items: center; gap: 2rem;}
+#search .rich-text__caption {margin: 0;}
+#search {
+    display: block;
+   margin-top:-100px;
+   padding-top:100px;
+}
+#search .rich-text {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    
+  }
+@media screen and (min-width: 750px) {
+    .section-template--16825564987620__54e51075-478b-4d8c-a058-7561aac36f1e-padding {
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+  a.link.animate-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    line-height: 3;
+    text-decoration: none;
+    width: 200px;
+    margin: auto;
+    font-family:"Noto Serif JP", serif;
+  }
+  p.rich-text__caption.caption-with-letter-spacing.caption-with-letter-spacing--medium.scroll-trigger.animate--slide-in {
+    margin: 0;
+}
+  @media screen and (max-width: 750px) {
+    a.link.animate-arrow{
+      width:170px;
+    }
+  }
+{%- endstyle -%}

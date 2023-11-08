@@ -1,0 +1,114 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "suggestion-top": {
+      "type": "suggestion-top",
+      "settings": {
+        "btn-url": "http:\/\/lin.ee\/OFdk49W"
+      }
+    },
+    "suggestion-qa": {
+      "type": "suggestion-qa",
+      "blocks": {
+        "11b6d4e2-f05d-472d-9348-3170c81b9852": {
+          "type": "Block",
+          "settings": {
+            "suggestion-qa-img": "shopify:\/\/shop_images\/avatar1.svg",
+            "suggestion-qa-text": "アート初心者の心得を教えて欲しい!!\n何を基準にアートを購入すれば良いの？？"
+          }
+        },
+        "003cd202-6eed-4754-b2a1-152a4dfeabde": {
+          "type": "Block",
+          "settings": {
+            "suggestion-qa-img": "shopify:\/\/shop_images\/avatar2.svg",
+            "suggestion-qa-text": "フレームの選び方とかあるの？？\n失敗しないフレームの選び方を教えて欲しい!!"
+          }
+        },
+        "3fe60b58-764f-4be2-be0a-8b62513f3cb6": {
+          "type": "Block",
+          "settings": {
+            "suggestion-qa-img": "shopify:\/\/shop_images\/avatar3.svg",
+            "suggestion-qa-text": "どこで購入するとより良い商品にたどり着けるの？？"
+          }
+        },
+        "46b2e427-3513-4b9f-8033-a4c54b07d170": {
+          "type": "Block",
+          "settings": {
+            "suggestion-qa-img": "shopify:\/\/shop_images\/avatar4.svg",
+            "suggestion-qa-text": "自分の部屋に似合う絵画ってどれ？？\n部屋の写真を送るから提案して欲しい!!"
+          }
+        }
+      },
+      "block_order": [
+        "11b6d4e2-f05d-472d-9348-3170c81b9852",
+        "003cd202-6eed-4754-b2a1-152a4dfeabde",
+        "3fe60b58-764f-4be2-be0a-8b62513f3cb6",
+        "46b2e427-3513-4b9f-8033-a4c54b07d170"
+      ],
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "suggestion-unpublished-product": {
+      "type": "suggestion-unpublished-product",
+      "settings": {
+        "section_heading": "非公開作品についても多数ご案内しております",
+        "section_desc": "都合上、当サイトに載せられなかった作品が存在するため <br>\n「あまりお気に入りがなかった...」<br>\n「もっと作品を見たい!!」<br>\nと思った方は公式LINEよりメッセージをくださった方限定で非公開作品もご案内致します。",
+        "btn-url": "http:\/\/lin.ee\/OFdk49W"
+      }
+    },
+    "suggestion-line-contact": {
+      "type": "suggestion-line-contact",
+      "blocks": {
+        "9abeee1a-6e19-47fd-9a5a-7d0abb687821": {
+          "type": "Block",
+          "settings": {
+            "bl-img": "shopify:\/\/shop_images\/line-contact-img1.svg",
+            "bl-title": "NEW ART",
+            "bl-text": "新着絵画を知りたい"
+          }
+        },
+        "897514c9-94ce-4529-877a-e7b67ab35f5d": {
+          "type": "Block",
+          "settings": {
+            "bl-img": "shopify:\/\/shop_images\/line-contact-img2.svg",
+            "bl-title": "REQUEST",
+            "bl-text": "作品リクエスト <br>\n（こんな作品がほしいなど）"
+          }
+        },
+        "d8f84822-c292-4e37-8236-9da6ff649a41": {
+          "type": "Block",
+          "settings": {
+            "bl-img": "shopify:\/\/shop_images\/line-contact-img3.svg",
+            "bl-title": "INTERVIEW",
+            "bl-text": "取材をしたい"
+          }
+        }
+      },
+      "block_order": [
+        "9abeee1a-6e19-47fd-9a5a-7d0abb687821",
+        "897514c9-94ce-4529-877a-e7b67ab35f5d",
+        "d8f84822-c292-4e37-8236-9da6ff649a41"
+      ],
+      "settings": {
+        "section_color_scheme": "",
+        "line-contact-img": "shopify:\/\/shop_images\/line-contact.webp",
+        "btn-line-url": "http:\/\/lin.ee\/OFdk49W",
+        "btn-detail-url": "",
+        "btn-line-url2": "http:\/\/lin.ee\/OFdk49W"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "suggestion-top",
+    "suggestion-qa",
+    "suggestion-unpublished-product",
+    "suggestion-line-contact"
+  ]
+}

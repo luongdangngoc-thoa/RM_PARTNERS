@@ -1,0 +1,87 @@
+<div id="guide-soldout" class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="guide-soldOut-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="guide-soldOut-title">
+      売り切れ作品について</h2>
+    <div class="guide-soldOut-des-wrapper">
+      <p class="guide-soldOut-txt">
+        {{ section.settings.guide-soldOut-des }}</p>
+      <a class="guide-soldOut-txt" href="{{ section.settings.btn-url }}">公式ラインに登録する>></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  #guide-soldout {
+    padding-top: 8rem;
+    margin-bottom: 12rem;
+  }
+
+  .guide-soldOut-title {
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30 / 20);
+    letter-spacing: 1px;
+  }
+
+  .guide-soldOut-list {
+    margin-left: 3.5rem;
+  }
+
+
+  .guide-soldOut-txt {
+    margin: 0;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  a.guide-soldOut-txt:hover {
+    opacity: 0.7;
+  }
+
+
+  @media screen and (max-width: 749px) {
+    .guide-soldOut-txt {
+      font-size: 1.4rem;
+      line-height: calc(24 / 14);
+      letter-spacing: 0.7px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Guide soldout",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      }, {
+        "type": "textarea",
+        "id": "guide-soldOut-des",
+        "default": "ご希望の商品が売り切れしまっている場合は公式LINEをご登録の上、ご希望の商品をメッセージにてお伝え下さい。",
+        "label": "About sold out product"
+      }, {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Button url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Guide soldout"
+      }
+    ]
+  }
+{% endschema %}

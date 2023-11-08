@@ -1,0 +1,84 @@
+<slider-component class="modal-search-block slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
+  <div class="sakusha-heading-group">
+    <h2 class="sakusha-heading heading-en">
+      ARTIST
+    </h2>
+    <h2 class="sakusha-heading heading-jp">
+      画家から選ぶ
+    </h2>
+  </div>
+  <ul class="sakusha-list">
+    {% for artist in shop.metaobjects.artist.values %}
+      <li>
+        <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">{{ artist.name.value }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</slider-component>
+
+
+{%- style -%}
+
+  .sakusha-heading-group {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .sakusha-heading-group .sakusha-heading.heading-en {
+    color: #fff;
+    font-family: Oswald;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .sakusha-heading-group .sakusha-heading.heading-jp {
+    color: #fff;
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+  }
+  .sakusha-list {
+    list-style: none;
+    display: flex;
+    gap: 2em 1em;
+    flex-wrap: wrap;
+  }
+
+  .modal-search-block .sakusha-list li {
+    color: #fff;
+  }
+  @media screen and (max-width: 750px) {
+    .sakusha-list {
+      list-style: none;
+    display: flex;
+    gap: 2em 1em;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    height: 9em;
+    flex-direction: column;
+    padding-top:1em;
+    }
+  }
+  .sakusha-list li a {
+    padding: 1rem 2rem;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .modal-search-block .sakusha-list a {
+    line-height: 1.5;
+    font-family: var(--font-body-family);
+    text-decoration: none;
+    color: #fff;
+  }
+  .modal-search-block .sakusha-list a:hover {
+    color: #7B7B7B;
+    background: #fff;
+  }
+{%- endstyle -%}

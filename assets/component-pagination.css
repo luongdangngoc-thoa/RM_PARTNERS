@@ -33,6 +33,11 @@
   width: 100%;
   padding: 0;
   text-decoration: none;
+  font-family: 'Oswald';
+}
+
+.pagination__item--next svg {
+  transform: scale(-1,1);
 }
 
 a.pagination__item:hover::after {
@@ -59,6 +64,18 @@ a.pagination__item:hover::after {
   background-color: currentColor;
 }
 
+.pagination__item--current::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: currentColor;
+  height: 1px;
+}
+
 .pagination__item--next .icon {
   margin-left: -0.2rem;
   transform: rotate(90deg);
@@ -80,3 +97,4 @@ a.pagination__item:hover::after {
 .pagination__item-arrow:hover::after {
   display: none;
 }
+

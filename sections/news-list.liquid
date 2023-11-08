@@ -8,10 +8,12 @@
               <a href="{{ article.url }}">
                 <div class="news-list-info">
                   {% if section.settings.news_list_date %}
-                    <span class="news-list-date">{{ article.published_at | date: "%Y &frasl; %m &frasl; %d" }}</span>
+                    <span class="news-list-date">{{ article.published_at | date: "%Y . %m . %d" }}</span>
                   {% endif %}
                   {% if section.settings.news_list_category %}
+                    <span class="news-list-category">&frasl;</span>
                     <span class="news-list-category">{{ article.tags }}</span>
+                    <span class="news-list-category">&frasl;</span>
                   {% endif %}
                 </div>
                 <div class="news-list-title">{{ article.title }}</div>
@@ -77,10 +79,23 @@
   }
   #section-news-list .news-list {
     margin: 0;
-    border-top: 1.5px solid #333;
-    border-bottom: 1.5px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
     list-style: none;
     font-family: 'Oswald';
+}
+@media screen and (max-width: 749px) {
+  #section-news-list .news-list {
+    padding-left:5px;
+  }
+}
+@media screen and (min-width:750px) {
+  #section-news-list .news-list {
+    padding:0 100px;
+  }
+  #section-news-list .news-list-item>a {
+    padding-left:0px !important;
+  }
 }
   #section-news-list .news-list-item{
     border-bottom: 1px solid #ccc;
@@ -119,7 +134,7 @@
   }
   @media screen and (max-width: 768px){
     #section-news-list .container{
-      padding: 35px 20px;
+      padding: 0px;
     }
     #section-news-list .news-list-item>a{
       display: block;

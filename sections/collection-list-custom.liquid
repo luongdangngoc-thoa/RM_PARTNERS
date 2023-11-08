@@ -1,5 +1,20 @@
 <slider-component class="slider-mobile-gutter page-width-desktop scroll-trigger animate--slide-in">
     <div class="tagsWrap">
+      <div
+        class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h2>
+        {%- else -%}
+          <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
+        {% endif %}
+        {%- if section.settings.caption != blank -%}
+          <p class="caption-with-letter-spacing">
+            {{ section.settings.caption | escape }}
+          </p>
+        {% endif %}
+      </div>
 <ul class="search_tags">
     {% for collection in section.settings.custom_collection_list %}
         <li class="search_tagItem">
@@ -16,6 +31,17 @@
   {
     "name": "コレクションタグ",
     "settings": [
+      {
+        "type": "text",
+        "id": "caption",
+        "label": "キャプション"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "label": "見出し",
+        "default": "Collapsible content"
+      },  
       {
         "type": "collection_list",
         "label": "カスタムコレクションリスト",
@@ -39,3 +65,59 @@
   }
   {% endschema %}
   
+  {%- style -%}
+.search_tags {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    padding:1rem 3.5rem;
+}
+
+@media screen and (min-width: 751px) {
+  .page-width.rich-text__wrapper {
+    padding:0 100px;
+    max-width:140em;
+
+  }
+  #shopify-section-template--16825565020388__5daf4363-2028-410e-a13c-d4aa33eccba9 ul.sakusha-list {
+  list-style: none;
+  display: flex;
+  gap: 2em 1em;
+  flex-wrap: wrap;
+}
+}
+@media screen and (max-width: 750px) {
+  .search_tags{
+    overflow-x:scroll;
+  }
+}
+.search_tags li a {
+    padding: 1rem 2rem;
+    border: 1px solid;
+    white-space: nowrap;
+}
+.search_tags li a:hover {
+  background:#fff;
+}
+.search_tags a {
+    line-height: 1.5;
+    font-family: Oswald, serif;
+    text-decoration: none;
+    color: currentColor;
+    font-weight:300;
+}
+.collapsible-content__header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.collapsible-content__header h2 {
+    margin: 0;
+}
+.collapsible-content__header p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+{%- endstyle -%}

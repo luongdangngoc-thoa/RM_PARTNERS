@@ -21,7 +21,12 @@
     text-decoration: none;
     width: 200px;
     margin: auto;
-    font-family:"Noto Serif", serif;
+    font-family:"Noto Serif JP", serif;
+  }
+  @media screen and (max-width: 750px) {
+    a.link.animate-arrow{
+      width:170px;
+    }
   }
 {%- endstyle -%}
 
@@ -81,7 +86,7 @@
                       href="{{ block.settings.button_link }}"
                     {% endif %}
                     class="link animate-arrow"
-                  >
+                   target="_blank">
                     {{- block.settings.button_label | escape -}}
                     <span class="icon-wrap">{% render 'icon-arrow' %}</span>
                   </a>

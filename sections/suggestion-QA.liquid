@@ -1,0 +1,234 @@
+<div class="section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="suggestion-qa-wrapper page-width-desktop page-width-tablet page-width-sp">
+    <h2 class="suggestion-qa-title">
+      <strong>▽</strong>
+      <span>
+        下記のような疑問に対して様々な視点からご提案致します
+      </span>
+      <strong>▽</strong>
+    </h2>
+    <div class="suggestion-qa-list">
+      {%- for block in section.blocks -%}
+        <div class="suggestion-qa">
+          <div class="suggestion-qa-img">
+            {%- if block.settings.suggestion-qa-img -%}
+              {{ block.settings.suggestion-qa-img | image_url: width: 100 | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+          </div>
+          <div class="suggestion-qa-txt">
+            <p>
+              {%- if block.settings.suggestion-qa-text -%}
+                {{ block.settings.suggestion-qa-text }}
+              {%- endif -%}
+            </p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <p class="suggestion-txt">
+      アートについて精通している<br class="pc-display-none">Art Gallery M専門コンサルタントが<br class="sp-display-none">皆様の疑問にお答え致します。
+    </p>
+  </div>
+</div>
+
+<style>
+  .suggestion-qa-wrapper {
+    max-width: 80rem;
+  }
+  .suggestion-qa-title {
+    margin-top: 8rem;
+    text-align: center;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .suggestion-qa-title span {
+    display: inline-block;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+  .suggestion-qa-list {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .suggestion-qa {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.4rem;
+  }
+  .suggestion-qa:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .suggestion-qa-img {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .suggestion-qa-img img {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .suggestion-qa-txt {
+    text-align: left;
+    border: #333 1px solid;
+    flex-grow: 1;
+    min-height: 9rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .suggestion-qa-txt p {
+    margin: 0;
+    text-align: left;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+    padding: 2rem 5rem;
+  }
+
+  .suggestion-qa:nth-child(odd) .suggestion-qa-txt::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    margin-top: -12px;
+    border: 12px solid transparent;
+    border-right: 12px solid #f4f4f4;
+    z-index: 2;
+  }
+
+  .suggestion-qa:nth-child(odd) .suggestion-qa-txt::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -28px;
+    margin-top: -14px;
+    border: 14px solid transparent;
+    border-right: 14px solid #333;
+    z-index: 1;
+}
+  .suggestion-qa:nth-child(even) .suggestion-qa-txt::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -24px;
+    margin-top: -12px;
+    border: 12px solid transparent;
+    border-left: 12px solid #f4f4f4;
+    z-index: 2;
+  }
+
+  .suggestion-qa:nth-child(even) .suggestion-qa-txt::after {
+    content: "";
+  position: absolute;
+  top: 50%;
+  right: -28px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-left: 14px solid #333;
+  z-index: 1;
+  }
+  .suggestion-txt {
+    margin-top: 6rem;
+    text-align: center;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.8px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .suggestion-qa-title {
+      margin-top: 6rem;
+    }
+    .suggestion-qa-list {
+      margin-top: 4rem;
+      gap: 3rem;
+    }
+    .suggestion-qa {
+      gap: 1.6rem;
+    }
+    .suggestion-qa-img img {
+      width: 5rem;
+      height: 5rem;
+    }
+    .suggestion-qa-txt p {
+      font-size: 1.2rem;
+      line-height: calc(18 / 12);
+      letter-spacing: 0.6px;
+      padding: 1.2rem 1.4rem;
+    }
+    .suggestion-txt {
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      line-height: calc(20 / 14);
+      letter-spacing: 0.7px;
+    }
+
+  }
+
+</style>
+{% schema %}
+  {
+    "name": "Suggestion Q&A",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-3"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "image",
+            "id": "suggestion-qa-img"
+          }, {
+            "type": "textarea",
+            "id": "suggestion-qa-text",
+            "default": "suggestion question",
+            "label": "suggestion question"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Suggestion-qa",
+        "blocks": [
+          {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }, {
+            "type": "Block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

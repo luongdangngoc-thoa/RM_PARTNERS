@@ -95,7 +95,7 @@ cart-items {
   line-height: 1;
   height: 1.8rem;
   top: -3rem;
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-foreground);
 }
 
 .cart__note .field__input {
@@ -155,6 +155,8 @@ cart-items {
 
 .cart__ctas button {
   width: 100%;
+  color: #333;
+  background: inherit;
 }
 
 .cart__ctas > *:not(noscript:first-child) + * {

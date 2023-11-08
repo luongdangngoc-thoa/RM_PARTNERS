@@ -1,0 +1,138 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width section-{{ section.id }}-padding page-width-desktop">
+  <div class="terms_of_service">
+    <h1 class="terms_of_service_type">TERMS OF SERVICE</h1>
+    <h2 class="terms_of_service_tilte">利用規約</h2>
+  </div>
+  <div class="terms_of_service__form">
+    <div class="terms_of_service_policy">
+      <h3>{{ shop.terms_of_service }}</h3>
+    </div>
+  </div>
+</div>
+</div>
+{% schema %}
+{
+"name": "t:sections.main-terms-of-service.name",
+"tag": "section",
+"class": "section",
+"settings": [
+{
+"type": "header",
+"content": "t:sections.all.padding.section_padding_heading"
+},
+{
+"type": "range",
+"id": "padding_top",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"label": "t:sections.all.padding.padding_top",
+"default": 36
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"label": "t:sections.all.padding.padding_bottom",
+"default": 36
+}
+]
+}
+{% endschema %}
+<style>
+  .terms_of_service {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .terms_of_service_type {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(60/40);
+    text-transform: uppercase;
+  }
+
+  .terms_of_service_tilte {
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24/16);
+    letter-spacing: 0.8px;
+  }
+
+  .shopify-section.shopify-section-group-header-group.section-header.shopify-section-header-sticky {
+    margin: 0;
+  }
+
+  .terms_of_service__form {
+    width: 100%;
+
+  }
+
+  .terms_of_service_policy h3 {
+    align-items: center;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(24/16);
+    letter-spacing: 0.8px;
+    padding: 0 0 5rem 0;
+    color: #333;
+
+  }
+
+  .section-template--16838004736228__main-padding {
+    align-items: center;
+    margin: 2rem auto;
+  }
+
+  .section-template--16838004736228__e04dd024-6888-4bd5-8763-f5bfe3eb990e {
+    display: flex;
+    justify-content: 30rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    .terms_of_service {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .terms_of_service_type {
+      color: var(--primary, #333);
+      font-family: Oswald;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: calc(60/40);
+      text-transform: uppercase;
+    }
+
+    .terms_of_service_tilte {
+      color: var(--primary, #333);
+      text-align: justify;
+      font-family: Noto Serif JP;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: calc(24/16);
+      letter-spacing: 0.8px;
+    }
+  }
+</style>

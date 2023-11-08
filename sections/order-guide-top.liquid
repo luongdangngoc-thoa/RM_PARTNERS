@@ -1,0 +1,148 @@
+<div class="order-guide-top section-{{ section.id }} gradient color-{{ section.settings.section_color_scheme }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="order-guide-top-wrapper page-width">
+    <div class="order-guide-top-heading-group">
+      <h2 class="order-guide-top-heading heading-en">
+        ORDER GUIDE
+      </h2>
+      <h2 class="order-guide-top-heading heading-jp">
+        ご利用ガイド
+      </h2>
+    </div>
+    <div>
+      <ul class="order-guide-top-chips">
+        <li>
+          <a href="#order-flow">ご注文の流れ</a>
+        </li>
+        <li>
+          <a href="#guide-payment">お支払い方法について</a>
+        </li>
+        <li>
+          <a href="#guide-delivery-cost">配送料について</a>
+        </li>
+        <li>
+          <a href="#guide-delivery">納期について</a>
+        </li>
+        <li>
+          <a href="#guide-cancel-return">キャンセル・返品について</a>
+        </li>
+        <li>
+          <a href="#guide-soldout">売り切れ作品について</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .order-guide-top {
+    margin-top: 8rem;
+  }
+
+  .order-guide-top-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .order-guide-top-heading-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .order-guide-top-heading-group .order-guide-top-heading.heading-en {
+    color: var(--primary, #333);
+    font-family: Oswald;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .order-guide-top-heading-group .order-guide-top-heading.heading-jp {
+    color: var(--primary, #333);
+    text-align: justify;
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+  }
+
+  .order-guide-top-chips {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 80rem;
+    padding-left: 0;
+  }
+
+  .order-guide-top-chips li {
+    display: inline-block;
+  }
+
+  .order-guide-top-chips li a {
+    display: inline-block;
+    color: var(--primary, #333);
+    font-family: Noto Serif JP;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    padding: 1.6rem 2rem;
+    text-decoration: none;
+    border: 1px solid var(--primary, #333);
+    transition: 0.2s;
+  }
+
+  .order-guide-top-chips li a:hover {
+    color: #fff;
+    background-color: var(--primary, #333);
+  }
+
+  @media screen and (max-width: 749px) {
+
+    .order-guide-top {
+      margin-top: 4rem;
+    }
+    .order-guide-top-heading-group {
+      gap: 1.2rem;
+    }
+
+    .order-guide-top-heading-group .order-guide-top-heading.heading-en {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .order-guide-top-heading-group .order-guide-top-heading.heading-jp {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .order-guide-top-chips {
+      margin-top: 4rem;
+      gap: 1rem;
+    }
+
+    .order-guide-top-chips li a {
+      font-size: 1.6rem;
+      padding: 1rem 1.2rem;
+    }
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "Order guide top",
+    "tag": "section",
+    "class": "section",
+    "settings": []
+  }
+{% endschema %}

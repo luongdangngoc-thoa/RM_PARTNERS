@@ -1,14 +1,52 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "703f1428-ba37-498a-b43d-cf41669ff0a6": {
+      "type": "artist-banner-custom",
+      "blocks": {
+        "377bfd16-d013-436f-ad2b-725d6f0ed47f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/artist-detail-bg.webp"
+          }
+        }
+      },
+      "block_order": [
+        "377bfd16-d013-436f-ad2b-725d6f0ed47f"
+      ],
+      "settings": {}
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
+        "section_color_scheme": ""
+      }
+    },
+    "artist-product-list": {
+      "type": "artist-product-list",
+      "custom_css": [
+        ".collection__title {display: flex; gap: 1em; align-items: center;}",
+        ".collection__title h2 {margin: 0;}",
+        ".collection__title h5 {font-size: 1.2rem; margin: 0; padding: 0; color: rgba(var(--color-foreground), 0.75);}",
+        ".card__information {position: relative; bottom: 5em;}",
+        ".card__inner {width: 100%; position: relative; bottom: 1.5em;}",
+        ".card-wrapper {color: inherit; height: 80%; position: relative; text-decoration: none; top: 2em;}",
+        ".price {display: none;}"
+      ],
+      "settings": {
+        "columns_desktop": 3,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2"
       }
     }
   },
   "order": [
-    "main"
+    "703f1428-ba37-498a-b43d-cf41669ff0a6",
+    "breadcrumbs",
+    "artist-product-list"
   ]
 }

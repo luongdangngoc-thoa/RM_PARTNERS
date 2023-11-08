@@ -1,41 +1,10 @@
 {
   "sections": {
-    "a9024dd2-3d67-408d-a3ff-9fbf35c6cd4b": {
-      "type": "slideshow",
-      "blocks": {
-        "template--16826083180772__a9024dd2-3d67-408d-a3ff-9fbf35c6cd4b-slide-1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image.webp",
-            "heading": "日本・世界に名を轟かす画家達が集結",
-            "heading_size": "h2",
-            "subheading": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "inverse",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--16826083180772__a9024dd2-3d67-408d-a3ff-9fbf35c6cd4b-slide-1"
-      ],
-      "custom_css": [
-        ".slideshow__text.banner__box.content-container {background: transparent;}"
-      ],
+    "c79cded5-956f-4cc1-bffe-31953065e9cd": {
+      "type": "page-banner-custom",
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "small",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "image": "shopify:\/\/shop_images\/artist-list-bgr.webp",
+        "heading": "世界に名を轟かす画家達が集結"
       }
     },
     "breadcrumbs": {
@@ -44,23 +13,18 @@
         "section_color_scheme": ""
       }
     },
-    "882388fd-926e-483a-b338-3dca30eaa8fe": {
-      "type": "search-box",
-      "settings": {}
-    },
     "artists-list": {
       "type": "artists-list",
       "settings": {
         "section_color_scheme": "",
         "button_lable": "作品一覧を見る",
-        "button_link": "#"
+        "button_link": "shopify:\/\/collections\/all"
       }
     }
   },
   "order": [
-    "a9024dd2-3d67-408d-a3ff-9fbf35c6cd4b",
+    "c79cded5-956f-4cc1-bffe-31953065e9cd",
     "breadcrumbs",
-    "882388fd-926e-483a-b338-3dca30eaa8fe",
     "artists-list"
   ]
 }

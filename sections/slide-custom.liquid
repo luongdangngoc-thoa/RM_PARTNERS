@@ -1,0 +1,236 @@
+{%- style -%}
+.slide {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height:50rem;
+}
+.slide .item {
+  position: relative;
+  height: 100%;
+}
+.slide .item::before {
+  display: block;
+  padding-top: 39%;
+  content: "";
+}
+.slide .item .image {
+  position: relative;
+  overflow: hidden;
+}
+.slide .item img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+}
+@media screen and (max-width: 750px) {
+    .slide .item img {
+        height:100%;
+        width:auto;
+    }
+    .pc {display:none;}
+    .slideshow_block .slideshow__text-wrapper {
+        left:20px;
+        top:20%;
+    }
+  }
+@media screen and (min-width: 751px) {
+    .sp {display:none;}
+}
+.slide > .slick-list,
+.slide > .slick-list > .slick-track,
+.slide > .slick-list > .slick-track > .slick-slide > div {
+  position: relative;
+  height: 100%;
+}
+.slide-animation{
+    animation: fadezoom 15s 0s forwards;
+}
+@keyframes fadezoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.slideshow_block, .slideshow_block_image {
+    position:relative;
+}
+.slideshow_block {
+    padding-left: calc(100% - 100% / 1440 * 1240);
+    background: #fff;
+}
+.slideshow__text-wrapper {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+}
+.slideshow__text.banner__box {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 54.5rem;
+}
+.banner__buttons {
+    margin-top: 2rem;
+}
+@media screen and (min-width: 750px){
+.banner__content.banner__content--middle-left{
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    margin-left: 10rem;
+}
+.banner--desktop-transparent .banner__box {
+    max-width: 89rem;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+}
+.banner__heading {
+    margin-bottom: 0;
+    font-family: Noto Serif JP;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4.875rem;
+    letter-spacing: .45rem;
+    -webkit-text-stroke-width: 0.6px;
+    -webkit-text-stroke-color: #333333;
+    text-align: left;
+}
+.slick-dots li {
+    width: 40px;
+    height: 5px;
+}
+.slick-dots li button {
+    width: 40px;
+    height: 2px;
+}
+.slick-dots li button:before {
+    width: 40px;
+    height: 2px;
+    content: '';
+    opacity: .25;
+    background: #fff;
+}
+.slick-dots {
+    position: absolute;
+    bottom: 9px;
+    display: inline-block !important;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+a.button--secondary {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background: #fff;
+    border: 1px solid;
+    padding: 0.5em;
+    color:#333;
+    text-decoration: none;
+    position: relative;
+}
+a.button--secondary:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 35px solid #333;
+    border-right: 35px solid transparent;
+}
+a.button--secondary span {
+    font-size: 0.7em;
+    padding-left: 1em;
+}
+a.button--secondary:after {
+    content: '';
+    position: absolute;
+    bottom: 0.6em;
+    width: 95%;
+    border-bottom: 1px solid;
+    right: 0;
+}
+a.button--secondary p {
+    margin-right: 1em;
+}
+@media screen and (max-width:749px) {
+    a.button--secondary {
+    display:block;
+    width:70%;
+}
+a.button--secondary p {
+    margin: 0;
+    padding-left: 0.8em;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+}
+{%- endstyle -%}
+
+<div class="slideshow_block">
+    <div class="slideshow_block_image">
+        <ul class="slide">
+            {%- for block in section.blocks -%}    
+            {%- if block.settings.image -%}
+                <li class="item">
+                    {{ block.settings.image | image_url: width: 3840
+                        | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths }}
+                </li>
+            {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </div>
+    <div class="slideshow__text-wrapper banner__content banner__content--middle-left banner--desktop-transparent scroll-trigger animate--slide-in">
+        <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-inverse gradient slideshow__text--left slideshow__text-mobile--center">
+            <h2 class="banner__heading medium">あなたの感性を刺激する<br>多くの作品がここにある</h2>
+            <div class="banner__buttons">
+                <a role="link" aria-disabled="true" class="button--secondary" href="http://lin.ee/OFdk49W" target="_blank">
+                    <span>アート購入<br class="pc">初めての方におすすめ</span>
+                    <p>LINEで直接相談する</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "スライドカスタム",
+    "tag": "section",
+    "class": "section",
+    "blocks": [
+            {
+            "type": "slide",
+            "name": "t:sections.slideshow.blocks.slide.name",
+            "limit": 5, 
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "label": "カスタムコレクションリスト",
+                    "id": "image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "カスタムスライド"
+      }
+    ]
+  }
+{% endschema %}

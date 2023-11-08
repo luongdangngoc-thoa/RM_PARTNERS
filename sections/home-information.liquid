@@ -1,0 +1,117 @@
+<div class="home-information">
+    <div class="rich-text__wrapper rich-text__wrapper--left page-width">
+        <div class="information-text__blocks left">
+            <h2 class="rich-text__heading rte inline-richtext h1 scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 0;">
+                  INFORMATION
+            </h2>
+            <p class="rich-text__caption animate--slide-in caption-with-letter-spacing--medium" data-cascade="" style="--animation-order: 0;">
+                  アートギャラリー店舗のご案内
+            </p>
+        </div>
+    </div>
+</div>
+<div class="multicolumn color-background-1 gradient background-none no-heading">
+    <div class="page-width-desktop animate--slide-in" data-cascade="" style="--animation-order: 0;">
+        <slider-component class="slider-mobile-gutter">
+            <div class="information-text__blocks">
+                <div class="multicolumn-card content-container map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2824894130367!2d139.71482837543252!3d35.670045672590895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c9c17a751d7%3A0x811abc5c7e6da822!2z44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yS5LiB55uu77yS77yW4oiS77yT77yXIFZvcnQg5aSW6IuR5YmNIEkgMWY!5e0!3m2!1sja!2sjp!4v1697698425745!5m2!1sja!2sjp" width="100%" height="300em" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="multicolumn-card content-container info">
+                    <p><span>ADDRESS</span><br>東京都港区南青山2-26-37 VORT外苑前I 1F</p>
+                    <p><span>TEL</span><br>03-6434-5111</p>
+                    <p><span>MAIL</span><br>info@artgallerym.jp</p>
+                    <p><span>OPEN / CLOSE</span><br>11:00〜19:00（不定休）</p>
+                </div>
+            </div>
+        </slider-component>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "インフォメーション",
+    "presets": [
+      {
+        "name": "インフォメーション"
+      }
+    ]
+  }
+{% endschema %}
+
+{%- style -%}
+@media screen and (min-width:750px) {
+.home-information {
+    margin-top:120px;
+}
+.home-information h2 {
+    margin-bottom: 40px;
+}
+}
+@media screen and (max-width:749px){
+    .home-information {
+    margin-top:60px;
+}    
+}
+.multicolumn-card.content-container.info span{
+    font-family:'Oswald';
+
+}
+.information-text__blocks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.multicolumn .information-text__blocks {
+    gap:4rem;
+}
+.information-text__blocks iframe {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.information-text__blocks .map {
+    width:60%;
+}
+.information-text__blocks .info {
+    width:40%;
+}
+@media screen and (min-width: 750px) {
+  .page-width {
+    padding: 0 100px;
+  }
+  .page-width-inner {
+    padding: 0 200px;
+  }
+  #insta-feed {
+    width: 100%;
+}
+div#shopify-block-5bc97287-00ce-480a-b88c-2a47d67165d3 {
+    max-width: var(--page-width);
+    padding: 0 5rem;
+    margin: 0 auto;
+}
+}
+@media screen and (max-width: 749px) {
+    .slider-mobile-gutter .information-text__blocks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin: 0 20px;
+}
+.information-text__blocks .map {
+    width:100%;
+}
+.information-text__blocks .info {
+    width:100%;
+}
+}
+.sakusha-list {
+    gap: 1em !important;
+}
+{%- endstyle -%}

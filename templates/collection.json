@@ -8,6 +8,48 @@
         "color_scheme": "background-1"
       }
     },
+    "0a794c04-e4e1-4b3d-a616-64fdb65ce4a7": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_color_scheme": ""
+      }
+    },
+    "e9c3399a-6ded-4c3e-bf2a-1c3ab15f951c": {
+      "type": "rich-text",
+      "blocks": {
+        "7df8c08d-2409-43de-88a9-06ca019b1ae1": {
+          "type": "heading",
+          "settings": {
+            "heading": "WORK",
+            "heading_size": "h1"
+          }
+        },
+        "a98f4b06-e457-4995-9b6a-999b68463e3d": {
+          "type": "caption",
+          "settings": {
+            "caption": "作品一覧",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "7df8c08d-2409-43de-88a9-06ca019b1ae1",
+        "a98f4b06-e457-4995-9b6a-999b68463e3d"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {display: flex; align-items: center; gap: 2rem;}",
+        ".rich-text__caption {margin: 0;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [
@@ -28,9 +70,9 @@
         "show_vendor": true,
         "show_rating": false,
         "enable_quick_add": false,
-        "enable_filtering": true,
+        "enable_filtering": false,
         "filter_type": "horizontal",
-        "enable_sorting": true,
+        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 60
@@ -43,7 +85,7 @@
           "type": "heading",
           "settings": {
             "heading": "SEARCH",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "e289d51c-453b-441e-8a07-b59f40896887": {
@@ -60,7 +102,7 @@
         "e289d51c-453b-441e-8a07-b59f40896887"
       ],
       "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__blocks {display: flex; align-items: center; gap: 2rem;}",
         ".rich-text__caption {margin: 0;}"
       ],
       "settings": {
@@ -69,141 +111,62 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 20
       }
     },
     "9613ba5a-e741-470c-b943-917111dc5723": {
       "type": "search-box",
-      "settings": {}
-    },
-    "e425452f-1547-4c79-9e71-a697e4d6ae09": {
-      "type": "rich-text",
-      "blocks": {
-        "9094d532-c674-4fbf-a434-0d24e6917865": {
-          "type": "heading",
-          "settings": {
-            "heading": "HASHTAGS",
-            "heading_size": "h2"
-          }
-        },
-        "c5b96ec6-8c88-49df-a18d-c5347000a2d6": {
-          "type": "caption",
-          "settings": {
-            "caption": "ハッシュタグから選ぶ",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        }
-      },
-      "block_order": [
-        "9094d532-c674-4fbf-a434-0d24e6917865",
-        "c5b96ec6-8c88-49df-a18d-c5347000a2d6"
-      ],
       "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
-        ".rich-text__caption {margin: 0;}"
+        "@media screen and (max-width: 749px) {.field__label {font-size: 1.3rem; }}"
       ],
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": false,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "0036dba9-ac96-43e2-9e00-458d3ee6cbca": {
-      "type": "hash-tag",
       "settings": {}
-    },
-    "1b15fffc-5483-4803-8e7b-1991c9ada1b5": {
-      "type": "rich-text",
-      "blocks": {
-        "c121645e-7c2a-45b3-ac12-6c940101fe4c": {
-          "type": "heading",
-          "settings": {
-            "heading": "PRICE",
-            "heading_size": "h2"
-          }
-        },
-        "b6c8f158-cd9e-4df4-ab60-0f5b2a14085c": {
-          "type": "caption",
-          "settings": {
-            "caption": "お好みの商品を探す",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        }
-      },
-      "block_order": [
-        "c121645e-7c2a-45b3-ac12-6c940101fe4c",
-        "b6c8f158-cd9e-4df4-ab60-0f5b2a14085c"
-      ],
-      "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
-        ".rich-text__caption {margin: 0;}"
-      ],
-      "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": false,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
     },
     "7ab214e3-0abb-4786-bc17-e3910c13a202": {
       "type": "collection-list-custom",
+      "custom_css": [
+        ".collapsible-content__header {padding: 0 3.5rem; padding-top: 40px;}"
+      ],
       "settings": {
+        "caption": "ハッシュタグから選ぶ",
+        "heading": "HASHTAG",
         "custom_collection_list": [
-          "50万円以下",
-          "100万円以下",
-          "150万円以下",
-          "200万より下",
-          "200万以上"
+          "new",
+          "pick-up",
+          "first",
+          "features",
+          "popular"
         ],
         "max_collections": 5
       }
     },
-    "17311222-a124-4786-aed6-3d59f0dda463": {
-      "type": "rich-text",
-      "blocks": {
-        "23ecc62c-1d08-4af0-9907-9e52ddec3c42": {
-          "type": "heading",
-          "settings": {
-            "heading": "ARTIST",
-            "heading_size": "h2"
-          }
-        },
-        "c7daa3e5-582b-48f1-82a8-5cfdb3bd4d65": {
-          "type": "caption",
-          "settings": {
-            "caption": "画家から選ぶ",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        }
-      },
-      "block_order": [
-        "23ecc62c-1d08-4af0-9907-9e52ddec3c42",
-        "c7daa3e5-582b-48f1-82a8-5cfdb3bd4d65"
-      ],
+    "f471ada9-d071-4e29-ac7c-f136542c33d2": {
+      "type": "collection-list-custom",
       "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
-        ".rich-text__caption {margin: 0;}"
+        ".collapsible-content__header {padding: 0 3.5rem; padding-top: 40px;}"
       ],
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "",
-        "full_width": false,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "caption": "金額から選ぶ",
+        "heading": "PRICE",
+        "custom_collection_list": [
+          "under-500000-yen",
+          "under-1000000-yen",
+          "under-1500000-yen",
+          "under-1999999-yen",
+          "over-2000000-yen"
+        ],
+        "max_collections": 5
       }
     },
-    "5daf4363-2028-410e-a13c-d4aa33eccba9": {
+    "a2d28d22-aae3-4594-bd30-949f4c0fbb48": {
       "type": "sakusha-tag",
-      "settings": {}
+      "custom_css": [
+        ".collapsible-content__header {padding: 0 3.5rem; padding-top: 40px;}",
+        ".sakusha-list {gap: 2em 1em; padding-top: 1em;}"
+      ],
+      "settings": {
+        "caption": "画家から選ぶ",
+        "heading": "ARTIST"
+      }
     },
     "9bc43d84-f84f-46df-89a3-22bf677b6d62": {
       "type": "rich-text",
@@ -212,7 +175,7 @@
           "type": "heading",
           "settings": {
             "heading": "TASTE",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "26da7107-f727-4be1-b24b-d5f65a0b8ef3": {
@@ -229,7 +192,7 @@
         "26da7107-f727-4be1-b24b-d5f65a0b8ef3"
       ],
       "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__blocks {display: flex; align-items: center; gap: 2rem;}",
         ".rich-text__caption {margin: 0;}"
       ],
       "settings": {
@@ -237,8 +200,8 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "padding_top": 100,
+        "padding_bottom": 40
       }
     },
     "b983432a-a2fd-4714-be84-bcaaadd0dee9": {
@@ -247,10 +210,10 @@
         "751080aa-e12d-4467-bf67-e672c482bc61": {
           "type": "custom_block_1",
           "settings": {
-            "class_name": "",
+            "class_name": "first",
             "url": "shopify:\/\/collections\/pop-culture",
-            "image": "shopify:\/\/shop_images\/Group_72.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_3.webp",
+            "alt_text": "ポップカルチャー"
           }
         },
         "2b27594e-6826-4848-971e-bfbf18af07bf": {
@@ -258,8 +221,8 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/portrait",
-            "image": "shopify:\/\/shop_images\/Group_75.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_11.webp",
+            "alt_text": "ポートレート"
           }
         },
         "6ff4ec56-cafe-41ed-9f1c-efa9a1ce3e99": {
@@ -267,17 +230,17 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/urban",
-            "image": "shopify:\/\/shop_images\/Group_76.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_12.webp",
+            "alt_text": "アーバン"
           }
         },
         "72bcdaaf-c78b-479f-abfe-65111d080273": {
           "type": "custom_block_1",
           "settings": {
-            "class_name": "",
+            "class_name": "first",
             "url": "shopify:\/\/collections\/abstract",
-            "image": "shopify:\/\/shop_images\/Group_73_2.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_6.webp",
+            "alt_text": "抽象芸術"
           }
         },
         "c1777ada-170c-4c59-bba3-ec848c0104ad": {
@@ -285,8 +248,8 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/street",
-            "image": "shopify:\/\/shop_images\/Group_74_2.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_7.webp",
+            "alt_text": "ストリートアート"
           }
         },
         "cf377790-1c68-449b-bff3-8f217a105488": {
@@ -294,8 +257,8 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/landskape",
-            "image": "shopify:\/\/shop_images\/Group_77_2.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_15.webp",
+            "alt_text": "風景"
           }
         }
       },
@@ -316,7 +279,7 @@
           "type": "heading",
           "settings": {
             "heading": "PLACE",
-            "heading_size": "h2"
+            "heading_size": "h1"
           }
         },
         "3c77d2ff-e92f-460f-be93-0f356dd234b0": {
@@ -333,7 +296,7 @@
         "3c77d2ff-e92f-460f-be93-0f356dd234b0"
       ],
       "custom_css": [
-        ".rich-text__blocks {display: flex; align-items: center; gap: 1em;}",
+        ".rich-text__blocks {display: flex; align-items: center; gap: 2rem;}",
         ".rich-text__caption {margin: 0;}"
       ],
       "settings": {
@@ -341,8 +304,8 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "padding_top": 100,
+        "padding_bottom": 40
       }
     },
     "5b331455-ebb5-49ca-9d1c-ce6c30d80754": {
@@ -351,10 +314,10 @@
         "71c27b65-a545-4411-a7ee-355c188f777e": {
           "type": "custom_block_1",
           "settings": {
-            "class_name": "",
+            "class_name": "first",
             "url": "shopify:\/\/collections\/entrance",
-            "image": "shopify:\/\/shop_images\/Group_72_1.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_2.webp",
+            "alt_text": "玄関"
           }
         },
         "30f2871a-3cd0-4d8d-91d4-b6861a2419d8": {
@@ -362,8 +325,8 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/bedroom",
-            "image": "shopify:\/\/shop_images\/Group_75_1.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_10.webp",
+            "alt_text": "寝室"
           }
         },
         "eba4158b-7180-427b-a072-7396b7f15352": {
@@ -371,17 +334,17 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/stails",
-            "image": "shopify:\/\/shop_images\/Group_76_1.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_13.webp",
+            "alt_text": "階段"
           }
         },
         "62acd852-77b5-4386-a472-c52578f29ef7": {
           "type": "custom_block_1",
           "settings": {
-            "class_name": "",
+            "class_name": "first",
             "url": "shopify:\/\/collections\/living",
-            "image": "shopify:\/\/shop_images\/Group_73.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_4.webp",
+            "alt_text": "リビング"
           }
         },
         "7969c4d5-9afe-4ad4-91a9-fb3dd89afa78": {
@@ -389,8 +352,8 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/toilet",
-            "image": "shopify:\/\/shop_images\/Group_74.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_8.webp",
+            "alt_text": "トイレ"
           }
         },
         "a11efd5a-a056-44b0-a422-eff36b51077c": {
@@ -398,8 +361,8 @@
           "settings": {
             "class_name": "",
             "url": "shopify:\/\/collections\/other",
-            "image": "shopify:\/\/shop_images\/Group_77.png",
-            "alt_text": ""
+            "image": "shopify:\/\/shop_images\/image_14.webp",
+            "alt_text": "その他"
           }
         }
       },
@@ -411,20 +374,22 @@
         "7969c4d5-9afe-4ad4-91a9-fb3dd89afa78",
         "a11efd5a-a056-44b0-a422-eff36b51077c"
       ],
+      "custom_css": [
+        ".category {margin-bottom: 120px;}"
+      ],
       "settings": {}
     }
   },
   "order": [
     "banner",
+    "0a794c04-e4e1-4b3d-a616-64fdb65ce4a7",
+    "e9c3399a-6ded-4c3e-bf2a-1c3ab15f951c",
     "product-grid",
     "3a76e840-0e13-46fb-be56-99baf235b06f",
     "9613ba5a-e741-470c-b943-917111dc5723",
-    "e425452f-1547-4c79-9e71-a697e4d6ae09",
-    "0036dba9-ac96-43e2-9e00-458d3ee6cbca",
-    "1b15fffc-5483-4803-8e7b-1991c9ada1b5",
     "7ab214e3-0abb-4786-bc17-e3910c13a202",
-    "17311222-a124-4786-aed6-3d59f0dda463",
-    "5daf4363-2028-410e-a13c-d4aa33eccba9",
+    "f471ada9-d071-4e29-ac7c-f136542c33d2",
+    "a2d28d22-aae3-4594-bd30-949f4c0fbb48",
     "9bc43d84-f84f-46df-89a3-22bf677b6d62",
     "b983432a-a2fd-4714-be84-bcaaadd0dee9",
     "9db279c5-31b8-4f04-ac6e-1233052de82b",

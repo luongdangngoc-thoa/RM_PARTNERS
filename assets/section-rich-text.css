@@ -8,20 +8,29 @@
   width: calc(100% - 4rem / var(--font-body-scale));
 }
 
-.rich-text:not(.rich-text--full-width) .rich-text__wrapper {
-  margin: auto;
-  width: calc(100% - 8rem / var(--font-body-scale));
-}
-
 .rich-text__blocks {
   width: 100%;
 }
 
+@media screen and (max-width: 749px) {
+  .rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+    margin: auto;
+    padding: 0px;
+    width: auto;
+  }
+  .rich-text__wrapper {
+    width:auto;
+    justify-content: space-between;
+  }
+}
 @media screen and (min-width: 750px) {
   .rich-text__wrapper {
     width: 100%;
   }
-
+  .rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+    margin: auto;
+    padding: 0 100px;
+  }
   .rich-text__wrapper--left {
     justify-content: flex-start;
   }
