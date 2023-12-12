@@ -991,6 +991,7 @@ summary::-webkit-details-marker {
 
   .grid--4-col-tablet .grid__item {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+    display: flex;
   }
 
   .grid--3-col-tablet .grid__item {
@@ -2974,7 +2975,7 @@ details-disclosure > details {
 }
 
 .gradient {
-  background: url( bg.gif );
+  /* background: url( bg.gif ); */
   background-attachment: fixed;
   background-size: 250px;
 }
@@ -3572,13 +3573,7 @@ html {
 
 @media screen and (min-width: 1024px) {
   .footer__content-top .footer-block__details-content {
-    margin-left: 6em!important;
-  }
-}
-
-@media screen and (min-width: 1246px) {
-  .footer__content-top .footer-block__details-content {
-    margin-left: 13em!important;
+    margin-left: auto!important;
   }
 }
 
@@ -3586,3 +3581,62 @@ html {
   font-family: var(--font-body-family);
   font-color: #000;
 }
+
+@media screen and (max-width: 1024px) {
+  .search_tags {
+    overflow-x: auto;
+  }
+}
+@media screen and (min-width: 426px) {
+    .sp-only {
+    display:none!important;
+  }
+}
+
+@media screen and (max-width: 426px) {
+.page-width-desktop{
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+ 
+  
+  .banner__heading{
+    font-size:1.1em!important;
+    line-height: 2.7rem!important;
+  }
+  .collection-hero__title{
+    font-size: 2rem!important;
+  }
+}
+.mxpr-favorites-header{
+font-family: var(--font-body-family)!important;  
+}
+
+a.button--secondary p{
+  font-size :2rem;
+}
+
+@media screen and (max-width: 749px){
+.collection-hero--with-image .collection-hero__description {
+  opacity: 0.9!important;
+}
+  .product__information-artist-name h2{
+    font-size: 2.1rem!important;
+  }
+  .slider--mobile:after{
+    content: none!important;
+  }
+  .product__this_artist_in_thumbnail{
+    padding-right:0.8em!important;
+  }
+}
+
+
+@media screen and (min-width: 750px){
+.collection-hero--with-image .collection-hero__description {
+  opacity: 0.9!important;
+}
+}
+
+
+

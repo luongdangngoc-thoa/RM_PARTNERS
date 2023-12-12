@@ -10,7 +10,7 @@
   <ul class="sakusha-list">
     {% for artist in shop.metaobjects.artist.values %}
       <li>
-        <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">{{ artist.name.value }}</a>
+        <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.url_handle | default: artist.name_romaji.value | downcase | replace: ' ', '-' }}">{{ artist.name.value }}</a>
       </li>
     {% endfor %}
   </ul>

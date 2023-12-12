@@ -111,6 +111,18 @@
           </div>
         </div>
       {%- endif -%}
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading">
+            <a href="{{ item.url }}" class="full-unstyled-link">
+              {{ item.title | truncate: 50 | escape }}
+            </a>
+          </h3>
+        </div>
+        <div class="card__badge {{ settings.badge_position }}">
+          <span class="badge color-{{ settings.color_schemes | first }}">{{ 'templates.search.page' | t }}</span>
+        </div>
+      </div>
     </div>
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
@@ -157,3 +169,13 @@
     {%- endif -%}
   </div>
 </div>
+
+{%- style -%}
+.card__badge.bottom.left {
+    position: absolute;
+    top: -10em;
+}
+.card__content {
+  position: relative;
+}
+{%- endstyle -%}

@@ -48,7 +48,7 @@
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>お問い合わせの前に<br><span style=\"font-weight: bold; text-decoration: underline;\">よくある質問<\/span>をご確認ください。<br>お問い合わせより早く問題が解決できる場合がございます。<\/p>\n<p>解決できない場合は下記フォームより<br>お問い合わせください。<br>\n＊ご回答までの目安は2,3営業日となります。迅速な対応を心がけておりますが、<br>\nお問い合わせが集中した場合、一週間ほどお時間がかかる場合がございます。<br>\n大型連休期間は翌営業日以降対応致します。<\/p>\n<p>＊LINEからも問い合わせ可能でございます。<\/p>"
+            "text": "<p>お問い合わせの前に<br><span style=\"font-weight: bold; text-decoration: underline;\">よくある質問<\/span>をご確認ください。<br>お問い合わせより早く問題が解決できる場合がございます。<\/p>\n<p>解決できない場合は下記フォームより<br>お問い合わせください。<br>\n＊ご回答までの目安は2,3営業日となります。迅速な対応を心がけておりますが、<br>\nお問い合わせが集中した場合、一週間ほどお時間がかかる場合がございます。<br>\n大型連休期間は翌営業日以降対応致します。<\/p>\n<p><strong>※LINEからも問い合わせ可能でございます。<br>※LINEの方がスムーズにお問い合わせ可能でございます<\/strong><\/p>"
           }
         },
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-button-1": {
@@ -62,6 +62,12 @@
             "button_style_secondary_2": false
           }
         },
+        "d01f782f-c30c-455d-8753-7d8b9e82bab8": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
         "7b73e65f-2f4d-40ab-871d-4af98bc238e5": {
           "type": "text",
           "settings": {
@@ -72,6 +78,7 @@
       "block_order": [
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-text-1",
         "template--16825565151460__ad58b0f0-17ca-4a54-baec-0344b1615c5d-button-1",
+        "d01f782f-c30c-455d-8753-7d8b9e82bab8",
         "7b73e65f-2f4d-40ab-871d-4af98bc238e5"
       ],
       "custom_css": [

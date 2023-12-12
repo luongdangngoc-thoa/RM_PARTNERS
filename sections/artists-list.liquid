@@ -7,7 +7,7 @@
       id="searchInput"
       placeholder="アーティスト名で検索"
       title="Type in a name">
-
+    
     <div class="artist-list-block">
       <ul class="artist-list" id="artist-list">
         {% for artist in shop.metaobjects.artist.values %}
@@ -20,7 +20,7 @@
             </div>
             <p class="artist-desc">
               {{ artist.description.value }}</p>
-            <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.name_romaji.value | downcase | replace: ' ', '-' }}">
+            <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.url_handle | default: artist.name_romaji.value | downcase | replace: ' ', '-' }}">
               <span>
                 VIEW MORE
               </span>
@@ -102,6 +102,7 @@
       }
     }
   })
+  
 </script>
 
 

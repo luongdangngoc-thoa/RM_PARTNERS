@@ -23,7 +23,10 @@
     width: 100%;
     margin-left: 10rem;
   }
-
+  .card__badge.bottom.left {
+  position: absolute;
+  top: -17em !important;
+}
   }
   @media screen and (max-width: 749px) {
     .collection-back .media img {
@@ -38,25 +41,60 @@
   }
   }
   .collection-hero__title{
-    margin-bottom: 0;
-    font-family: "Noto Serif JP", serif;
-    font-size: 2.4rem;
+  margin-bottom: 0;
+  font-family: Noto Serif JP;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 700;
     line-height: 4.875rem;
     letter-spacing: .45rem;
-    -webkit-text-stroke-width: 0.56px;
-    -webkit-text-stroke-color: #333333;
     text-align: left;
-    color: #fff;
-  }
+    color: #333;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding:1rem;
+}
+.collection-hero__title:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -20px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: #fff;
+  transform-origin: bottom;
+  transform: skewX(-30deg);
+  opacity: 0.9;
+}
+@media screen and (max-width:749px) {
+    .collection-hero__title:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #fff;
+    transform-origin: bottom;
+    transform: skewX(0deg);
+    opacity: 0.9;
+}
+}
   .page-width-desktop {
     display: block;
 }
+
 @media screen and (max-width:749px){
 .sakusha-list {
   gap: 2em 1em !important;
   padding-top:1em;
+}
+.card__badge.bottom.left {
+  position: absolute;
+  top: -15em !important;
 }
 }
 {%- endstyle -%}
@@ -75,7 +113,6 @@
   <div class="collection-hero__inner {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {% if collection %}
           {% if collection.title == 'WORK' %}
             あなたの感性を刺激する<br>多くの作品がここにある

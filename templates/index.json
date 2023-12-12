@@ -6,26 +6,34 @@
         "4173a678-60f6-478b-828f-959b26402451": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slide01.png"
+            "image": "shopify:\/\/shop_images\/top1113-01.webp"
           }
         },
         "7cc508de-ceab-4e16-90fc-63f0cbe7c7e6": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slide02.png"
+            "image": "shopify:\/\/shop_images\/AG_M-47_Object-Removal-_1.webp"
           }
         },
         "28772d45-cd63-4f62-bf5c-e83b831255f3": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slide03.png"
+            "image": "shopify:\/\/shop_images\/top1113-03.webp"
+          }
+        },
+        "14b04be0-958b-4114-86b4-4e0c901db142": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_2_0a491bfc-26e6-49d7-b336-9c46a10d18ba.webp"
           }
         }
       },
       "block_order": [
         "4173a678-60f6-478b-828f-959b26402451",
         "7cc508de-ceab-4e16-90fc-63f0cbe7c7e6",
-        "28772d45-cd63-4f62-bf5c-e83b831255f3"
+        "28772d45-cd63-4f62-bf5c-e83b831255f3",
+        "14b04be0-958b-4114-86b4-4e0c901db142"
       ],
       "settings": {}
     },
@@ -117,7 +125,7 @@
       "custom_css": [
         ".collection__title {display: flex; gap: 2rem; align-items: center;}",
         ".collection__title h2 {margin: 0;}",
-        ".collection__title h5 {font-size: 1.2rem; margin: 0; padding: 0; color: rgba(var(--color-foreground), 0.75);}",
+        ".collection__title h5 {font-size: 1.2rem; margin: 0; padding: 0; color: #333;}",
         ".card__content {position: relative; bottom: 5em;}",
         ".card__inner {width: 100%; position: relative; bottom: 1.5em;}",
         ".card-wrapper {color: inherit; height: 80%; position: relative; text-decoration: none; top: 2em;}",
@@ -429,8 +437,7 @@
         ".prime-review {display: none;}",
         ".slider-buttons {display: none;}",
         ".caption-with-letter-spacing.light p {display: none;}",
-        ".card__heading.h5.top {display: block; margin-top:1.5rem;}",
-        ".card__heading.h5.top2 {display: none;}"
+        ".card__heading.h5.top2 {display: block; margin-bottom: 1.5rem; margin-top: 1rem;}"
       ],
       "settings": {
         "title": "LATEST SOLD WORKS",

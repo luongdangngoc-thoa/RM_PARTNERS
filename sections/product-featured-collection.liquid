@@ -134,9 +134,9 @@
           <div class="collection__product">
             <div class="image_product">
               {% for image in product.images %}
-                <p>
-                  <img src="{{ image.src | product_img_url: "medium" }}">
-                  </p>
+                <a href="{{product.url}}">
+                  <img src="{{ image.src | product_img_url: "medium" }}" class="image">
+                </a>
               {% endfor %}
               {% comment %} <div class="prime-review prime-review-favorites-product-{{ product_hash }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20%" style="height: 28px;">

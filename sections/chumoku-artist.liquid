@@ -29,16 +29,16 @@
                 </div>
 
                 {%- for prod in artist.product.value limit: 3 -%}
-                  <p class="artist-desc">
+                  <a href="{{ prod.url }}" class="artist-desc-link">
+                    <p class="artist-desc">
                     {{- prod.title -}}
                   </p>
                   <p class="artist-desc-romaji">
                     {{ prod.metafields.custom.product_name_romaji }}
                   </p>
+                </a>
                 {%- endfor -%}
-                <a href="{{ page.url }}/pages/artists/{{artist.name_romaji | downcase | replace: ' ', '-'}}"
-                  class="artist-link"
-                >
+                <a class="artist-link" href="{{ shop.url }}/pages/artists/{{ artist.url_handle | default: artist.name_romaji.value | downcase | replace: ' ', '-' }}">
                   <span>VIEW MORE</span>
                   {% render 'icon-arrow' %}
                 </a>
@@ -200,6 +200,9 @@
     min-width: 24rem;
     height: 3.3rem;
     font-family: Noto Serif JP;
+  }
+  .artist-desc-link {
+    text-decoration: none;
   }
   @media screen and (max-width: 749px) {
     .artist-list-wrapper {
