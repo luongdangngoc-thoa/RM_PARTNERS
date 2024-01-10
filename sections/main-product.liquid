@@ -650,6 +650,9 @@
         </div>
         <div class="product__fee">
           <p class="product__fee-title">※商品の配送料はお客様負担となります。</p>
+          {% if product.description != blank %}
+            <p>説明：{{ product.description }}</p>
+          {% endif %}
         </div>
       </div>
       </product-info>

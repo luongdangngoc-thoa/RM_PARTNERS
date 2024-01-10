@@ -58,6 +58,9 @@
     padding: 1.8rem 0;
     position: relative;
   }
+html:lang(en) .step-name {
+  text-align: center;
+}
 
   .step-name::after {
     content: "";
@@ -87,7 +90,9 @@
     line-height: calc(20 / 14);
     letter-spacing: 0.7px;
   }
-
+  html:lang(en) .step-des {
+    text-align: left;
+  }
 
   @media screen and (max-width: 1000px) {
     .order-flow-list {

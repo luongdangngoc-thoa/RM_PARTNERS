@@ -440,9 +440,9 @@
         ".card__heading.h5.top2 {display: block; margin-bottom: 1.5rem; margin-top: 1rem;}"
       ],
       "settings": {
-        "title": "LATEST SOLD WORKS",
+        "title": "NEW ARRIVALS",
         "heading_size": "h1",
-        "description": "<p>最近購入された商品<\/p>",
+        "description": "<p>新着入荷作品<\/p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
@@ -507,6 +507,8 @@
         "5bc97287-00ce-480a-b88c-2a47d67165d3": {
           "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
+            "title_color": "",
+            "alignment": "center",
             "html_area": ""
           }
         }

@@ -65,6 +65,12 @@
 .slideshow_block {
     padding-left: calc(100% - 100% / 1440 * 1240);
     background: #fff;
+    overflow: hidden;
+}
+h2.rich-text__heading.rte.inline-richtext.h1.scroll-trigger.animate--slide-in, 
+h2.rich-text__heading.rte.inline-richtext.h1.scroll-trigger.animate--slide-in {
+    text-wrap: nowrap;
+    white-space: nowrap;
 }
 .slideshow__text-wrapper {
     position:absolute;
@@ -206,6 +212,13 @@ a.button--secondary p {
     a.button--secondary {
     display:block;
     width:80%;
+}
+html:lang(en) a.button--secondary {
+    display:block;
+    width:100%;
+}
+html:lang(en) .banner__heading {
+    letter-spacing: 0.1rem;
 }
 a.button--secondary p {
     margin: 0;

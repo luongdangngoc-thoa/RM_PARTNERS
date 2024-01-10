@@ -55,6 +55,16 @@
       justify-content: space-around;
       padding: 0;
     }
+    .sp-footer-menu-bar img {
+    display: block;
+    margin: auto;
+    }
+    .sp-footer-menu-bar ul li a {
+      font-size:10px;
+      text-align:center;
+      color:#333;
+      text-decoration: none;
+    }
     #prime-review-favorites-float {
       display: none;
     }
@@ -123,19 +133,24 @@
 <div class="sp-footer-menu-bar">
   <ul>
     <li>
-      <a href="{{ shop.url }}"><img src="{{ 'footer-home.svg' | asset_url }}" /></a>
+      <a href="{{ shop.url }}"><img src="{{ 'footer-home.svg' | asset_url }}" />
+    ホーム</a>
     </li>
     <li>
-      <a href="{{ shop.url }}/tools/prime-review/favorites.html"><img src="{{ 'footer-favo.svg' | asset_url }}" /></a>
+      <a href="{{ shop.url }}/tools/prime-review/favorites.html"><img src="{{ 'footer-favo.svg' | asset_url }}" />
+    お気に入り</a>
     </li>
     <li>
-      <a href="{{ shop.url }}/cart"><img src="{{ 'footer-cart.svg' | asset_url }}" /></a>
+      <a href="{{ shop.url }}/cart"><img src="{{ 'footer-cart.svg' | asset_url }}" />
+    カート</a>
     </li>
     <li>
-      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"><img src="{{ 'footer-mypage.svg' | asset_url }}" /></a>
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"><img src="{{ 'footer-mypage.svg' | asset_url }}" />
+    マイページ</a>
     </li>
     <li id="footer-search-trigger">
-      <a href=""><img src="{{ 'footer-search.svg' | asset_url }}" /></a>
+      <a href=""><img src="{{ 'footer-search.svg' | asset_url }}" />
+    探す</a>
     </li>
   </ul>
 </div>

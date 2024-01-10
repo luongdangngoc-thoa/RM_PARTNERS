@@ -355,10 +355,17 @@ color: transparent;
       <div class="field__checkbox_contact">
         <input type="checkbox" id="ContactForm-agree" aria-required="true" class="field__checkbox"
           name="contact[個人情報取り扱い同意]">
-        <a href="https://rm-partners.myshopify.com/pages/policy" class="checkbox_href">個人情報の取扱</a>
-        <label class="field__label" for="ContactForm-agree">
-          {{- 'templates.contact.form.checkbox' | t }}
-        </label>
+          {% if request.locale.iso_code == 'en' %}
+            <label class="field__label" for="ContactForm-agree">
+              I agree to the 
+            </label>
+            <a href="https://rm-partners.myshopify.com/pages/policy" class="checkbox_href">handling of personal information </a>
+          {% else %}
+            <a href="https://rm-partners.myshopify.com/pages/policy" class="checkbox_href">個人情報の取扱 </a>
+            <label class="field__label" for="ContactForm-agree">
+               に同意します。
+            </label>
+          {% endif %}          
       </div>
       <div class="contact_checkbox_error">
         <p class="error-message" id="checkBoxError">チェックが入っていません</p>
